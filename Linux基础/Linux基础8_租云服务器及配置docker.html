@@ -1,0 +1,1127 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>概述 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Linux基础/Linux基础8_租云服务器及配置docker';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Neovim + Ubuntu快速搭建教程" href="nvim_linux.html" />
+    <link rel="prev" title="管道、环境变量与常用命令" href="Linux%E5%9F%BA%E7%A1%807_%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%80.html">
+                        常用文件管理命令
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%801_%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%802_tmux.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%803_vim.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%804_shell%E8%AF%AD%E6%B3%95.html">
+                        概论
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%805_ssh.html">
+                        ssh登录
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%806_git.html">
+                        git基本概念
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%807_%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html">
+                        管道、环境变量与常用命令
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        概述
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="nvim_linux.html">
+                        Neovim + Ubuntu快速搭建教程
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%80.html">
+                        常用文件管理命令
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%801_%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%802_tmux.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%803_vim.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%804_shell%E8%AF%AD%E6%B3%95.html">
+                        概论
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%805_ssh.html">
+                        ssh登录
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%806_git.html">
+                        git基本概念
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%807_%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html">
+                        管道、环境变量与常用命令
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        概述
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="nvim_linux.html">
+                        Neovim + Ubuntu快速搭建教程
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Linux Basic</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Linux%E5%9F%BA%E7%A1%80.html">常用文件管理命令</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Linux%E5%9F%BA%E7%A1%804_shell%E8%AF%AD%E6%B3%95.html">概论</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Linux%E5%9F%BA%E7%A1%805_ssh.html">ssh登录</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Linux%E5%9F%BA%E7%A1%806_git.html">git基本概念</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Linux%E5%9F%BA%E7%A1%807_%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html">管道、环境变量与常用命令</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">概述</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="nvim_linux.html">Neovim + Ubuntu快速搭建教程</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-repository-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">repository</span>
+</a>
+</a>
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLinux基础/Linux基础8_租云服务器及配置docker.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">open issue</span>
+</a>
+</a>
+      
+  </ul>
+</div>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/Linux基础/Linux基础8_租云服务器及配置docker.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>概述</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   概述
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     云平台的作用:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     任选一个云平台即可，推荐配置：
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   租云平台
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     阿里云
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#username-username-sudo">
+       创建工作用户
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         username
+        </span>
+       </code>
+       (username改成你自己的)并赋予
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sudo
+        </span>
+       </code>
+       权限
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       配置免密登录方式
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       配置新服务器的工作环境
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tmuxdocker">
+       安装
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         tmux
+        </span>
+       </code>
+       和
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         docker
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     腾讯云
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     华为云
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docker">
+   docker教程
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     将当前用户添加到
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       docker
+      </span>
+     </code>
+     用户组
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#images">
+     镜像（images）
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#container">
+     容器(container)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     实战
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tips">
+     小Tips
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <div class="section" id="id1">
+<h1>概述<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id2">
+<h2>云平台的作用:<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>存放我们的docker容器，让计算跑在云端。
+获得公网IP地址，让每个人可以访问到我们的服务。</p>
+</div>
+<div class="section" id="id3">
+<h2>任选一个云平台即可，推荐配置：<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>1核 2GB（后期可以动态扩容，前期配置低一些没关系）
+网络带宽采用按量付费，最大带宽拉满即可（费用取决于用量，与最大带宽无关）
+系统版本：ubuntu 20.04 LTS（推荐用统一版本，避免后期出现配置不兼容的问题）</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h1>租云平台<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id5">
+<h2>阿里云<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p>阿里云地址：<a class="reference external" href="https://www.aliyun.com/">https://www.aliyun.com/</a></p>
+<div class="section" id="username-username-sudo">
+<h3>创建工作用户<code class="docutils literal notranslate"><span class="pre">username</span></code>(username改成你自己的)并赋予<code class="docutils literal notranslate"><span class="pre">sudo</span></code>权限<a class="headerlink" href="#username-username-sudo" title="Permalink to this headline">#</a></h3>
+<p>登录到新服务器。打开Terminal，然后：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh root@xxx.xxx.xxx.xxx  <span class="c1"># xxx.xxx.xxx.xxx替换成新服务器的公网IP</span>
+</pre></div>
+</div>
+<p>创建<code class="docutils literal notranslate"><span class="pre">username</span></code>用户：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>adduser username  <span class="c1"># 创建用户acs</span>
+usermod -aG sudo acs  <span class="c1"># 给用户acs分配sudo权限</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>配置免密登录方式<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>退回Terminal，然后配置username用户的别名和免密登录，可以参考<span class="xref myst">ssh——ssh登录</span>。</p>
+</div>
+<div class="section" id="id7">
+<h3>配置新服务器的工作环境<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>将Terminal的配置传到新服务器上：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scp .bashrc .vimrc .tmux.conf server_name:  <span class="c1"># server_name需要换成自己配置的别名</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tmuxdocker">
+<h3>安装<code class="docutils literal notranslate"><span class="pre">tmux</span></code>和<code class="docutils literal notranslate"><span class="pre">docker</span></code><a class="headerlink" href="#tmuxdocker" title="Permalink to this headline">#</a></h3>
+<p>登录自己的服务器，然后安装<code class="docutils literal notranslate"><span class="pre">tmux</span></code>：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
+sudo apt-get install tmux
+</pre></div>
+</div>
+<p>打开<code class="docutils literal notranslate"><span class="pre">tmux</span></code>。（养成好习惯，所有工作都在<code class="docutils literal notranslate"><span class="pre">tmux</span></code>里进行，防止意外关闭终端后，工作进度丢失）</p>
+<p>然后在<code class="docutils literal notranslate"><span class="pre">tmux</span></code>中根据<a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">docker安装教程</a>安装<code class="docutils literal notranslate"><span class="pre">docker</span></code>即可。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>腾讯云<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<p>腾讯云地址：<a class="reference external" href="https://cloud.tencent.com/">https://cloud.tencent.com/</a></p>
+</div>
+<div class="section" id="id9">
+<h2>华为云<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<p>华为云地址：<a class="reference external" href="https://www.huaweicloud.com/">https://www.huaweicloud.com/</a></p>
+</div>
+</div>
+<div class="section" id="docker">
+<h1>docker教程<a class="headerlink" href="#docker" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id10">
+<h2>将当前用户添加到<code class="docutils literal notranslate"><span class="pre">docker</span></code>用户组<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<p>为了避免每次使用<code class="docutils literal notranslate"><span class="pre">docker</span></code>命令都需要加上<code class="docutils literal notranslate"><span class="pre">sudo</span></code>权限，可以将当前用户加入安装中自动创建的<code class="docutils literal notranslate"><span class="pre">docker用户组</span></code>(<a class="reference external" href="https://docs.docker.com/engine/install/linux-postinstall/">可以参考官方文档</a>)：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo usermod -aG docker <span class="nv">$USER</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="images">
+<h2>镜像（images）<a class="headerlink" href="#images" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">ubuntu:20.04</span></code>：拉取一个镜像</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code>：列出本地所有镜像</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">image</span> <span class="pre">rm</span> <span class="pre">ubuntu:20.04</span></code> 或 <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rmi</span> <span class="pre">ubuntu:20.04</span></code>：删除镜像<code class="docutils literal notranslate"><span class="pre">ubuntu:20.04</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">commit</span> <span class="pre">CONTAINER</span> <span class="pre">IMAGE_NAME:TAG</span></code>：创建某个<code class="docutils literal notranslate"><span class="pre">container</span></code>的镜像</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">save</span> <span class="pre">-o</span> <span class="pre">ubuntu_20_04.tar</span> <span class="pre">ubuntu:20.04</span></code>：将镜像<code class="docutils literal notranslate"><span class="pre">ubuntu:20.04</span></code>导出到本地文件<code class="docutils literal notranslate"><span class="pre">ubuntu_20_04.tar</span></code>中</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">ubuntu_20_04.tar</span></code>：将镜像<code class="docutils literal notranslate"><span class="pre">ubuntu:20.04</span></code>从本地文件<code class="docutils literal notranslate"><span class="pre">ubuntu_20_04.tar</span></code>中加载出来</p></li>
+</ol>
+</div>
+<div class="section" id="container">
+<h2>容器(container)<a class="headerlink" href="#container" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">create</span> <span class="pre">-it</span> <span class="pre">ubuntu:20.04</span></code>：利用镜像<code class="docutils literal notranslate"><span class="pre">ubuntu:20.04</span></code>创建一个容器。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code>：查看本地的所有容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">start</span> <span class="pre">CONTAINER</span></code>：启动容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">stop</span> <span class="pre">CONTAINER</span></code>：停止容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">restart</span> <span class="pre">CONTAINER</span></code>：重启容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[contaienr]</span> <span class="pre">run</span> <span class="pre">-itd</span> <span class="pre">ubuntu:20.04</span></code>：创建并启动一个容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">attach</span> <span class="pre">CONTAINER</span></code>：进入容器</p>
+<ul class="simple">
+<li><p>先按<code class="docutils literal notranslate"><span class="pre">Ctrl-p</span></code>，再按<code class="docutils literal notranslate"><span class="pre">Ctrl-q</span></code>可以挂起容器</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">exec</span> <span class="pre">CONTAINER</span> <span class="pre">COMMAND</span></code>：在容器中执行命令</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">rm</span> <span class="pre">CONTAINER</span></code>：删除容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">prune</span></code>：删除所有已停止的容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">export</span> <span class="pre">-o</span> <span class="pre">xxx.tar</span> <span class="pre">CONTAINER</span></code>：将容器<code class="docutils literal notranslate"><span class="pre">CONTAINER</span></code>导出到本地文件<code class="docutils literal notranslate"><span class="pre">xxx.tar</span></code>中</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">import</span> <span class="pre">xxx.tar</span> <span class="pre">image_name:tag</span></code>：将本地文件<code class="docutils literal notranslate"><span class="pre">xxx.tar</span></code>导入成镜像，并将镜像命名为<code class="docutils literal notranslate"><span class="pre">image_name:tag</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">export/import与docker</span> <span class="pre">save/load</span></code>的区别：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">export/import</span></code>会丢弃历史记录和元数据信息，仅保存容器当时的快照状态</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">save/load</span></code>会保存完整记录，体积更大</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">top</span> <span class="pre">CONTAINER</span></code>：查看某个容器内的所有进程</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stats</span></code>：查看所有容器的统计信息，包括CPU、内存、存储、网络等信息</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">xxx</span> <span class="pre">CONTAINER:xxx</span></code> 或 <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">CONTAINER:xxx</span> <span class="pre">xxx</span></code>：在本地和容器间复制文件</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rename</span> <span class="pre">CONTAINER1</span> <span class="pre">CONTAINER2</span></code>：重命名容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">update</span> <span class="pre">CONTAINER</span> <span class="pre">--memory</span> <span class="pre">500MB</span></code>：修改容器限制</p></li>
+</ol>
+</div>
+<div class="section" id="id11">
+<h2>实战<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
+<p>进入AC Terminal，然后：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scp /var/lib/acwing/docker/images/docker_lesson_1_0.tar server_name:  <span class="c1"># 将镜像上传到自己租的云端服务器</span>
+ssh server_name  <span class="c1"># 登录自己的云端服务器</span>
+
+docker load -i docker_lesson_1_0.tar  <span class="c1"># 将镜像加载到本地</span>
+docker run -p <span class="m">20000</span>:22 --name my_docker_server -itd docker_lesson:1.0  <span class="c1"># 创建并运行docker_lesson:1.0镜像</span>
+
+docker attach my_docker_server  <span class="c1"># 进入创建的docker容器</span>
+passwd  <span class="c1"># 设置root密码</span>
+</pre></div>
+</div>
+<p>去云平台控制台中修改安全组配置，放行端口<code class="docutils literal notranslate"><span class="pre">20000</span></code>。</p>
+<p>返回AC Terminal，即可通过<code class="docutils literal notranslate"><span class="pre">ssh</span></code>登录自己的<code class="docutils literal notranslate"><span class="pre">docker</span></code>容器：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh root@xxx.xxx.xxx.xxx -p <span class="m">20000</span>  <span class="c1"># 将xxx.xxx.xxx.xxx替换成自己租的服务器的IP地址</span>
+</pre></div>
+</div>
+<p>然后，可以仿照上节课内容，创建工作账户<code class="docutils literal notranslate"><span class="pre">acs</span></code>。</p>
+<p>最后，可以参考<span class="xref myst">ssh——ssh登录</span>配置<code class="docutils literal notranslate"><span class="pre">docker</span></code>容器的别名和免密登录。</p>
+</div>
+<div class="section" id="tips">
+<h2>小Tips<a class="headerlink" href="#tips" title="Permalink to this headline">#</a></h2>
+<p>如果<code class="docutils literal notranslate"><span class="pre">apt-get</span></code>下载软件速度较慢，可以参考<a class="reference external" href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">清华大学开源软件镜像站</a>中的内容，修改软件源。</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Linux基础"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="Linux%E5%9F%BA%E7%A1%807_%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">管道、环境变量与常用命令</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="nvim_linux.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Neovim + Ubuntu快速搭建教程</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   概述
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     云平台的作用:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     任选一个云平台即可，推荐配置：
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   租云平台
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     阿里云
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#username-username-sudo">
+       创建工作用户
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         username
+        </span>
+       </code>
+       (username改成你自己的)并赋予
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sudo
+        </span>
+       </code>
+       权限
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       配置免密登录方式
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       配置新服务器的工作环境
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tmuxdocker">
+       安装
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         tmux
+        </span>
+       </code>
+       和
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         docker
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     腾讯云
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     华为云
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docker">
+   docker教程
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     将当前用户添加到
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       docker
+      </span>
+     </code>
+     用户组
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#images">
+     镜像（images）
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#container">
+     容器(container)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     实战
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tips">
+     小Tips
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

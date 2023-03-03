@@ -1,0 +1,4239 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>常用文件管理命令 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Linux基础/Linux基础';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="Linux%E5%9F%BA%E7%A1%801_%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        常用文件管理命令
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%801_%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%802_tmux.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%803_vim.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%804_shell%E8%AF%AD%E6%B3%95.html">
+                        概论
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%805_ssh.html">
+                        ssh登录
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%806_git.html">
+                        git基本概念
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%807_%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html">
+                        管道、环境变量与常用命令
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%808_%E7%A7%9F%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%8A%E9%85%8D%E7%BD%AEdocker.html">
+                        概述
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="nvim_linux.html">
+                        Neovim + Ubuntu快速搭建教程
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        常用文件管理命令
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%801_%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%802_tmux.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%803_vim.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%804_shell%E8%AF%AD%E6%B3%95.html">
+                        概论
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%805_ssh.html">
+                        ssh登录
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%806_git.html">
+                        git基本概念
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%807_%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html">
+                        管道、环境变量与常用命令
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Linux%E5%9F%BA%E7%A1%808_%E7%A7%9F%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%8A%E9%85%8D%E7%BD%AEdocker.html">
+                        概述
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="nvim_linux.html">
+                        Neovim + Ubuntu快速搭建教程
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Linux Basic</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">常用文件管理命令</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Linux%E5%9F%BA%E7%A1%804_shell%E8%AF%AD%E6%B3%95.html">概论</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Linux%E5%9F%BA%E7%A1%805_ssh.html">ssh登录</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Linux%E5%9F%BA%E7%A1%806_git.html">git基本概念</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Linux%E5%9F%BA%E7%A1%807_%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html">管道、环境变量与常用命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux%E5%9F%BA%E7%A1%808_%E7%A7%9F%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%8A%E9%85%8D%E7%BD%AEdocker.html">概述</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="nvim_linux.html">Neovim + Ubuntu快速搭建教程</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-repository-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">repository</span>
+</a>
+</a>
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLinux基础/Linux基础.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">open issue</span>
+</a>
+</a>
+      
+  </ul>
+</div>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/Linux基础/Linux基础.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>常用文件管理命令</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   常用文件管理命令
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tmux">
+   tmux
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vim">
+   vim
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shell">
+   shell 语法
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     概论
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       概论
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       学习技巧
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       脚本示例
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       运行方式
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     注释
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       单行注释
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       多行注释
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     变量
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       定义变量
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       使用变量
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       只读变量
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       删除变量
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       变量类型
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id16">
+       字符串
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     默认变量
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       文件参数变量
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id19">
+       其它参数相关变量
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     数组
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
+       定义
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id22">
+       读取数组中某个元素的值
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id23">
+       读取整个数组
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id24">
+       数组长度
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expr">
+     expr命令
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id25">
+       字符串表达式
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id26">
+       整数表达式
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id27">
+       逻辑关系表达式
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read">
+     read命令
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#echo">
+     echo命令
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id28">
+       显示普通字符串
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id29">
+       显示转义字符
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id30">
+       显示变量
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id31">
+       显示换行
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id32">
+       显示不换行
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id33">
+       显示结果定向至文件
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id34">
+       原样输出字符串，不进行转义或取变量(用单引号)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id35">
+       显示命令的执行结果
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printf">
+     printf命令
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id36">
+       用法示例
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test">
+     test命令与判断符号[]
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id37">
+       逻辑运算符&amp;&amp;和||
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id38">
+       test命令
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id39">
+       文件类型判断
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id40">
+       文件权限判断
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id41">
+       整数间的比较
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id42">
+       字符串比较
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id43">
+       多重条件判定
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id44">
+       判断符号[]
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id45">
+     判断语句
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if">
+       单层if
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-else">
+       单层if-else
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-elif-elif-else">
+       多层if-elif-elif-else
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#case-esac">
+       case…esac形式
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id46">
+     循环语句
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#for-in-do-done">
+       for…in…do…done
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#for-do-done">
+       for ((…;…;…)) do…done
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#while-do-done">
+       while…do…done循环
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#until-do-done">
+       until…do…done循环
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#break">
+       break命令
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#continue">
+       continue命令
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id47">
+       死循环的处理方式
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id48">
+     函数
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#returnstdout">
+       不获取
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         return
+        </span>
+       </code>
+       值和
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stdout
+        </span>
+       </code>
+       值
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id49">
+       获取
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         return
+        </span>
+       </code>
+       值和
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stdout
+        </span>
+       </code>
+       值
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id50">
+       函数的输入参数
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id51">
+       函数内的局部变量
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exit">
+     exit命令
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id52">
+     文件重定向
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id53">
+       重定向命令列表
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id54">
+       输入和输出重定向
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stdinstdout">
+       同时重定向
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stdin
+        </span>
+       </code>
+       和
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stdout
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id55">
+     引入外部脚本
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ssh">
+   ssh
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id56">
+     ssh登录
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id57">
+       基本用法
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id58">
+       配置文件
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id59">
+       密钥登录
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id60">
+       执行命令
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scp">
+     scp传文件
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id61">
+       基本用法
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#scpvimtmux">
+       使用
+       <strong>
+        scp
+       </strong>
+       配置其他服务器的
+       <strong>
+        vim
+       </strong>
+       和
+       <strong>
+        tmux
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git">
+   git
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id62">
+     git基本概念
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id63">
+     git常用命令
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id64">
+   管道、环境变量与常用命令
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id65">
+     管道
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id66">
+       概念
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id67">
+       要点
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id68">
+       与文件重定向的区别
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id69">
+       举例
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id70">
+     环境变量
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id71">
+       概念
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id72">
+       查看
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id73">
+       修改
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id74">
+       常见环境变量
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id75">
+     常用命令
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id76">
+       系统状况
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id77">
+       文件权限
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id78">
+       文件检索
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id79">
+       查看文件内容
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id80">
+       用户相关
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id81">
+       工具
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id82">
+       安装软件
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docker">
+   租云服务器及配置docker环境
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id83">
+     概述
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id84">
+       云平台的作用:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id85">
+       任选一个云平台即可，推荐配置：
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id86">
+     租云平台
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id87">
+       阿里云
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#username-username-sudo">
+         创建工作用户
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           username
+          </span>
+         </code>
+         (username改成你自己的)并赋予
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           sudo
+          </span>
+         </code>
+         权限
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id88">
+         配置免密登录方式
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id89">
+         配置新服务器的工作环境
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#tmuxdocker">
+         安装
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           tmux
+          </span>
+         </code>
+         和
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           docker
+          </span>
+         </code>
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id90">
+       腾讯云
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id91">
+       华为云
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id92">
+     docker教程
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id93">
+       将当前用户添加到
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         docker
+        </span>
+       </code>
+       用户组
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#images">
+       镜像（images）
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#container">
+       容器(container)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id94">
+       实战
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tips">
+       小Tips
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <p>Linux服务器端常用命令和操作</p>
+<!--more-->
+<div class="section" id="id1">
+<h1>常用文件管理命令<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(1) ctrl c: 取消命令，并且换行
+(2) ctrl u: 清空本行命令
+(3) tab键：可以补全命令和文件名，如果补全不了快速按两下tab键，可以显示备选选项
+(4) ls: 列出当前目录下所有文件，蓝色的是文件夹，白色的是普通文件，绿色的是可执行文件
+(5) pwd: 显示当前路径
+(6) cd XXX: 进入XXX目录下, cd .. 返回上层目录
+(7) cp XXX YYY: 将XXX文件复制成YYY，XXX和YYY可以是一个路径，比如../dir_c/a.txt，表示上层目录下的dir_c文件夹下的文件a.txt
+(8) mkdir XXX: 创建目录XXX
+(9) rm XXX: 删除普通文件;  rm XXX -r: 删除文件夹
+(10) mv XXX YYY: 将XXX文件移动到YYY，和cp命令一样，XXX和YYY可以是一个路径；重命名也是用这个命令
+(11) touch XXX: 创建一个文件
+(12) cat XXX: 展示文件XXX中的内容
+(13) 复制文本
+    windows/Linux下：Ctrl + insert，Mac下：command + c
+(14) 粘贴文本
+    windows/Linux下：Shift + insert，Mac下：command + v
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="tmux">
+<h1>tmux<a class="headerlink" href="#tmux" title="Permalink to this headline">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>功能：
+    (1) 分屏。
+    (2) 允许断开Terminal连接后，继续运行进程。
+结构：
+    一个tmux可以包含多个session，一个session可以包含多个window，一个window可以包含多个pane。
+    实例：
+        tmux:
+            session 0:
+                window 0:
+                    pane 0
+                    pane 1
+                    pane 2
+                    ...
+                window 1
+                window 2
+                ...
+            session 1
+            session 2
+            ...
+操作：
+    (1) tmux：新建一个session，其中包含一个window，window中包含一个pane，pane里打开了一个shell对话框。
+    (2) 按下Ctrl + a后手指松开，然后按%：将当前pane左右平分成两个pane。
+    (3) 按下Ctrl + a后手指松开，然后按&quot;（注意是双引号&quot;）：将当前pane上下平分成两个pane。
+    (4) Ctrl + d：关闭当前pane；如果当前window的所有pane均已关闭，则自动关闭window；如果当前session的所有window均已关闭，则自动关闭session。
+    (5) 鼠标点击可以选pane。
+    (6) 按下ctrl + a后手指松开，然后按方向键：选择相邻的pane。
+    (7) 鼠标拖动pane之间的分割线，可以调整分割线的位置。
+    (8) 按住ctrl + a的同时按方向键，可以调整pane之间分割线的位置。
+    (9) 按下ctrl + a后手指松开，然后按z：将当前pane全屏/取消全屏。
+    (10) 按下ctrl + a后手指松开，然后按d：挂起当前session。
+    (11) tmux a：打开之前挂起的session。
+    (12) 按下ctrl + a后手指松开，然后按s：选择其它session。
+        方向键 —— 上：选择上一项 session/window/pane
+        方向键 —— 下：选择下一项 session/window/pane
+        方向键 —— 右：展开当前项 session/window
+        方向键 —— 左：闭合当前项 session/window
+    (13) 按下Ctrl + a后手指松开，然后按c：在当前session中创建一个新的window。
+    (14) 按下Ctrl + a后手指松开，然后按w：选择其他window，操作方法与(12)完全相同。
+    (15) 按下Ctrl + a后手指松开，然后按PageUp：翻阅当前pane内的内容。
+    (16) 鼠标滚轮：翻阅当前pane内的内容。
+    (17) 在tmux中选中文本时，需要按住shift键。（仅支持Windows和Linux，不支持Mac，不过该操作并不是必须的，因此影响不大）
+    (18) tmux中复制/粘贴文本的通用方式：
+        (1) 按下Ctrl + a后松开手指，然后按[
+        (2) 用鼠标选中文本，被选中的文本会被自动复制到tmux的剪贴板
+        (3) 按下Ctrl + a后松开手指，然后按]，会将剪贴板中的内容粘贴到光标处
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="vim">
+<h1>vim<a class="headerlink" href="#vim" title="Permalink to this headline">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>功能：
+    (1) 命令行模式下的文本编辑器。
+    (2) 根据文件扩展名自动判别编程语言。支持代码缩进、代码高亮等功能。
+    (3) 使用方式：vim filename
+        如果已有该文件，则打开它。
+        如果没有该文件，则打开个一个新的文件，并命名为filename
+模式：
+    (1) 一般命令模式
+        默认模式。命令输入方式：类似于打游戏放技能，按不同字符，即可进行不同操作。可以复制、粘贴、删除文本等。
+    (2) 编辑模式
+        在一般命令模式里按下i，会进入编辑模式。
+        按下ESC会退出编辑模式，返回到一般命令模式。
+    (3) 命令行模式
+        在一般命令模式里按下:/?三个字母中的任意一个，会进入命令行模式。命令行在最下面。
+        可以查找、替换、保存、退出、配置编辑器等。
+操作：
+    (1) i：进入编辑模式
+    (2) ESC：进入一般命令模式
+    (3) h 或 左箭头键：光标向左移动一个字符
+    (4) j 或 向下箭头：光标向下移动一个字符
+    (5) k 或 向上箭头：光标向上移动一个字符
+    (6) l 或 向右箭头：光标向右移动一个字符
+    (7) n&lt;Space&gt;：n表示数字，按下数字后再按空格，光标会向右移动这一行的n个字符
+    (8) 0 或 功能键[Home]：光标移动到本行开头
+    (9) $ 或 功能键[End]：光标移动到本行末尾
+    (10) G：光标移动到最后一行
+    (11) :n 或 nG：n为数字，光标移动到第n行
+    (12) gg：光标移动到第一行，相当于1G
+    (13) n&lt;Enter&gt;：n为数字，光标向下移动n行
+    (14) /word：向光标之下寻找第一个值为word的字符串。
+    (15) ?word：向光标之上寻找第一个值为word的字符串。
+    (16) n：重复前一个查找操作
+    (17) N：反向重复前一个查找操作
+    (18) :n1,n2s/word1/word2/g：n1与n2为数字，在第n1行与n2行之间寻找word1这个字符串，并将该字符串替换为word2
+    (19) :1,$s/word1/word2/g：将全文的word1替换为word2
+    (20) :1,$s/word1/word2/gc：将全文的word1替换为word2，且在替换前要求用户确认。
+    (21) v：选中文本
+    (22) d：删除选中的文本
+    (23) dd: 删除当前行
+    (24) y：复制选中的文本
+    (25) yy: 复制当前行
+    (26) p: 将复制的数据在光标的下一行/下一个位置粘贴
+    (27) u：撤销
+    (28) Ctrl + r：取消撤销
+    (29) 大于号 &gt;：将选中的文本整体向右缩进一次
+    (30) 小于号 &lt;：将选中的文本整体向左缩进一次
+    (31) :w 保存
+    (32) :w! 强制保存
+    (33) :q 退出
+    (34) :q! 强制退出
+    (35) :wq 保存并退出
+    (36) :set paste 设置成粘贴模式，取消代码自动缩进
+    (37) :set nopaste 取消粘贴模式，开启代码自动缩进
+    (38) :set nu 显示行号
+    (39) :set nonu 隐藏行号
+    (40) gg=G：将全文代码格式化
+    (41) :noh 关闭查找关键词高亮
+    (42) Ctrl + q：当vim卡死时，可以取消当前正在执行的命令
+异常处理：
+    每次用vim编辑文件时，会自动创建一个.filename.swp的临时文件。
+    如果打开某个文件时，该文件的swp文件已存在，则会报错。此时解决办法有两种：
+        (1) 找到正在打开该文件的程序，并退出
+        (2) 直接删掉该swp文件即可
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="shell">
+<h1>shell 语法<a class="headerlink" href="#shell" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id2">
+<h2>概论<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id3">
+<h3>概论<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>shell是我们通过命令行与操作系统沟通的语言。</p>
+<p>shell脚本可以直接在命令行中执行，也可以将一套逻辑组织成一个文件，方便复用。
+AC Terminal中的命令行可以看成是一个**“shell脚本在逐行执行”**。</p>
+<p>Linux中常见的shell脚本有很多种，常见的有：</p>
+<ul class="simple">
+<li><p>Bourne Shell(<code class="docutils literal notranslate"><span class="pre">/usr/bin/sh</span></code>或<code class="docutils literal notranslate"><span class="pre">/bin/sh</span></code>)</p></li>
+<li><p>Bourne Again Shell(<code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code>)</p></li>
+<li><p>C Shell(<code class="docutils literal notranslate"><span class="pre">/usr/bin/csh</span></code>)</p></li>
+<li><p>K Shell(<code class="docutils literal notranslate"><span class="pre">/usr/bin/ksh</span></code>)</p></li>
+<li><p>zsh</p></li>
+<li><p>…
+Linux系统中一般默认使用bash，所以接下来讲解bash中的语法。
+文件开头需要写<code class="docutils literal notranslate"><span class="pre">#!</span> <span class="pre">/bin/bash</span></code>，指明bash为脚本解释器。</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>学习技巧<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>不要死记硬背，遇到含糊不清的地方，可以在Terminal里实际运行一遍。</p>
+</div>
+<div class="section" id="id5">
+<h3>脚本示例<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>新建一个<code class="docutils literal notranslate"><span class="pre">test.sh</span></code>文件，内容如下：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#! /bin/bash</span>
+<span class="nb">echo</span> <span class="s2">&quot;Hello World!&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>运行方式<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>作为可执行文件</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>acs@9e0ebfcd82d7:~$ chmod +x test.sh  <span class="c1"># 使脚本具有可执行权限</span>
+acs@9e0ebfcd82d7:~$ ./test.sh  <span class="c1"># 当前路径下执行</span>
+Hello World!  <span class="c1"># 脚本输出</span>
+acs@9e0ebfcd82d7:~$ /home/acs/test.sh  <span class="c1"># 绝对路径下执行</span>
+Hello World!  <span class="c1"># 脚本输出</span>
+acs@9e0ebfcd82d7:~$ ~/test.sh  <span class="c1"># 家目录路径下执行</span>
+Hello World!  <span class="c1"># 脚本输出</span>
+</pre></div>
+</div>
+<p>用解释器执行</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>acs@9e0ebfcd82d7:~$ bash test.sh
+Hello World!  <span class="c1"># 脚本输出</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>注释<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id8">
+<h3>单行注释<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>每行中<code class="docutils literal notranslate"><span class="pre">#</span></code>之后的内容均是注释。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这是一行注释</span>
+
+<span class="nb">echo</span> <span class="s1">&#39;Hello World&#39;</span>  <span class="c1">#  这也是注释</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>多行注释<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>:<span class="s">&lt;&lt;EOF</span>
+<span class="s">第一行注释</span>
+<span class="s">第二行注释</span>
+<span class="s">第三行注释</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p>其中<code class="docutils literal notranslate"><span class="pre">EOF</span></code>可以换成其它任意字符串。例如：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>:<span class="s">&lt;&lt;abc</span>
+<span class="s">第一行注释</span>
+<span class="s">第二行注释</span>
+<span class="s">第三行注释</span>
+<span class="s">abc</span>
+
+:&lt;&lt;!
+第一行注释
+第二行注释
+第三行注释
+!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>变量<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id11">
+<h3>定义变量<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p>定义变量，不需要加<code class="docutils literal notranslate"><span class="pre">$</span></code>符号，例如：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">name1</span><span class="o">=</span><span class="s1">&#39;yxc&#39;</span>  <span class="c1"># 单引号定义字符串</span>
+<span class="nv">name2</span><span class="o">=</span><span class="s2">&quot;yxc&quot;</span>  <span class="c1"># 双引号定义字符串</span>
+<span class="nv">name3</span><span class="o">=</span>yxc    <span class="c1"># 也可以不加引号，同样表示字符串</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>使用变量<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<p>使用变量，需要加上<code class="docutils literal notranslate"><span class="pre">$</span></code>符号，或者<code class="docutils literal notranslate"><span class="pre">${}</span></code>符号。花括号是可选的，主要为了帮助解释器识别变量边界。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">name</span><span class="o">=</span>yxc
+<span class="nb">echo</span> <span class="nv">$name</span>  <span class="c1"># 输出yxc</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">name</span><span class="si">}</span>  <span class="c1"># 输出yxc</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">name</span><span class="si">}</span>acwing  <span class="c1"># 输出yxcacwing</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>只读变量<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<p>使用<code class="docutils literal notranslate"><span class="pre">readonly</span></code>或者<code class="docutils literal notranslate"><span class="pre">declare</span></code>可以将变量变为只读。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">name</span><span class="o">=</span>yxc
+<span class="nb">readonly</span> name
+<span class="nb">declare</span> -r name  <span class="c1"># 两种写法均可</span>
+
+<span class="nv">name</span><span class="o">=</span>abc  <span class="c1"># 会报错，因为此时name只读</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>删除变量<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">unset</span></code>可以删除变量。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">name</span><span class="o">=</span>yxc
+<span class="nb">unset</span> name
+<span class="nb">echo</span> <span class="nv">$name</span>  <span class="c1"># 输出空行</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>变量类型<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>自定义变量（局部变量）
+子进程不能访问的变量</p></li>
+<li><p>环境变量（全局变量）
+子进程可以访问的变量</p></li>
+</ol>
+<p>自定义变量改成环境变量：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>acs@9e0ebfcd82d7:~$ <span class="nv">name</span><span class="o">=</span>yxc  <span class="c1"># 定义变量</span>
+acs@9e0ebfcd82d7:~$ <span class="nb">export</span> name  <span class="c1"># 第一种方法</span>
+acs@9e0ebfcd82d7:~$ <span class="nb">declare</span> -x name  <span class="c1"># 第二种方法</span>
+</pre></div>
+</div>
+<p>环境变量改为自定义变量：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>acs@9e0ebfcd82d7:~$ <span class="nb">export</span> <span class="nv">name</span><span class="o">=</span>yxc  <span class="c1"># 定义环境变量</span>
+acs@9e0ebfcd82d7:~$ <span class="nb">declare</span> +x name  <span class="c1"># 改为自定义变量</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>字符串<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<p>字符串可以用单引号，也可以用双引号，也可以不用引号。</p>
+<p>单引号与双引号的区别：</p>
+<ul class="simple">
+<li><p>单引号中的内容会原样输出，不会执行、不会取变量；</p></li>
+<li><p>双引号中的内容可以执行、可以取变量；</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">name</span><span class="o">=</span>yxc  <span class="c1"># 不用引号</span>
+<span class="nb">echo</span> <span class="s1">&#39;hello, $name \&quot;hh\&quot;&#39;</span>  <span class="c1"># 单引号字符串，输出 hello, $name \&quot;hh\&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;hello, </span><span class="nv">$name</span><span class="s2"> \&quot;hh\&quot;&quot;</span>  <span class="c1"># 双引号字符串，输出 hello, yxc &quot;hh&quot;</span>
+</pre></div>
+</div>
+<p>获取字符串长度</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;yxc&quot;</span>
+<span class="nb">echo</span> <span class="si">${#</span><span class="nv">name</span><span class="si">}</span>  <span class="c1"># 输出3</span>
+</pre></div>
+</div>
+<p>提取子串</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;hello, yxc&quot;</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">name</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">5</span><span class="si">}</span>  <span class="c1"># 提取从0开始的5个字符</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>默认变量<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id18">
+<h3>文件参数变量<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
+<p>在执行shell脚本时，可以向脚本传递参数。<code class="docutils literal notranslate"><span class="pre">$1</span></code>是第一个参数，<code class="docutils literal notranslate"><span class="pre">$2</span></code>是第二个参数，以此类推。特殊的，<code class="docutils literal notranslate"><span class="pre">$0</span></code>是文件名（包含路径）。例如：</p>
+<p>创建文件<code class="docutils literal notranslate"><span class="pre">test.sh</span></code>：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#! /bin/bash</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;文件名：&quot;</span><span class="nv">$0</span>
+<span class="nb">echo</span> <span class="s2">&quot;第一个参数：&quot;</span><span class="nv">$1</span>
+<span class="nb">echo</span> <span class="s2">&quot;第二个参数：&quot;</span><span class="nv">$2</span>
+<span class="nb">echo</span> <span class="s2">&quot;第三个参数：&quot;</span><span class="nv">$3</span>
+<span class="nb">echo</span> <span class="s2">&quot;第四个参数：&quot;</span><span class="nv">$4</span>
+</pre></div>
+</div>
+<p>然后执行该脚本：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>acs@9e0ebfcd82d7:~$ chmod +x test.sh 
+acs@9e0ebfcd82d7:~$ ./test.sh <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
+文件名：./test.sh
+第一个参数：1
+第二个参数：2
+第三个参数：3
+第四个参数：4
+</pre></div>
+</div>
+</div>
+<div class="section" id="id19">
+<h3>其它参数相关变量<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$#</span></code></p></td>
+<td><p>代表文件传入的参数个数，如上例中值为4</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$*</span></code></p></td>
+<td><p>由所有参数构成的用空格隔开的字符串，如上例中值为<code class="docutils literal notranslate"><span class="pre">&quot;$1</span> <span class="pre">$2</span> <span class="pre">$3</span> <span class="pre">$4&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$&#64;</span></code></p></td>
+<td><p>每个参数分别用双引号括起来的字符串，如上例中值为<code class="docutils literal notranslate"><span class="pre">&quot;$1&quot;</span> <span class="pre">&quot;$2&quot;</span> <span class="pre">&quot;$3&quot;</span> <span class="pre">&quot;$4&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$$</span></code></p></td>
+<td><p>脚本当前运行的进程ID</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$?</span></code></p></td>
+<td><p>上一条命令的退出状态（注意不是stdout，而是exit code）。0表示正常退出，其他值表示错误</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$(command)</span></code></p></td>
+<td><p>返回<code class="docutils literal notranslate"><span class="pre">command</span></code>这条命令的stdout（可嵌套）</p></td>
+</tr>
+<tr class="row-even"><td><p>`command`</p></td>
+<td><p>返回<code class="docutils literal notranslate"><span class="pre">command</span></code>这条命令的stdout（不可嵌套）</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id20">
+<h2>数组<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h2>
+<p>数组中可以存放多个不同类型的值，只支持一维数组，初始化时不需要指明数组大小。
+数组<strong>下标从0开始</strong>。</p>
+<div class="section" id="id21">
+<h3>定义<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
+<p>数组用小括号表示，元素之间用空格隔开。例如：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">array</span><span class="o">=(</span><span class="m">1</span> abc <span class="s2">&quot;def&quot;</span> yxc<span class="o">)</span>
+</pre></div>
+</div>
+<p>也可以直接定义数组中某个元素的值：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>array<span class="o">[</span><span class="m">0</span><span class="o">]=</span><span class="m">1</span>
+array<span class="o">[</span><span class="m">1</span><span class="o">]=</span>abc
+array<span class="o">[</span><span class="m">2</span><span class="o">]=</span><span class="s2">&quot;def&quot;</span>
+array<span class="o">[</span><span class="m">3</span><span class="o">]=</span>yxc
+</pre></div>
+</div>
+</div>
+<div class="section" id="id22">
+<h3>读取数组中某个元素的值<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
+<p>格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="si">${</span><span class="nv">array</span><span class="p">[index]</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>例如：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">array</span><span class="o">=(</span><span class="m">1</span> abc <span class="s2">&quot;def&quot;</span> yxc<span class="o">)</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[0]</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[1]</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[2]</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[3]</span><span class="si">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id23">
+<h3>读取整个数组<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h3>
+<p>格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span>  <span class="c1"># 第一种写法</span>
+<span class="si">${</span><span class="nv">array</span><span class="p">[*]</span><span class="si">}</span>  <span class="c1"># 第二种写法</span>
+</pre></div>
+</div>
+<p>例如：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">array</span><span class="o">=(</span><span class="m">1</span> abc <span class="s2">&quot;def&quot;</span> yxc<span class="o">)</span>
+
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span>  <span class="c1"># 第一种写法</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[*]</span><span class="si">}</span>  <span class="c1"># 第二种写法</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id24">
+<h3>数组长度<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
+<p>类似于字符串</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="si">${#</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span>  <span class="c1"># 第一种写法</span>
+<span class="si">${#</span><span class="nv">array</span><span class="p">[*]</span><span class="si">}</span>  <span class="c1"># 第二种写法</span>
+</pre></div>
+</div>
+<p>例如：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">array</span><span class="o">=(</span><span class="m">1</span> abc <span class="s2">&quot;def&quot;</span> yxc<span class="o">)</span>
+
+<span class="nb">echo</span> <span class="si">${#</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span>  <span class="c1"># 第一种写法</span>
+<span class="nb">echo</span> <span class="si">${#</span><span class="nv">array</span><span class="p">[*]</span><span class="si">}</span>  <span class="c1"># 第二种写法</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="expr">
+<h2>expr命令<a class="headerlink" href="#expr" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">expr</span></code>命令用于求表达式的值，格式为：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>expr 表达式
+</pre></div>
+</div>
+<p>表达式说明：</p>
+<ul class="simple">
+<li><p>用空格隔开每一项</p></li>
+<li><p>用反斜杠放在shell特定的字符前面（发现表达式运行错误时，可以试试转义）</p></li>
+<li><p>对包含空格和其他特殊字符的字符串要用引号括起来</p></li>
+<li><p>expr会在<code class="docutils literal notranslate"><span class="pre">stdout</span></code>中输出结果。如果为逻辑关系表达式，则结果为真，<code class="docutils literal notranslate"><span class="pre">stdout</span></code>为1，否则为0。</p></li>
+<li><p>expr的<code class="docutils literal notranslate"><span class="pre">exit</span> <span class="pre">code</span></code>：如果为逻辑关系表达式，则结果为真，<code class="docutils literal notranslate"><span class="pre">exit</span> <span class="pre">code</span></code>为0，否则为1。</p></li>
+</ul>
+<div class="section" id="id25">
+<h3>字符串表达式<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">length</span> <span class="pre">STRING</span></code>
+返回<code class="docutils literal notranslate"><span class="pre">STRING</span></code>的长度</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index</span> <span class="pre">STRING</span> <span class="pre">CHARSET</span></code>
+<code class="docutils literal notranslate"><span class="pre">CHARSET</span></code>中任意单个字符在STRING中最前面的字符位置，下标从1开始。如果在<code class="docutils literal notranslate"><span class="pre">STRING</span></code>中完全不存在<code class="docutils literal notranslate"><span class="pre">CHARSET</span></code>中的字符，则返回0。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">substr</span> <span class="pre">STRING</span> <span class="pre">POSITION</span> <span class="pre">LENGTH</span></code>
+返回<code class="docutils literal notranslate"><span class="pre">STRING</span></code>字符串中从<code class="docutils literal notranslate"><span class="pre">POSITION</span></code>开始，长度最大为<code class="docutils literal notranslate"><span class="pre">LENGTH</span></code>的子串。如果<code class="docutils literal notranslate"><span class="pre">POSITION</span></code>或<code class="docutils literal notranslate"><span class="pre">LENGTH</span></code>为负数，0或非数值，则返回空字符串。</p></li>
+</ul>
+<p>示例：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">str</span><span class="o">=</span><span class="s2">&quot;Hello World!&quot;</span>
+
+<span class="nb">echo</span> <span class="sb">`</span>expr length <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span><span class="sb">`</span>  <span class="c1"># ``不是单引号，表示执行该命令，输出12</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr index <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span> aWd<span class="sb">`</span>  <span class="c1"># 输出7，下标从1开始</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr substr <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span> <span class="m">2</span> <span class="m">3</span><span class="sb">`</span>  <span class="c1"># 输出 ell</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id26">
+<h3>整数表达式<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">expr</span></code>支持普通的算术操作，算术表达式优先级低于字符串表达式，高于逻辑关系表达式。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span></code>
+加减运算。两端参数会转换为整数，如果转换失败则报错。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">/</span> <span class="pre">%</span></code>
+乘，除，取模运算。两端参数会转换为整数，如果转换失败则报错。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">()</span></code> 可以该表优先级，但需要用反斜杠转义</p></li>
+</ul>
+<p>示例：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">b</span><span class="o">=</span><span class="m">4</span>
+
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> + <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出7</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> - <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出-1</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\*</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出12，*需要转义</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> / <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出0，整除</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> % <span class="nv">$b</span><span class="sb">`</span> <span class="c1"># 输出3</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="se">\(</span> <span class="nv">$a</span> + <span class="m">1</span> <span class="se">\)</span> <span class="se">\*</span> <span class="se">\(</span> <span class="nv">$b</span> + <span class="m">1</span> <span class="se">\)</span><span class="sb">`</span>  <span class="c1"># 输出20，值为(a + 1) * (b + 1)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id27">
+<h3>逻辑关系表达式<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">|</span></code>
+如果第一个参数非空且非0，则返回第一个参数的值，否则返回第二个参数的值，但要求第二个参数的值也是非空或非0，否则返回0。如果第一个参数是非空或非0时，不会计算第二个参数。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code>
+如果两个参数都非空且非0，则返回第一个参数，否则返回0。如果第一个参为0或为空，则不会计算第二个参数。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&lt;=</span> <span class="pre">=</span> <span class="pre">==</span> <span class="pre">!=</span> <span class="pre">&gt;=</span> <span class="pre">&gt;</span></code>
+比较两端的参数，如果为true，则返回1，否则返回0。”==”是”=”的同义词。”expr”首先尝试将两端参数转换为整数，并做算术比较，如果转换失败，则按字符集排序规则做字符比较。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">()</span></code> 可以该表优先级，但需要用反斜杠转义</p></li>
+</ul>
+<p>示例：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">b</span><span class="o">=</span><span class="m">4</span>
+
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\&gt;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出0，&gt;需要转义</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="s1">&#39;&lt;&#39;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出1，也可以将特殊字符用引号引起来</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="s1">&#39;&gt;=&#39;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出0</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\&lt;\=</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出1</span>
+
+<span class="nv">c</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">d</span><span class="o">=</span><span class="m">5</span>
+
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$c</span> <span class="se">\&amp;</span> <span class="nv">$d</span><span class="sb">`</span>  <span class="c1"># 输出0</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\&amp;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出3</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$c</span> <span class="se">\|</span> <span class="nv">$d</span><span class="sb">`</span>  <span class="c1"># 输出5</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\|</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="read">
+<h2>read命令<a class="headerlink" href="#read" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">read</span></code>命令用于从标准输入中读取单行数据。当读到文件结束符时，<code class="docutils literal notranslate"><span class="pre">exit</span> <span class="pre">code</span></code>为1，否则为0。</p>
+<p>参数说明</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-p</span></code>: 后面可以接提示信息</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-t</span></code>：后面跟秒数，定义输入字符的等待时间，超过等待时间后会自动忽略此命令</p></li>
+</ul>
+<p>实例：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>acs@9e0ebfcd82d7:~$ <span class="nb">read</span> name  <span class="c1"># 读入name的值</span>
+acwing yxc  <span class="c1"># 标准输入</span>
+acs@9e0ebfcd82d7:~$ <span class="nb">echo</span> <span class="nv">$name</span>  <span class="c1"># 输出name的值</span>
+acwing yxc  <span class="c1">#标准输出</span>
+acs@9e0ebfcd82d7:~$ <span class="nb">read</span> -p <span class="s2">&quot;Please input your name: &quot;</span> -t <span class="m">30</span> name  <span class="c1"># 读入name的值，等待时间30秒</span>
+Please input your name: acwing yxc  <span class="c1"># 标准输入</span>
+acs@9e0ebfcd82d7:~$ <span class="nb">echo</span> <span class="nv">$name</span>  <span class="c1"># 输出name的值</span>
+acwing yxc  <span class="c1"># 标准输出</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="echo">
+<h2>echo命令<a class="headerlink" href="#echo" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span></code>用于输出字符串。命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> STRING
+</pre></div>
+</div>
+<div class="section" id="id28">
+<h3>显示普通字符串<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Hello AC Terminal&quot;</span>
+<span class="nb">echo</span> Hello AC Terminal  <span class="c1"># 引号可以省略</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id29">
+<h3>显示转义字符<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;\&quot;Hello AC Terminal\&quot;&quot;</span>  <span class="c1"># 注意只能使用双引号，如果使用单引号，则不转义</span>
+<span class="nb">echo</span> <span class="se">\&quot;</span>Hello AC Terminal<span class="se">\&quot;</span>  <span class="c1"># 也可以省略双引号</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id30">
+<h3>显示变量<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">name</span><span class="o">=</span>yxc
+<span class="nb">echo</span> <span class="s2">&quot;My name is </span><span class="nv">$name</span><span class="s2">&quot;</span>  <span class="c1"># 输出 My name is yxc</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id31">
+<h3>显示换行<a class="headerlink" href="#id31" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> -e <span class="s2">&quot;Hi\n&quot;</span>  <span class="c1"># -e 开启转义</span>
+<span class="nb">echo</span> <span class="s2">&quot;acwing&quot;</span>
+</pre></div>
+</div>
+<p>输出结果：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Hi
+
+acwing
+</pre></div>
+</div>
+</div>
+<div class="section" id="id32">
+<h3>显示不换行<a class="headerlink" href="#id32" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> -e <span class="s2">&quot;Hi \c&quot;</span> <span class="c1"># -e 开启转义 \c 不换行</span>
+<span class="nb">echo</span> <span class="s2">&quot;acwing&quot;</span>
+</pre></div>
+</div>
+<p>输出结果：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Hi acwing
+</pre></div>
+</div>
+</div>
+<div class="section" id="id33">
+<h3>显示结果定向至文件<a class="headerlink" href="#id33" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Hello World&quot;</span> &gt; output.txt  <span class="c1"># 将内容以覆盖的方式输出到output.txt中</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id34">
+<h3>原样输出字符串，不进行转义或取变量(用单引号)<a class="headerlink" href="#id34" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">name</span><span class="o">=</span>acwing
+<span class="nb">echo</span> <span class="s1">&#39;$name\&quot;&#39;</span>
+</pre></div>
+</div>
+<p>输出结果</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$name</span><span class="se">\&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id35">
+<h3>显示命令的执行结果<a class="headerlink" href="#id35" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="sb">`</span>date<span class="sb">`</span>
+</pre></div>
+</div>
+<p>输出结果：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Wed Sep <span class="m">1</span> <span class="m">11</span>:45:33 CST <span class="m">2021</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="printf">
+<h2>printf命令<a class="headerlink" href="#printf" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">printf</span></code>命令用于格式化输出，类似于<code class="docutils literal notranslate"><span class="pre">C/C++</span></code>中的<code class="docutils literal notranslate"><span class="pre">printf</span></code>函数。</p>
+<p>默认<strong>不会在字符串末尾添加换行符</strong>。</p>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">printf</span> format-string <span class="o">[</span>arguments...<span class="o">]</span>
+</pre></div>
+</div>
+<div class="section" id="id36">
+<h3>用法示例<a class="headerlink" href="#id36" title="Permalink to this headline">#</a></h3>
+<p>脚本内容：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">printf</span> <span class="s2">&quot;%10d.\n&quot;</span> <span class="m">123</span>  <span class="c1"># 占10位，右对齐</span>
+<span class="nb">printf</span> <span class="s2">&quot;%-10.2f.\n&quot;</span> <span class="m">123</span>.123321  <span class="c1"># 占10位，保留2位小数，左对齐</span>
+<span class="nb">printf</span> <span class="s2">&quot;My name is %s\n&quot;</span> <span class="s2">&quot;yxc&quot;</span>  <span class="c1"># 格式化输出字符串</span>
+<span class="nb">printf</span> <span class="s2">&quot;%d * %d = %d\n&quot;</span>  <span class="m">2</span> <span class="m">3</span> <span class="sb">`</span>expr <span class="m">2</span> <span class="se">\*</span> <span class="m">3</span><span class="sb">`</span> <span class="c1"># 表达式的值作为参数</span>
+</pre></div>
+</div>
+<p>输出结果：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>       <span class="m">123</span>.
+<span class="m">123</span>.12    .
+My name is yxc
+<span class="m">2</span> * <span class="nv">3</span> <span class="o">=</span> <span class="m">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="test">
+<h2>test命令与判断符号[]<a class="headerlink" href="#test" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id37">
+<h3>逻辑运算符&amp;&amp;和||<a class="headerlink" href="#id37" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> 表示与，<code class="docutils literal notranslate"><span class="pre">||</span></code> 表示或</p></li>
+<li><p>二者具有短路原则：
+<code class="docutils literal notranslate"><span class="pre">expr1</span> <span class="pre">&amp;&amp;</span> <span class="pre">expr2</span></code>：当<code class="docutils literal notranslate"><span class="pre">expr1</span></code>为假时，直接忽略<code class="docutils literal notranslate"><span class="pre">expr2</span></code>
+<code class="docutils literal notranslate"><span class="pre">expr1</span> <span class="pre">||</span> <span class="pre">expr2</span></code>：当<code class="docutils literal notranslate"><span class="pre">expr1</span></code>为真时，直接忽略<code class="docutils literal notranslate"><span class="pre">expr2</span></code></p></li>
+<li><p>表达式的<code class="docutils literal notranslate"><span class="pre">exit</span> <span class="pre">code</span></code>为0，表示真；为非零，表示假。（与<code class="docutils literal notranslate"><span class="pre">C/C++</span></code>中的定义相反）</p></li>
+</ul>
+</div>
+<div class="section" id="id38">
+<h3>test命令<a class="headerlink" href="#id38" title="Permalink to this headline">#</a></h3>
+<p>在命令行中输入<code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">test</span></code>，可以查看<code class="docutils literal notranslate"><span class="pre">test</span></code>命令的用法。</p>
+<p><code class="docutils literal notranslate"><span class="pre">test</span></code>命令用于判断文件类型，以及对变量做比较。</p>
+<p><code class="docutils literal notranslate"><span class="pre">test</span></code>命令用<code class="docutils literal notranslate"><span class="pre">exit</span> <span class="pre">code</span></code>返回结果，而不是使用<code class="docutils literal notranslate"><span class="pre">stdout</span></code>。0表示真，非0表示假。</p>
+<p>例如：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">test</span> <span class="m">2</span> -lt <span class="m">3</span>  <span class="c1"># 为真，返回值为0</span>
+<span class="nb">echo</span> <span class="nv">$?</span>  <span class="c1"># 输出上个命令的返回值，输出0</span>
+acs@9e0ebfcd82d7:~$ ls  <span class="c1"># 列出当前目录下的所有文件</span>
+homework  output.txt  test.sh  tmp
+acs@9e0ebfcd82d7:~$ <span class="nb">test</span> -e test.sh <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;exist&quot;</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&quot;Not exist&quot;</span>
+exist  <span class="c1"># test.sh 文件存在</span>
+acs@9e0ebfcd82d7:~$ <span class="nb">test</span> -e test2.sh <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;exist&quot;</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&quot;Not exist&quot;</span>
+Not exist  <span class="c1"># testh2.sh 文件不存在</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id39">
+<h3>文件类型判断<a class="headerlink" href="#id39" title="Permalink to this headline">#</a></h3>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">test</span> -e filename  <span class="c1"># 判断文件是否存在</span>
+</pre></div>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>测试参数</p></th>
+<th class="head"><p>代表意义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-e</p></td>
+<td><p>文件是否存在</p></td>
+</tr>
+<tr class="row-odd"><td><p>-f</p></td>
+<td><p>是否为文件</p></td>
+</tr>
+<tr class="row-even"><td><p>-d</p></td>
+<td><p>是否为目录</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id40">
+<h3>文件权限判断<a class="headerlink" href="#id40" title="Permalink to this headline">#</a></h3>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">test</span> -r filename  <span class="c1"># 判断文件是否可读</span>
+</pre></div>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>测试参数</p></th>
+<th class="head"><p>代表意义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-r</p></td>
+<td><p>文件是否可读</p></td>
+</tr>
+<tr class="row-odd"><td><p>-w</p></td>
+<td><p>文件是否可写</p></td>
+</tr>
+<tr class="row-even"><td><p>-x</p></td>
+<td><p>文件是否可执行</p></td>
+</tr>
+<tr class="row-odd"><td><p>-s</p></td>
+<td><p>是否为非空文件</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id41">
+<h3>整数间的比较<a class="headerlink" href="#id41" title="Permalink to this headline">#</a></h3>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">test</span> <span class="nv">$a</span> -eq <span class="nv">$b</span>  <span class="c1"># a是否等于b</span>
+</pre></div>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>测试参数</p></th>
+<th class="head"><p>代表意义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-eq</p></td>
+<td><p>a是否等于b</p></td>
+</tr>
+<tr class="row-odd"><td><p>-ne</p></td>
+<td><p>a是否不等于b</p></td>
+</tr>
+<tr class="row-even"><td><p>-gt</p></td>
+<td><p>a是否大于b</p></td>
+</tr>
+<tr class="row-odd"><td><p>-lt</p></td>
+<td><p>a是否小于b</p></td>
+</tr>
+<tr class="row-even"><td><p>-ge</p></td>
+<td><p>a是否大于等于b</p></td>
+</tr>
+<tr class="row-odd"><td><p>-le</p></td>
+<td><p>a是否小于等于b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id42">
+<h3>字符串比较<a class="headerlink" href="#id42" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>测试参数</p></th>
+<th class="head"><p>代表意义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>test -z STRING</p></td>
+<td><p>判断STRING是否为空，如果为空，则返回true</p></td>
+</tr>
+<tr class="row-odd"><td><p>test -n STRING</p></td>
+<td><p>判断STRING是否非空，如果非空，则返回true（-n可以省略）</p></td>
+</tr>
+<tr class="row-even"><td><p>test str1 == str2</p></td>
+<td><p>判断str1是否等于str2</p></td>
+</tr>
+<tr class="row-odd"><td><p>test str1 != str2</p></td>
+<td><p>判断str1是否不等于str2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id43">
+<h3>多重条件判定<a class="headerlink" href="#id43" title="Permalink to this headline">#</a></h3>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">test</span> -r filename -a -x filename
+</pre></div>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>测试参数</p></th>
+<th class="head"><p>代表意义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-a</p></td>
+<td><p>两条件是否同时成立</p></td>
+</tr>
+<tr class="row-odd"><td><p>-o</p></td>
+<td><p>两条件是否至少一个成立</p></td>
+</tr>
+<tr class="row-even"><td><p>!</p></td>
+<td><p>取反。如 test ! -x file，当file不可执行时，返回true</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id44">
+<h3>判断符号[]<a class="headerlink" href="#id44" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">[]</span></code>与<code class="docutils literal notranslate"><span class="pre">test</span></code>用法几乎一模一样，更常用于<code class="docutils literal notranslate"><span class="pre">if</span></code>语句中。另外<code class="docutils literal notranslate"><span class="pre">[[]]</span></code>是<code class="docutils literal notranslate"><span class="pre">[]</span></code>的加强版，支持的特性更多。</p>
+<p>例如：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span> <span class="m">2</span> -lt <span class="m">3</span> <span class="o">]</span>  <span class="c1"># 为真，返回值为0</span>
+<span class="nb">echo</span> <span class="nv">$?</span>  <span class="c1"># 输出上个命令的返回值，输出0</span>
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>acs@9e0ebfcd82d7:~$ ls  <span class="c1"># 列出当前目录下的所有文件</span>
+homework  output.txt  test.sh  tmp
+acs@9e0ebfcd82d7:~$ <span class="o">[</span> -e test.sh <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;exist&quot;</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&quot;Not exist&quot;</span>
+exist  <span class="c1"># test.sh 文件存在</span>
+acs@9e0ebfcd82d7:~$ <span class="o">[</span> -e test2.sh <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;exist&quot;</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&quot;Not exist&quot;</span>
+Not exist  <span class="c1"># testh2.sh 文件不存在</span>
+</pre></div>
+</div>
+<p>注意：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[]</span></code>内的每一项都要用空格隔开</p></li>
+<li><p>中括号内的变量，最好用双引号括起来</p></li>
+<li><p>中括号内的常数，最好用单或双引号括起来
+例如：</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;acwing yxc&quot;</span>
+<span class="o">[</span> <span class="nv">$name</span> <span class="o">==</span> <span class="s2">&quot;acwing yxc&quot;</span> <span class="o">]</span>  <span class="c1"># 错误，等价于 [ acwing yxc == &quot;acwing yxc&quot; ]，参数太多</span>
+<span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$name</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;acwing yxc&quot;</span> <span class="o">]</span>  <span class="c1"># 正确</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id45">
+<h2>判断语句<a class="headerlink" href="#id45" title="Permalink to this headline">#</a></h2>
+<p><strong>if…then</strong>形式</p>
+<p>类似于<code class="docutils literal notranslate"><span class="pre">C/C++</span></code>中的<code class="docutils literal notranslate"><span class="pre">if-else</span></code>语句。</p>
+<div class="section" id="if">
+<h3>单层if<a class="headerlink" href="#if" title="Permalink to this headline">#</a></h3>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> condition
+<span class="k">then</span>
+    语句1
+    语句2
+    ...
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>示例：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">b</span><span class="o">=</span><span class="m">4</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> -lt <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> -gt <span class="m">2</span> <span class="o">]</span>
+<span class="k">then</span>
+    <span class="nb">echo</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span>在范围内
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>输出结果：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>3在范围内
+</pre></div>
+</div>
+</div>
+<div class="section" id="if-else">
+<h3>单层if-else<a class="headerlink" href="#if-else" title="Permalink to this headline">#</a></h3>
+<p>命令格式</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> condition
+<span class="k">then</span>
+    语句1
+    语句2
+    ...
+<span class="k">else</span>
+    语句1
+    语句2
+    ...
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>示例：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">b</span><span class="o">=</span><span class="m">4</span>
+
+<span class="k">if</span> ! <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> -lt <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+    <span class="nb">echo</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span>不小于<span class="si">${</span><span class="nv">b</span><span class="si">}</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span>小于<span class="si">${</span><span class="nv">b</span><span class="si">}</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>输出结果：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>3小于4
+</pre></div>
+</div>
+</div>
+<div class="section" id="if-elif-elif-else">
+<h3>多层if-elif-elif-else<a class="headerlink" href="#if-elif-elif-else" title="Permalink to this headline">#</a></h3>
+<p>命令格式</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> condition
+<span class="k">then</span>
+    语句1
+    语句2
+    ...
+<span class="k">elif</span> condition
+<span class="k">then</span>
+    语句1
+    语句2
+    ...
+<span class="k">elif</span> condition
+<span class="k">then</span>
+    语句1
+    语句2
+<span class="k">else</span>
+    语句1
+    语句2
+    ...
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>示例：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="o">=</span><span class="m">4</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$a</span> -eq <span class="m">1</span> <span class="o">]</span>
+<span class="k">then</span>
+    <span class="nb">echo</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span>等于1
+<span class="k">elif</span> <span class="o">[</span> <span class="nv">$a</span> -eq <span class="m">2</span> <span class="o">]</span>
+<span class="k">then</span>
+    <span class="nb">echo</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span>等于2
+<span class="k">elif</span> <span class="o">[</span> <span class="nv">$a</span> -eq <span class="m">3</span> <span class="o">]</span>
+<span class="k">then</span>
+    <span class="nb">echo</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span>等于3
+<span class="k">else</span>
+    <span class="nb">echo</span> 其他
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>输出结果：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>其他
+</pre></div>
+</div>
+</div>
+<div class="section" id="case-esac">
+<h3>case…esac形式<a class="headerlink" href="#case-esac" title="Permalink to this headline">#</a></h3>
+<p>类似于<code class="docutils literal notranslate"><span class="pre">C/C++</span></code>中的<code class="docutils literal notranslate"><span class="pre">switch</span></code>语句。</p>
+<p>命令格式</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">case</span> $变量名称 <span class="k">in</span>
+    值1<span class="o">)</span>
+        语句1
+        语句2
+        ...
+        <span class="p">;;</span>  <span class="c1"># 类似于C/C++中的break</span>
+    值2<span class="o">)</span>
+        语句1
+        语句2
+        ...
+        <span class="p">;;</span>
+    *<span class="o">)</span>  <span class="c1"># 类似于C/C++中的default</span>
+        语句1
+        语句2
+        ...
+        <span class="p">;;</span>
+<span class="k">esac</span>
+</pre></div>
+</div>
+<p>示例：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="o">=</span><span class="m">4</span>
+
+<span class="k">case</span> <span class="nv">$a</span> <span class="k">in</span>
+    <span class="m">1</span><span class="o">)</span>
+        <span class="nb">echo</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span>等于1
+        <span class="p">;;</span>  
+    <span class="m">2</span><span class="o">)</span>
+        <span class="nb">echo</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span>等于2
+        <span class="p">;;</span>  
+    <span class="m">3</span><span class="o">)</span>                                                
+        <span class="nb">echo</span> <span class="si">${</span><span class="nv">a</span><span class="si">}</span>等于3
+        <span class="p">;;</span>  
+    *<span class="o">)</span>
+        <span class="nb">echo</span> 其他
+        <span class="p">;;</span>  
+<span class="k">esac</span>
+</pre></div>
+</div>
+<p>输出结果：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>其他
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id46">
+<h2>循环语句<a class="headerlink" href="#id46" title="Permalink to this headline">#</a></h2>
+<div class="section" id="for-in-do-done">
+<h3>for…in…do…done<a class="headerlink" href="#for-in-do-done" title="Permalink to this headline">#</a></h3>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> var <span class="k">in</span> val1 val2 val3
+<span class="k">do</span>
+    语句1
+    语句2
+    ...
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>示例1，输出a 2 cc，每个元素一行：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> i <span class="k">in</span> a <span class="m">2</span> cc
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$i</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>示例2，输出当前路径下的所有文件名，每个文件名一行：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> file <span class="k">in</span> <span class="sb">`</span>ls<span class="sb">`</span>
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$file</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>示例3，输出1-10</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> i <span class="k">in</span> <span class="k">$(</span>seq <span class="m">1</span> <span class="m">10</span><span class="k">)</span>
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$i</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>示例4，使用<code class="docutils literal notranslate"><span class="pre">{1..10}</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">{a..z}</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> i <span class="k">in</span> <span class="o">{</span>a..z<span class="o">}</span>
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$i</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-do-done">
+<h3>for ((…;…;…)) do…done<a class="headerlink" href="#for-do-done" title="Permalink to this headline">#</a></h3>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">((</span>expression<span class="p">;</span> condition<span class="p">;</span> expression<span class="o">))</span>
+<span class="k">do</span>
+    语句1
+    语句2
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>示例，输出1-10，每个数占一行：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span> i&lt;<span class="o">=</span><span class="m">10</span><span class="p">;</span> i++<span class="o">))</span>
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$i</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="while-do-done">
+<h3>while…do…done循环<a class="headerlink" href="#while-do-done" title="Permalink to this headline">#</a></h3>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> condition
+<span class="k">do</span>
+    语句1
+    语句2
+    ...
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>示例，文件结束符为<code class="docutils literal notranslate"><span class="pre">Ctrl+d</span></code>，输入文件结束符后<code class="docutils literal notranslate"><span class="pre">read</span></code>指令返回<code class="docutils literal notranslate"><span class="pre">false</span></code>。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="nb">read</span> name
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$name</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="until-do-done">
+<h3>until…do…done循环<a class="headerlink" href="#until-do-done" title="Permalink to this headline">#</a></h3>
+<p>当条件为真时结束。</p>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">until</span> condition
+<span class="k">do</span>
+    语句1
+    语句2
+    ...
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>示例，当用户输入<code class="docutils literal notranslate"><span class="pre">yes</span></code>或者<code class="docutils literal notranslate"><span class="pre">YES</span></code>时结束，否则一直等待读入。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">until</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">word</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">word</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;YES&quot;</span> <span class="o">]</span>
+<span class="k">do</span>
+    <span class="nb">read</span> -p <span class="s2">&quot;Please input yes/YES to stop this program: &quot;</span> word
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="break">
+<h3>break命令<a class="headerlink" href="#break" title="Permalink to this headline">#</a></h3>
+<p>跳出当前一层循环，注意与<code class="docutils literal notranslate"><span class="pre">C/C++</span></code>不同的是：<code class="docutils literal notranslate"><span class="pre">break</span></code>不能跳出<code class="docutils literal notranslate"><span class="pre">case</span></code>语句。</p>
+<p>示例</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="nb">read</span> name
+<span class="k">do</span>
+    <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>i&lt;<span class="o">=</span><span class="m">10</span><span class="p">;</span>i++<span class="o">))</span>
+    <span class="k">do</span>
+        <span class="k">case</span> <span class="nv">$i</span> <span class="k">in</span>
+            <span class="m">8</span><span class="o">)</span>
+                <span class="nb">break</span>
+                <span class="p">;;</span>
+            *<span class="o">)</span>
+                <span class="nb">echo</span> <span class="nv">$i</span>
+                <span class="p">;;</span>
+        <span class="k">esac</span>
+    <span class="k">done</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>该示例每读入非EOF的字符串，会输出一遍1-7。
+该程序可以输入<code class="docutils literal notranslate"><span class="pre">Ctrl+d</span></code>文件结束符来结束，也可以直接用<code class="docutils literal notranslate"><span class="pre">Ctrl+c</span></code>杀掉该进程。</p>
+</div>
+<div class="section" id="continue">
+<h3>continue命令<a class="headerlink" href="#continue" title="Permalink to this headline">#</a></h3>
+<p>跳出当前循环。</p>
+<p>示例：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>i&lt;<span class="o">=</span><span class="m">10</span><span class="p">;</span>i++<span class="o">))</span>
+<span class="k">do</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="sb">`</span>expr <span class="nv">$i</span> % <span class="m">2</span><span class="sb">`</span> -eq <span class="m">0</span> <span class="o">]</span>
+    <span class="k">then</span>
+        <span class="k">continue</span>
+    <span class="k">fi</span>
+    <span class="nb">echo</span> <span class="nv">$i</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>该程序输出1-10中的所有奇数。</p>
+</div>
+<div class="section" id="id47">
+<h3>死循环的处理方式<a class="headerlink" href="#id47" title="Permalink to this headline">#</a></h3>
+<p>如果Terminal可以打开该程序，则输入<code class="docutils literal notranslate"><span class="pre">Ctrl+c</span></code>即可。</p>
+<p>否则可以直接关闭进程：</p>
+<ol class="arabic simple">
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">top</span></code>命令找到进程的PID</p></li>
+<li><p>输入<code class="docutils literal notranslate"><span class="pre">kill</span> <span class="pre">-9</span> <span class="pre">PID</span></code>即可关掉此进程</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id48">
+<h2>函数<a class="headerlink" href="#id48" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">bash</span></code>中的函数类似于<code class="docutils literal notranslate"><span class="pre">C/C++</span></code>中的函数，但<code class="docutils literal notranslate"><span class="pre">return</span></code>的返回值与<code class="docutils literal notranslate"><span class="pre">C/C++</span></code>不同，返回的是<code class="docutils literal notranslate"><span class="pre">exit</span> <span class="pre">code</span></code>，取值为0-255，0表示正常结束。</p>
+<p>如果想获取函数的输出结果，可以通过<code class="docutils literal notranslate"><span class="pre">echo</span></code>输出到<code class="docutils literal notranslate"><span class="pre">stdout</span></code>中，然后通过<code class="docutils literal notranslate"><span class="pre">$(function_name)</span></code>来获取<code class="docutils literal notranslate"><span class="pre">stdout</span></code>中的结果。</p>
+<p>函数的<code class="docutils literal notranslate"><span class="pre">return</span></code>值可以通过<code class="docutils literal notranslate"><span class="pre">$?</span></code>来获取。</p>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="k">function</span><span class="o">]</span> func_name<span class="o">()</span> <span class="o">{</span>  <span class="c1"># function关键字可以省略</span>
+    语句1
+    语句2
+    ...
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="section" id="returnstdout">
+<h3>不获取 <code class="docutils literal notranslate"><span class="pre">return</span></code>值和<code class="docutils literal notranslate"><span class="pre">stdout</span></code>值<a class="headerlink" href="#returnstdout" title="Permalink to this headline">#</a></h3>
+<p>示例</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>func<span class="o">()</span> <span class="o">{</span>
+    <span class="nv">name</span><span class="o">=</span>yxc
+    <span class="nb">echo</span> <span class="s2">&quot;Hello </span><span class="nv">$name</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+
+func
+</pre></div>
+</div>
+<p>输出结果：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Hello yxc
+</pre></div>
+</div>
+</div>
+<div class="section" id="id49">
+<h3>获取 <code class="docutils literal notranslate"><span class="pre">return</span></code>值和<code class="docutils literal notranslate"><span class="pre">stdout</span></code>值<a class="headerlink" href="#id49" title="Permalink to this headline">#</a></h3>
+<p>不写<code class="docutils literal notranslate"><span class="pre">return</span></code>时，默认<code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">0</span></code>。</p>
+<p>示例</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>func<span class="o">()</span> <span class="o">{</span>
+    <span class="nv">name</span><span class="o">=</span>yxc
+    <span class="nb">echo</span> <span class="s2">&quot;Hello </span><span class="nv">$name</span><span class="s2">&quot;</span>
+
+    <span class="k">return</span> <span class="m">123</span>
+<span class="o">}</span>
+
+<span class="nv">output</span><span class="o">=</span><span class="k">$(</span>func<span class="k">)</span>
+<span class="nv">ret</span><span class="o">=</span><span class="nv">$?</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;output = </span><span class="nv">$output</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;return = </span><span class="nv">$ret</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>输出结果：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">output</span> <span class="o">=</span> Hello yxc
+<span class="k">return</span> <span class="o">=</span> <span class="m">123</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id50">
+<h3>函数的输入参数<a class="headerlink" href="#id50" title="Permalink to this headline">#</a></h3>
+<p>在函数内，<code class="docutils literal notranslate"><span class="pre">$1</span></code>表示第一个输入参数，<code class="docutils literal notranslate"><span class="pre">$2</span></code>表示第二个输入参数，依此类推。</p>
+<p>注意：函数内的<code class="docutils literal notranslate"><span class="pre">$0</span></code>仍然是文件名，而不是函数名。</p>
+<p>示例：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>func<span class="o">()</span> <span class="o">{</span>  <span class="c1"># 递归计算 $1 + ($1 - 1) + ($1 - 2) + ... + 0</span>
+    <span class="nv">word</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+    <span class="k">while</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">word</span><span class="si">}</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s1">&#39;y&#39;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">word</span><span class="si">}</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s1">&#39;n&#39;</span> <span class="o">]</span>
+    <span class="k">do</span>
+        <span class="nb">read</span> -p <span class="s2">&quot;要进入func(</span><span class="nv">$1</span><span class="s2">)函数吗？请输入y/n：&quot;</span> word
+    <span class="k">done</span>
+
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$word</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s1">&#39;n&#39;</span> <span class="o">]</span>
+    <span class="k">then</span>
+        <span class="nb">echo</span> <span class="m">0</span>
+        <span class="k">return</span> <span class="m">0</span>
+    <span class="k">fi</span>  
+
+    <span class="k">if</span> <span class="o">[</span> <span class="nv">$1</span> -le <span class="m">0</span> <span class="o">]</span> 
+    <span class="k">then</span>
+        <span class="nb">echo</span> <span class="m">0</span>
+        <span class="k">return</span> <span class="m">0</span>
+    <span class="k">fi</span>  
+
+    <span class="nv">sum</span><span class="o">=</span><span class="k">$(</span>func <span class="k">$(</span>expr <span class="nv">$1</span> - <span class="m">1</span><span class="k">))</span>
+    <span class="nb">echo</span> <span class="k">$(</span>expr <span class="nv">$sum</span> + <span class="nv">$1</span><span class="k">)</span>
+<span class="o">}</span>
+
+<span class="nb">echo</span> <span class="k">$(</span>func <span class="m">10</span><span class="k">)</span>
+</pre></div>
+</div>
+<p>输出结果：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="m">55</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id51">
+<h3>函数内的局部变量<a class="headerlink" href="#id51" title="Permalink to this headline">#</a></h3>
+<p>可以在函数内定义局部变量，作用范围仅在当前函数内。</p>
+<p>可以在递归函数中定义局部变量。</p>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">local</span> <span class="nv">变量名</span><span class="o">=</span>变量值
+</pre></div>
+</div>
+<p>例如：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#! /bin/bash</span>
+
+func<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">local</span> <span class="nv">name</span><span class="o">=</span>yxc
+    <span class="nb">echo</span> <span class="nv">$name</span>
+<span class="o">}</span>
+func
+
+<span class="nb">echo</span> <span class="nv">$name</span>
+</pre></div>
+</div>
+<p>输出结果：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>yxc
+</pre></div>
+</div>
+<p>第一行为函数内的name变量，第二行为函数外调用name变量，会发现此时该变量不存在。</p>
+</div>
+</div>
+<div class="section" id="exit">
+<h2>exit命令<a class="headerlink" href="#exit" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">exit</span></code>命令用来退出当前<code class="docutils literal notranslate"><span class="pre">shell</span></code>进程，并返回一个退出状态；使用<code class="docutils literal notranslate"><span class="pre">$?</span></code>可以接收这个退出状态。</p>
+<p><code class="docutils literal notranslate"><span class="pre">exit</span></code>命令可以接受一个整数值作为参数，代表退出状态。如果不指定，默认状态值是 0。</p>
+<p><code class="docutils literal notranslate"><span class="pre">exit</span></code>退出状态只能是一个介于 0~255 之间的整数，其中只有 0 表示成功，其它值都表示失败。</p>
+<p>示例：</p>
+<p>创建脚本<code class="docutils literal notranslate"><span class="pre">test.sh</span></code>，内容如下：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#! /bin/bash</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -ne <span class="m">1</span> <span class="o">]</span>  <span class="c1"># 如果传入参数个数等于1，则正常退出；否则非正常退出。</span>
+<span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;arguments not valid&quot;</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;arguments valid&quot;</span>
+    <span class="nb">exit</span> <span class="m">0</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>执行该脚本：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>acs@9e0ebfcd82d7:~$ chmod +x test.sh 
+acs@9e0ebfcd82d7:~$ ./test.sh acwing
+arguments valid
+acs@9e0ebfcd82d7:~$ <span class="nb">echo</span> <span class="nv">$?</span>  <span class="c1"># 传入一个参数，则正常退出，exit code为0</span>
+<span class="m">0</span>
+acs@9e0ebfcd82d7:~$ ./test.sh 
+arguments not valid
+acs@9e0ebfcd82d7:~$ <span class="nb">echo</span> <span class="nv">$?</span>  <span class="c1"># 传入参数个数不是1，则非正常退出，exit code为1</span>
+<span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id52">
+<h2>文件重定向<a class="headerlink" href="#id52" title="Permalink to this headline">#</a></h2>
+<p>每个进程默认打开3个文件描述符：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">stdin</span></code>标准输入，从命令行读取数据，文件描述符为0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdout</span></code>标准输出，向命令行输出数据，文件描述符为1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stderr</span></code>标准错误输出，向命令行输出数据，文件描述符为2
+可以用文件重定向将这三个文件重定向到其他文件中。</p></li>
+</ul>
+<div class="section" id="id53">
+<h3>重定向命令列表<a class="headerlink" href="#id53" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>命令</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">&gt;</span> <span class="pre">file</span></code></p></td>
+<td><p>将<code class="docutils literal notranslate"><span class="pre">tdout</span></code>重定向到<code class="docutils literal notranslate"><span class="pre">file</span></code>中</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">&lt;</span> <span class="pre">file</span></code></p></td>
+<td><p>将<code class="docutils literal notranslate"><span class="pre">stdin</span></code>重定向到<code class="docutils literal notranslate"><span class="pre">file</span></code>中</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">&gt;&gt;</span> <span class="pre">file</span></code></p></td>
+<td><p>将<code class="docutils literal notranslate"><span class="pre">stdout</span></code>以追加方式重定向到<code class="docutils literal notranslate"><span class="pre">file</span></code>中</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">n&gt;</span> <span class="pre">file</span></code></p></td>
+<td><p>将文件描述符<code class="docutils literal notranslate"><span class="pre">n</span></code>重定向到<code class="docutils literal notranslate"><span class="pre">file</span></code>中</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">n&gt;&gt;</span> <span class="pre">file</span></code></p></td>
+<td><p>将文件描述符<code class="docutils literal notranslate"><span class="pre">n</span></code>以追加方式重定向到<code class="docutils literal notranslate"><span class="pre">file</span></code>中</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id54">
+<h3>输入和输出重定向<a class="headerlink" href="#id54" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> -e <span class="s2">&quot;Hello \c&quot;</span> &gt; output.txt  <span class="c1"># 将stdout重定向到output.txt中</span>
+<span class="nb">echo</span> <span class="s2">&quot;World&quot;</span> &gt;&gt; output.txt  <span class="c1"># 将字符串追加到output.txt中</span>
+
+<span class="nb">read</span> str &lt; output.txt  <span class="c1"># 从output.txt中读取字符串</span>
+
+<span class="nb">echo</span> <span class="nv">$str</span>  <span class="c1"># 输出结果：Hello World</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stdinstdout">
+<h3>同时重定向<code class="docutils literal notranslate"><span class="pre">stdin</span></code>和<code class="docutils literal notranslate"><span class="pre">stdout</span></code><a class="headerlink" href="#stdinstdout" title="Permalink to this headline">#</a></h3>
+<p>创建bash脚本：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#! /bin/bash</span>
+
+<span class="nb">read</span> a
+<span class="nb">read</span> b
+
+<span class="nb">echo</span> <span class="k">$(</span>expr <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> + <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span><span class="k">)</span>
+</pre></div>
+</div>
+<p>创建input.txt，里面的内容为：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="m">3</span>
+<span class="m">4</span>
+</pre></div>
+</div>
+<p>执行命令：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>acs@9e0ebfcd82d7:~$ chmod +x test.sh  <span class="c1"># 添加可执行权限</span>
+acs@9e0ebfcd82d7:~$ ./test.sh &lt; input.txt &gt; output.txt  <span class="c1"># 从input.txt中读取内容，将输出写入output.txt中</span>
+acs@9e0ebfcd82d7:~$ cat output.txt  <span class="c1"># 查看output.txt中的内容</span>
+<span class="m">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id55">
+<h2>引入外部脚本<a class="headerlink" href="#id55" title="Permalink to this headline">#</a></h2>
+<p>类似于<code class="docutils literal notranslate"><span class="pre">C/C++</span></code>中的<code class="docutils literal notranslate"><span class="pre">include</span></code>操作，<code class="docutils literal notranslate"><span class="pre">bash</span></code>也可以引入其他文件中的代码。</p>
+<p>语法格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>. filename  <span class="c1"># 注意点和文件名之间有一个空格</span>
+
+或
+
+<span class="nb">source</span> filename
+</pre></div>
+</div>
+<p>示例</p>
+<p><a class="reference external" href="http://xn--test1-ll6hz28e.sh">创建test1.sh</a>，内容为：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#! /bin/bash</span>
+
+<span class="nv">name</span><span class="o">=</span>yxc  <span class="c1"># 定义变量name</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://xn--test2-ll6hm0je43ajq1b.sh">然后创建test2.sh</a>，内容为：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#! /bin/bash</span>
+
+<span class="nb">source</span> test1.sh <span class="c1"># 或 . test1.sh</span>
+
+<span class="nb">echo</span> My name is: <span class="nv">$name</span>  <span class="c1"># 可以使用test1.sh中的变量</span>
+</pre></div>
+</div>
+<p>执行命令：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>acs@9e0ebfcd82d7:~$ chmod +x test2.sh 
+acs@9e0ebfcd82d7:~$ ./test2.sh 
+My name is: yxc
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="ssh">
+<h1>ssh<a class="headerlink" href="#ssh" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id56">
+<h2>ssh登录<a class="headerlink" href="#id56" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id57">
+<h3>基本用法<a class="headerlink" href="#id57" title="Permalink to this headline">#</a></h3>
+<p>远程登录服务器：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh user@hostname
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">user</span></code> : 用户名</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hostname</span></code> : IP地址或域名</p></li>
+</ul>
+<p>第一次登录时会提示：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>The authenticity of host &#39;123.57.47.211 (123.57.47.211)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:iy237yysfCe013/l+kpDGfEG9xxHxm0dnxnAbJTPpG8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+</pre></div>
+</div>
+<p>输入<code class="docutils literal notranslate"><span class="pre">yes</span></code>，然后回车即可。这样会将该服务器的信息记录在<code class="docutils literal notranslate"><span class="pre">~/.ssh/known_hosts</span></code>文件中。</p>
+<p>然后输入密码即可登录到远程服务器中。</p>
+<p>默认登录端口号为22。如果想登录某一特定端口：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh user@hostname -p <span class="m">22</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id58">
+<h3>配置文件<a class="headerlink" href="#id58" title="Permalink to this headline">#</a></h3>
+<p>创建文件<code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code>。</p>
+<p>然后在文件中输入：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Host myserver1
+    HostName IP地址或域名
+    User 用户名
+
+Host myserver2
+    HostName IP地址或域名
+    User 用户名
+</pre></div>
+</div>
+<p>之后再使用服务器时，可以直接使用别名<code class="docutils literal notranslate"><span class="pre">myserver1</span></code>、<code class="docutils literal notranslate"><span class="pre">myserver2</span></code>。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id59">
+<h3>密钥登录<a class="headerlink" href="#id59" title="Permalink to this headline">#</a></h3>
+<p>创建密钥：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh-keygen
+</pre></div>
+</div>
+<p>然后一直回车即可。</p>
+<p>执行结束后，<code class="docutils literal notranslate"><span class="pre">~/.ssh/</span></code>目录下会多两个文件：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id_rsa</span></code>：私钥</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>：公钥</p></li>
+</ul>
+<p>之后想免密码登录哪个服务器，就将公钥传给哪个服务器即可。</p>
+<p>例如，想免密登录<code class="docutils literal notranslate"><span class="pre">myserver</span></code>服务器。则将公钥中的内容，复制到<code class="docutils literal notranslate"><span class="pre">myserver</span></code>中的<code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code>文件里即可。</p>
+<p>也可以使用如下命令一键添加公钥：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh-copy-id myserver
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id60">
+<h3>执行命令<a class="headerlink" href="#id60" title="Permalink to this headline">#</a></h3>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh user@hostname <span class="nb">command</span>
+</pre></div>
+</div>
+<p>例如：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh user@hostname ls -a
+</pre></div>
+</div>
+<p>或者</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># 单引号中的$i可以求值</span>
+ssh myserver <span class="s1">&#39;for ((i = 0; i &lt; 10; i ++ )) do echo $i; done&#39;</span>
+</pre></div>
+</div>
+<p>或者</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># 双引号中的$i不可以求值</span>
+ssh myserver <span class="s2">&quot;for ((i = 0; i &lt; 10; i ++ )) do echo </span><span class="nv">$i</span><span class="s2">; done&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="scp">
+<h2>scp传文件<a class="headerlink" href="#scp" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id61">
+<h3>基本用法<a class="headerlink" href="#id61" title="Permalink to this headline">#</a></h3>
+<p>命令格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scp <span class="nb">source</span> destination
+</pre></div>
+</div>
+<p>将<code class="docutils literal notranslate"><span class="pre">source</span></code>路径下的文件复制到<code class="docutils literal notranslate"><span class="pre">destination</span></code>中</p>
+<p>一次复制多个文件：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scp source1 source2 destination
+</pre></div>
+</div>
+<p>复制文件夹：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scp -r ~/tmp myserver:/home/acs/
+</pre></div>
+</div>
+<p>将本地家目录中的<code class="docutils literal notranslate"><span class="pre">tmp</span></code>文件夹复制到<code class="docutils literal notranslate"><span class="pre">myserver</span></code>服务器中的<code class="docutils literal notranslate"><span class="pre">/home/acs/</span></code>目录下。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scp -r ~/tmp myserver:homework/
+</pre></div>
+</div>
+<p>将本地家目录中的<code class="docutils literal notranslate"><span class="pre">tmp</span></code>文件夹复制到<code class="docutils literal notranslate"><span class="pre">myserver</span></code>服务器中的<code class="docutils literal notranslate"><span class="pre">~/homework/</span></code>目录下。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scp -r myserver:homework .
+</pre></div>
+</div>
+<p>将<code class="docutils literal notranslate"><span class="pre">myserver</span></code>服务器中的<code class="docutils literal notranslate"><span class="pre">~/homework/</span></code>文件夹复制到本地的当前路径下。</p>
+<p>指定服务器的端口号：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scp -P <span class="m">22</span> source1 source2 destination
+</pre></div>
+</div>
+<p>注意： <code class="docutils literal notranslate"><span class="pre">scp</span></code>的<code class="docutils literal notranslate"><span class="pre">-r</span></code> <code class="docutils literal notranslate"><span class="pre">-P</span></code>等参数尽量加在<code class="docutils literal notranslate"><span class="pre">source</span></code>和<code class="docutils literal notranslate"><span class="pre">destination</span></code>之前。</p>
+</div>
+<div class="section" id="scpvimtmux">
+<h3>使用<strong>scp</strong>配置其他服务器的<strong>vim</strong>和<strong>tmux</strong><a class="headerlink" href="#scpvimtmux" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scp ~/.vimrc ~/.tmux.conf myserver:
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
+</div>
+</div>
+<div class="section" id="git">
+<h1>git<a class="headerlink" href="#git" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id62">
+<h2>git基本概念<a class="headerlink" href="#id62" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>工作区：仓库的目录。工作区是独立于各个分支的。</p></li>
+<li><p>暂存区：数据暂时存放的区域，类似于工作区写入版本库前的缓存区。暂存区是独立于各个分支的。</p></li>
+<li><p>版本库：存放所有已经提交到本地仓库的代码版本</p></li>
+<li><p>版本结构：树结构，树中每个节点代表一个代码版本。</p></li>
+</ul>
+</div>
+<div class="section" id="id63">
+<h2>git常用命令<a class="headerlink" href="#id63" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">xxx</span></code>：设置全局用户名，信息记录在<code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code>文件中</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">xxx&#64;xxx.com</span></code>：设置全局邮箱地址，信息记录在<code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code>文件中</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>：将当前目录配置成<code class="docutils literal notranslate"><span class="pre">git</span></code>仓库，信息记录在隐藏的<code class="docutils literal notranslate"><span class="pre">.git</span></code>文件夹中</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">XX</span></code>：将<code class="docutils literal notranslate"><span class="pre">XX</span></code>文件添加到暂存区</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code>：将所有待加入暂存区的文件加入暂存区</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span> <span class="pre">XX</span></code>：将文件从仓库索引目录中删掉</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;给自己看的备注信息&quot;</span></code>：将暂存区的内容提交到当前分支</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>：查看仓库状态</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">XX</span></code>：查看XX文件相对于暂存区修改了哪些内容</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>：查看当前分支的所有版本</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reflog</span></code>：查看HEAD指针的移动历史（包括被回滚的版本）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD^</span></code> 或 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD~</span></code>：将代码库回滚到上一个版本</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD^^</span></code>：往上回滚两次，以此类推</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD~100</span></code>：往上回滚100个版本</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">版本号</span></code>：回滚到某一特定版本</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">—</span> <span class="pre">XX</span></code>或<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">XX</span></code>：将XX文件尚未加入暂存区的修改全部撤销</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">git&#64;git.acwing.com:xxx/XXX.git</span></code>：将本地仓库关联到远程仓库</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">(第一次需要-u以后不需要)</span></code>：将当前分支推送到远程仓库</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">branch_name</span></code>：将本地的某个分支推送到远程仓库</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git&#64;git.acwing.com:xxx/XXX.git</span></code>：将远程仓库XXX下载到当前目录下</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">branch_name</span></code>：创建并切换到<code class="docutils literal notranslate"><span class="pre">branch_name</span></code>这个分支</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>：查看所有分支和当前所处分支</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">branch_name</span></code>：切换到<code class="docutils literal notranslate"><span class="pre">branch_name</span></code>这个分支</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">branch_name</span></code>：将分支<code class="docutils literal notranslate"><span class="pre">branch_name</span></code>合并到当前分支上</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-d</span> <span class="pre">branch_name</span></code>：删除本地仓库的<code class="docutils literal notranslate"><span class="pre">branch_name</span></code>分支</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">branch_name</span></code>：创建新分支</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--set-upstream</span> <span class="pre">origin</span> <span class="pre">branch_name</span></code>：设置本地的<code class="docutils literal notranslate"><span class="pre">branch_name</span></code>分支对应远程仓库的<code class="docutils literal notranslate"><span class="pre">branch_name</span></code>分支</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-d</span> <span class="pre">origin</span> <span class="pre">branch_name</span></code>：删除远程仓库的<code class="docutils literal notranslate"><span class="pre">branch_name</span></code>分支</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>：将远程仓库的当前分支与本地仓库的当前分支合并</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">branch_name</span></code>：将远程仓库的<code class="docutils literal notranslate"><span class="pre">branch_name</span></code>分支与本地仓库的当前分支合并</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">--set-upstream-to=origin/branch_name1</span> <span class="pre">branch_name2</span></code>：将远程的<code class="docutils literal notranslate"><span class="pre">branch_name1</span></code>分支与本地的<code class="docutils literal notranslate"><span class="pre">branch_name2</span></code>分支对应</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-t</span> <span class="pre">origin/branch_name</span></code>: 将远程的<code class="docutils literal notranslate"><span class="pre">branch_name</span></code>分支拉取到本地</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code>：将工作区和暂存区中尚未提交的修改存入栈中</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">apply</span></code>：将栈顶存储的修改恢复到当前分支，但不删除栈顶元素</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">drop</span></code>：删除栈顶存储的修改</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">pop</span></code>：将栈顶存储的修改恢复到当前分支，同时删除栈顶元素</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">list</span></code>：查看栈中所有元素</p></li>
+</ol>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="id64">
+<h1>管道、环境变量与常用命令<a class="headerlink" href="#id64" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id65">
+<h2>管道<a class="headerlink" href="#id65" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id66">
+<h3>概念<a class="headerlink" href="#id66" title="Permalink to this headline">#</a></h3>
+<p>管道类似于文件重定向，可以将前一个命令的<code class="docutils literal notranslate"><span class="pre">stdout</span></code>重定向到下一个命令的<code class="docutils literal notranslate"><span class="pre">stdin</span></code>。</p>
+</div>
+<div class="section" id="id67">
+<h3>要点<a class="headerlink" href="#id67" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>管道命令仅处理<code class="docutils literal notranslate"><span class="pre">stdout</span></code>，会忽略<code class="docutils literal notranslate"><span class="pre">stderr</span></code>。</p></li>
+<li><p>管道右边的命令必须能接受<code class="docutils literal notranslate"><span class="pre">stdin</span></code>。</p></li>
+<li><p>多个管道命令可以串联。</p></li>
+</ol>
+</div>
+<div class="section" id="id68">
+<h3>与文件重定向的区别<a class="headerlink" href="#id68" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>文件重定向左边为命令，右边为文件。</p></li>
+<li><p>管道左右两边均为命令，左边有<code class="docutils literal notranslate"><span class="pre">stdout</span></code>，右边有<code class="docutils literal notranslate"><span class="pre">stdin</span></code>。</p></li>
+</ul>
+</div>
+<div class="section" id="id69">
+<h3>举例<a class="headerlink" href="#id69" title="Permalink to this headline">#</a></h3>
+<p>统计当前目录下所有python文件的总行数，其中find、xargs、wc等命令可以参考常用命令这一节内容。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>find . -name <span class="s1">&#39;*.py&#39;</span> <span class="p">|</span> xargs cat <span class="p">|</span> wc -l
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id70">
+<h2>环境变量<a class="headerlink" href="#id70" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id71">
+<h3>概念<a class="headerlink" href="#id71" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Linux</span></code>系统中会用很多环境变量来记录<strong>配置信息</strong>。
+环境变量类似于全局变量，可以被各个进程访问到。我们可以通过修改环境变量来方便地修改系统配置。</p>
+</div>
+<div class="section" id="id72">
+<h3>查看<a class="headerlink" href="#id72" title="Permalink to this headline">#</a></h3>
+<p>列出当前环境下的所有环境变量：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>env  <span class="c1"># 显示当前用户的变量</span>
+<span class="nb">set</span>  <span class="c1"># 显示当前shell的变量，包括当前用户的变量;</span>
+<span class="nb">export</span>  <span class="c1"># 显示当前导出成用户变量的shell变量</span>
+</pre></div>
+</div>
+<p>输出某个环境变量的值：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$PATH</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id73">
+<h3>修改<a class="headerlink" href="#id73" title="Permalink to this headline">#</a></h3>
+<p>环境变量的定义、修改、删除操作可以参考<strong>shell语法——变量</strong>这一节的内容。</p>
+<p>为了将对环境变量的修改应用到未来所有环境下，可以将修改命令放到<code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>文件中。
+修改完<code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>文件后，记得执行<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/.bashrc</span></code>，来将修改应用到当前的<code class="docutils literal notranslate"><span class="pre">bash</span></code>环境下。</p>
+<p>为何将修改命令放到<code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>，就可以确保修改会影响未来所有的环境呢？</p>
+<ul class="simple">
+<li><p>每次启动<code class="docutils literal notranslate"><span class="pre">bash</span></code>，都会先执行<code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>。</p></li>
+<li><p>每次ssh登陆远程服务器，都会启动一个<code class="docutils literal notranslate"><span class="pre">bash</span></code>命令行给我们。</p></li>
+<li><p>每次<code class="docutils literal notranslate"><span class="pre">tmux</span></code>新开一个<code class="docutils literal notranslate"><span class="pre">pane</span></code>，都会启动一个<code class="docutils literal notranslate"><span class="pre">bash</span></code>命令行给我们。</p></li>
+<li><p>所以未来所有新开的环境都会加载我们修改的内容。</p></li>
+</ul>
+</div>
+<div class="section" id="id74">
+<h3>常见环境变量<a class="headerlink" href="#id74" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">HOME</span></code>：用户的家目录。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PATH</span></code>：可执行文件（命令）的存储路径。路径与路径之间用:分隔。当某个可执行文件同时出现在多个路径中时，会选择从左到右数第一个路径中的执行。下列所有存储路径的环境变量，均采用从左到右的优先顺序。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code>：用于指定动态链接库(.so文件)的路径，其内容是以冒号分隔的路径列表。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C_INCLUDE_PATH</span></code>：C语言的头文件路径，内容是以冒号分隔的路径列表。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CPLUS_INCLUDE_PATH</span></code>：CPP的头文件路径，内容是以冒号分隔的路径列表。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>：Python导入包的路径，内容是以冒号分隔的路径列表。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JAVA_HOME</span></code>：jdk的安装目录。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CLASSPATH</span></code>：存放Java导入类的路径，内容是以冒号分隔的路径列表。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id75">
+<h2>常用命令<a class="headerlink" href="#id75" title="Permalink to this headline">#</a></h2>
+<p>Linux命令非常多，本节讲解几个常用命令。其他命令依赖于大家根据实际操作环境，边用边查。</p>
+<div class="section" id="id76">
+<h3>系统状况<a class="headerlink" href="#id76" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">top</span></code>：查看所有进程的信息（Linux的任务管理器）</p></li>
+</ol>
+<ul class="simple">
+<li><p>打开后，输入<code class="docutils literal notranslate"><span class="pre">M</span></code>：按使用内存排序</p></li>
+<li><p>打开后，输入<code class="docutils literal notranslate"><span class="pre">P</span></code>：按使用CPU排序</p></li>
+<li><p>打开后，输入<code class="docutils literal notranslate"><span class="pre">q</span></code>：退出</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">-h</span></code>：查看硬盘使用情况</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">free</span> <span class="pre">-h</span></code>：查看内存使用情况</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span></code>：查看当前目录占用的硬盘空间</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ps</span> <span class="pre">aux</span></code>：查看所有进程</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kill</span> <span class="pre">-9</span> <span class="pre">pid</span></code>：杀死编号为<code class="docutils literal notranslate"><span class="pre">pid</span></code>的进程</p></li>
+</ol>
+<ul class="simple">
+<li><p>传递某个具体的信号：<code class="docutils literal notranslate"><span class="pre">kill</span> <span class="pre">-s</span> <span class="pre">SIGTERM</span> <span class="pre">pid</span></code></p></li>
+</ul>
+<ol class="arabic simple" start="7">
+<li><p><code class="docutils literal notranslate"><span class="pre">netstat</span> <span class="pre">-nt</span></code>：查看所有网络连接</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">w</span></code>：列出当前登陆的用户</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">www.baidu.com</span></code>：检查是否连网</p></li>
+</ol>
+</div>
+<div class="section" id="id77">
+<h3>文件权限<a class="headerlink" href="#id77" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">chmod</span></code>：修改文件权限</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">xxx</span></code>：给<code class="docutils literal notranslate"><span class="pre">xxx</span></code>添加可执行权限</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">-x</span> <span class="pre">xxx</span></code>：去掉<code class="docutils literal notranslate"><span class="pre">xxx</span></code>的可执行权限</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">777</span> <span class="pre">xxx</span></code>：将<code class="docutils literal notranslate"><span class="pre">xxx</span></code>的权限改成777</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">777</span> <span class="pre">xxx</span> <span class="pre">-R</span></code>：递归修改整个文件夹的权限</p></li>
+</ul>
+</div>
+<div class="section" id="id78">
+<h3>文件检索<a class="headerlink" href="#id78" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">/path/to/directory/</span> <span class="pre">-name</span> <span class="pre">'*.py'</span></code>：搜索某个文件路径下的所有<code class="docutils literal notranslate"><span class="pre">*.py</span></code>文件</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">xxx</span></code>：从<code class="docutils literal notranslate"><span class="pre">stdin</span></code>中读入若干行数据，如果某行中包含<code class="docutils literal notranslate"><span class="pre">xxx</span></code>，则输出该行；否则忽略该行。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wc</span></code>：统计行数、单词数、字节数</p></li>
+</ol>
+<ul class="simple">
+<li><p>既可以从<code class="docutils literal notranslate"><span class="pre">stdin</span></code>中直接读入内容；也可以在命令行参数中传入文件名列表；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span></code>：统计行数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-w</span></code>：统计单词数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-c</span></code>：统计字节数</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p><code class="docutils literal notranslate"><span class="pre">tree</span></code>：展示当前目录的文件结构</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tree</span> <span class="pre">/path/to/directory/</span></code>：展示某个目录的文件结构</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tree</span> <span class="pre">-a</span></code>：展示隐藏文件</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p><code class="docutils literal notranslate"><span class="pre">ag</span> <span class="pre">xxx</span></code>：搜索当前目录下的所有文件，检索<code class="docutils literal notranslate"><span class="pre">xxx</span></code>字符串</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cut</span></code>：分割一行内容</p></li>
+</ol>
+<ul class="simple">
+<li><p>从<code class="docutils literal notranslate"><span class="pre">stdin</span></code>中读入多行数据</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$PATH</span> <span class="pre">|</span> <span class="pre">cut</span> <span class="pre">-d</span> <span class="pre">':'</span> <span class="pre">-f</span> <span class="pre">3,5</span></code>：输出<code class="docutils literal notranslate"><span class="pre">PATH</span></code>用<code class="docutils literal notranslate"><span class="pre">:</span></code>分割后第3、5列数据</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$PATH</span> <span class="pre">|</span> <span class="pre">cut</span> <span class="pre">-d</span> <span class="pre">':'</span> <span class="pre">-f</span> <span class="pre">3-5</span></code>：输出<code class="docutils literal notranslate"><span class="pre">PATH</span></code>用<code class="docutils literal notranslate"><span class="pre">:</span></code>分割后第3-5列数据</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$PATH</span> <span class="pre">|</span> <span class="pre">cut</span> <span class="pre">-c</span> <span class="pre">3,5</span></code>：输出<code class="docutils literal notranslate"><span class="pre">PATH</span></code>的第3、5个字符</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$PATH</span> <span class="pre">|</span> <span class="pre">cut</span> <span class="pre">-c</span> <span class="pre">3-5</span></code>：输出<code class="docutils literal notranslate"><span class="pre">PATH</span></code>的第3-5个字符</p></li>
+</ul>
+<ol class="arabic simple" start="7">
+<li><p><code class="docutils literal notranslate"><span class="pre">sort</span></code>：将每行内容按字典序排序</p></li>
+</ol>
+<ul class="simple">
+<li><p>可以从<code class="docutils literal notranslate"><span class="pre">stdin</span></code>中读取多行数据</p></li>
+<li><p>可以从命令行参数中读取文件名列表</p></li>
+</ul>
+<ol class="arabic simple" start="8">
+<li><p><code class="docutils literal notranslate"><span class="pre">xargs</span></code>：将<code class="docutils literal notranslate"><span class="pre">stdin</span></code>中的数据用空格或回车分割成命令行参数</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-name</span> <span class="pre">'*.py'</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">cat</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code>：统计当前目录下所有python文件的总行数</p></li>
+</ul>
+</div>
+<div class="section" id="id79">
+<h3>查看文件内容<a class="headerlink" href="#id79" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">more</span></code>：浏览文件内容</p></li>
+</ol>
+<ul class="simple">
+<li><p>回车：下一行</p></li>
+<li><p>空格：下一页</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code>：上一页</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q</span></code>：退出</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><code class="docutils literal notranslate"><span class="pre">less</span></code>：与<code class="docutils literal notranslate"><span class="pre">more</span></code>类似，功能更全</p></li>
+</ol>
+<ul class="simple">
+<li><p>回车：下一行</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>：上一行</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">Down</span></code>：下一页</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">Up</span></code>：上一页</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q</span></code>：退出</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><code class="docutils literal notranslate"><span class="pre">head</span> <span class="pre">-3</span> <span class="pre">xxx</span></code>：展示<code class="docutils literal notranslate"><span class="pre">xxx</span></code>的前3行内容</p></li>
+</ol>
+<ul class="simple">
+<li><p>同时支持从<code class="docutils literal notranslate"><span class="pre">stdin</span></code>读入内容</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p><code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-3</span> <span class="pre">xxx</span></code>：展示<code class="docutils literal notranslate"><span class="pre">xxx</span></code>末尾3行内容</p></li>
+</ol>
+<ul class="simple">
+<li><p>同时支持从<code class="docutils literal notranslate"><span class="pre">stdin</span></code>读入内容</p></li>
+</ul>
+</div>
+<div class="section" id="id80">
+<h3>用户相关<a class="headerlink" href="#id80" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">history</span></code>：展示当前用户的历史操作。内容存放在<code class="docutils literal notranslate"><span class="pre">~/.bash_history</span></code>中</p></li>
+</ol>
+</div>
+<div class="section" id="id81">
+<h3>工具<a class="headerlink" href="#id81" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">md5sum</span></code>：计算<code class="docutils literal notranslate"><span class="pre">md5</span></code>哈希值</p>
+<ul class="simple">
+<li><p>可以从<code class="docutils literal notranslate"><span class="pre">stdin</span></code>读入内容</p></li>
+<li><p>也可以在命令行参数中传入文件名列表；</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">command</span></code>：统计<code class="docutils literal notranslate"><span class="pre">command</span></code>命令的执行时间</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipython3</span></code>：交互式python3环境。可以当做计算器，或者批量管理文件。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">!</span> <span class="pre">echo</span> <span class="pre">&quot;Hello</span> <span class="pre">World&quot;</span></code>：<code class="docutils literal notranslate"><span class="pre">!</span></code>表示执行<code class="docutils literal notranslate"><span class="pre">shell</span></code>脚本</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">watch</span> <span class="pre">-n</span> <span class="pre">0.1</span> <span class="pre">command</span></code>：每0.1秒执行一次<code class="docutils literal notranslate"><span class="pre">command</span></code>命令</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tar</span></code>：压缩文件</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-zcvf</span> <span class="pre">xxx.tar.gz</span> <span class="pre">/path/to/file/*</span></code>：压缩</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-zxvf</span> <span class="pre">xxx.tar.gz</span></code>：解压缩</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">diff</span> <span class="pre">xxx</span> <span class="pre">yyy</span></code>：查找文件<code class="docutils literal notranslate"><span class="pre">xxx</span></code>与<code class="docutils literal notranslate"><span class="pre">yyy</span></code>的不同点</p></li>
+</ol>
+</div>
+<div class="section" id="id82">
+<h3>安装软件<a class="headerlink" href="#id82" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">command</span></code>：以<code class="docutils literal notranslate"><span class="pre">root</span></code>身份执行<code class="docutils literal notranslate"><span class="pre">command</span></code>命令</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">xxx</span></code>：安装软件</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">xxx</span> <span class="pre">--user</span> <span class="pre">--upgrade</span></code>：安装python包</p></li>
+</ol>
+<hr class="docutils" />
+</div>
+</div>
+</div>
+<div class="section" id="docker">
+<h1>租云服务器及配置docker环境<a class="headerlink" href="#docker" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id83">
+<h2>概述<a class="headerlink" href="#id83" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id84">
+<h3>云平台的作用:<a class="headerlink" href="#id84" title="Permalink to this headline">#</a></h3>
+<p>存放我们的docker容器，让计算跑在云端。
+获得公网IP地址，让每个人可以访问到我们的服务。</p>
+</div>
+<div class="section" id="id85">
+<h3>任选一个云平台即可，推荐配置：<a class="headerlink" href="#id85" title="Permalink to this headline">#</a></h3>
+<p>1核 2GB（后期可以动态扩容，前期配置低一些没关系）
+网络带宽采用按量付费，最大带宽拉满即可（费用取决于用量，与最大带宽无关）
+系统版本：ubuntu 20.04 LTS（推荐用统一版本，避免后期出现配置不兼容的问题）</p>
+</div>
+</div>
+<div class="section" id="id86">
+<h2>租云平台<a class="headerlink" href="#id86" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id87">
+<h3>阿里云<a class="headerlink" href="#id87" title="Permalink to this headline">#</a></h3>
+<p>阿里云地址：<a class="reference external" href="https://www.aliyun.com/">https://www.aliyun.com/</a></p>
+<div class="section" id="username-username-sudo">
+<h4>创建工作用户<code class="docutils literal notranslate"><span class="pre">username</span></code>(username改成你自己的)并赋予<code class="docutils literal notranslate"><span class="pre">sudo</span></code>权限<a class="headerlink" href="#username-username-sudo" title="Permalink to this headline">#</a></h4>
+<p>登录到新服务器。打开Terminal，然后：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh root@xxx.xxx.xxx.xxx  <span class="c1"># xxx.xxx.xxx.xxx替换成新服务器的公网IP</span>
+</pre></div>
+</div>
+<p>创建<code class="docutils literal notranslate"><span class="pre">username</span></code>用户：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>adduser username  <span class="c1"># 创建用户acs</span>
+usermod -aG sudo acs  <span class="c1"># 给用户acs分配sudo权限</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id88">
+<h4>配置免密登录方式<a class="headerlink" href="#id88" title="Permalink to this headline">#</a></h4>
+<p>退回Terminal，然后配置username用户的别名和免密登录，可以参考<span class="xref myst">ssh——ssh登录</span>。</p>
+</div>
+<div class="section" id="id89">
+<h4>配置新服务器的工作环境<a class="headerlink" href="#id89" title="Permalink to this headline">#</a></h4>
+<p>将Terminal的配置传到新服务器上：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scp .bashrc .vimrc .tmux.conf server_name:  <span class="c1"># server_name需要换成自己配置的别名</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tmuxdocker">
+<h4>安装<code class="docutils literal notranslate"><span class="pre">tmux</span></code>和<code class="docutils literal notranslate"><span class="pre">docker</span></code><a class="headerlink" href="#tmuxdocker" title="Permalink to this headline">#</a></h4>
+<p>登录自己的服务器，然后安装<code class="docutils literal notranslate"><span class="pre">tmux</span></code>：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
+sudo apt-get install tmux
+</pre></div>
+</div>
+<p>打开<code class="docutils literal notranslate"><span class="pre">tmux</span></code>。（养成好习惯，所有工作都在<code class="docutils literal notranslate"><span class="pre">tmux</span></code>里进行，防止意外关闭终端后，工作进度丢失）</p>
+<p>然后在<code class="docutils literal notranslate"><span class="pre">tmux</span></code>中根据<a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">docker安装教程</a>安装<code class="docutils literal notranslate"><span class="pre">docker</span></code>即可。</p>
+</div>
+</div>
+<div class="section" id="id90">
+<h3>腾讯云<a class="headerlink" href="#id90" title="Permalink to this headline">#</a></h3>
+<p>腾讯云地址：<a class="reference external" href="https://cloud.tencent.com/">https://cloud.tencent.com/</a></p>
+</div>
+<div class="section" id="id91">
+<h3>华为云<a class="headerlink" href="#id91" title="Permalink to this headline">#</a></h3>
+<p>华为云地址：<a class="reference external" href="https://www.huaweicloud.com/">https://www.huaweicloud.com/</a></p>
+</div>
+</div>
+<div class="section" id="id92">
+<h2>docker教程<a class="headerlink" href="#id92" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id93">
+<h3>将当前用户添加到<code class="docutils literal notranslate"><span class="pre">docker</span></code>用户组<a class="headerlink" href="#id93" title="Permalink to this headline">#</a></h3>
+<p>为了避免每次使用<code class="docutils literal notranslate"><span class="pre">docker</span></code>命令都需要加上<code class="docutils literal notranslate"><span class="pre">sudo</span></code>权限，可以将当前用户加入安装中自动创建的<code class="docutils literal notranslate"><span class="pre">docker用户组</span></code>(<a class="reference external" href="https://docs.docker.com/engine/install/linux-postinstall/">可以参考官方文档</a>)：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo usermod -aG docker <span class="nv">$USER</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="images">
+<h3>镜像（images）<a class="headerlink" href="#images" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">ubuntu:20.04</span></code>：拉取一个镜像</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code>：列出本地所有镜像</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">image</span> <span class="pre">rm</span> <span class="pre">ubuntu:20.04</span></code> 或 <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rmi</span> <span class="pre">ubuntu:20.04</span></code>：删除镜像<code class="docutils literal notranslate"><span class="pre">ubuntu:20.04</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">commit</span> <span class="pre">CONTAINER</span> <span class="pre">IMAGE_NAME:TAG</span></code>：创建某个<code class="docutils literal notranslate"><span class="pre">container</span></code>的镜像</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">save</span> <span class="pre">-o</span> <span class="pre">ubuntu_20_04.tar</span> <span class="pre">ubuntu:20.04</span></code>：将镜像<code class="docutils literal notranslate"><span class="pre">ubuntu:20.04</span></code>导出到本地文件<code class="docutils literal notranslate"><span class="pre">ubuntu_20_04.tar</span></code>中</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">load</span> <span class="pre">-i</span> <span class="pre">ubuntu_20_04.tar</span></code>：将镜像<code class="docutils literal notranslate"><span class="pre">ubuntu:20.04</span></code>从本地文件<code class="docutils literal notranslate"><span class="pre">ubuntu_20_04.tar</span></code>中加载出来</p></li>
+</ol>
+</div>
+<div class="section" id="container">
+<h3>容器(container)<a class="headerlink" href="#container" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">create</span> <span class="pre">-it</span> <span class="pre">ubuntu:20.04</span></code>：利用镜像<code class="docutils literal notranslate"><span class="pre">ubuntu:20.04</span></code>创建一个容器。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code>：查看本地的所有容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">start</span> <span class="pre">CONTAINER</span></code>：启动容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">stop</span> <span class="pre">CONTAINER</span></code>：停止容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">restart</span> <span class="pre">CONTAINER</span></code>：重启容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[contaienr]</span> <span class="pre">run</span> <span class="pre">-itd</span> <span class="pre">ubuntu:20.04</span></code>：创建并启动一个容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">attach</span> <span class="pre">CONTAINER</span></code>：进入容器</p>
+<ul class="simple">
+<li><p>先按<code class="docutils literal notranslate"><span class="pre">Ctrl-p</span></code>，再按<code class="docutils literal notranslate"><span class="pre">Ctrl-q</span></code>可以挂起容器</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">exec</span> <span class="pre">CONTAINER</span> <span class="pre">COMMAND</span></code>：在容器中执行命令</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">[container]</span> <span class="pre">rm</span> <span class="pre">CONTAINER</span></code>：删除容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">prune</span></code>：删除所有已停止的容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">export</span> <span class="pre">-o</span> <span class="pre">xxx.tar</span> <span class="pre">CONTAINER</span></code>：将容器<code class="docutils literal notranslate"><span class="pre">CONTAINER</span></code>导出到本地文件<code class="docutils literal notranslate"><span class="pre">xxx.tar</span></code>中</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">import</span> <span class="pre">xxx.tar</span> <span class="pre">image_name:tag</span></code>：将本地文件<code class="docutils literal notranslate"><span class="pre">xxx.tar</span></code>导入成镜像，并将镜像命名为<code class="docutils literal notranslate"><span class="pre">image_name:tag</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">export/import与docker</span> <span class="pre">save/load</span></code>的区别：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">export/import</span></code>会丢弃历史记录和元数据信息，仅保存容器当时的快照状态</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">save/load</span></code>会保存完整记录，体积更大</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">top</span> <span class="pre">CONTAINER</span></code>：查看某个容器内的所有进程</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stats</span></code>：查看所有容器的统计信息，包括CPU、内存、存储、网络等信息</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">xxx</span> <span class="pre">CONTAINER:xxx</span></code> 或 <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">CONTAINER:xxx</span> <span class="pre">xxx</span></code>：在本地和容器间复制文件</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rename</span> <span class="pre">CONTAINER1</span> <span class="pre">CONTAINER2</span></code>：重命名容器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">update</span> <span class="pre">CONTAINER</span> <span class="pre">--memory</span> <span class="pre">500MB</span></code>：修改容器限制</p></li>
+</ol>
+</div>
+<div class="section" id="id94">
+<h3>实战<a class="headerlink" href="#id94" title="Permalink to this headline">#</a></h3>
+<p>进入AC Terminal，然后：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scp /var/lib/acwing/docker/images/docker_lesson_1_0.tar server_name:  <span class="c1"># 将镜像上传到自己租的云端服务器</span>
+ssh server_name  <span class="c1"># 登录自己的云端服务器</span>
+
+docker load -i docker_lesson_1_0.tar  <span class="c1"># 将镜像加载到本地</span>
+docker run -p <span class="m">20000</span>:22 --name my_docker_server -itd docker_lesson:1.0  <span class="c1"># 创建并运行docker_lesson:1.0镜像</span>
+
+docker attach my_docker_server  <span class="c1"># 进入创建的docker容器</span>
+passwd  <span class="c1"># 设置root密码</span>
+</pre></div>
+</div>
+<p>去云平台控制台中修改安全组配置，放行端口<code class="docutils literal notranslate"><span class="pre">20000</span></code>。</p>
+<p>返回AC Terminal，即可通过<code class="docutils literal notranslate"><span class="pre">ssh</span></code>登录自己的<code class="docutils literal notranslate"><span class="pre">docker</span></code>容器：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh root@xxx.xxx.xxx.xxx -p <span class="m">20000</span>  <span class="c1"># 将xxx.xxx.xxx.xxx替换成自己租的服务器的IP地址</span>
+</pre></div>
+</div>
+<p>然后，可以仿照上节课内容，创建工作账户<code class="docutils literal notranslate"><span class="pre">acs</span></code>。</p>
+<p>最后，可以参考<span class="xref myst">ssh——ssh登录</span>配置<code class="docutils literal notranslate"><span class="pre">docker</span></code>容器的别名和免密登录。</p>
+</div>
+<div class="section" id="tips">
+<h3>小Tips<a class="headerlink" href="#tips" title="Permalink to this headline">#</a></h3>
+<p>如果<code class="docutils literal notranslate"><span class="pre">apt-get</span></code>下载软件速度较慢，可以参考<a class="reference external" href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">清华大学开源软件镜像站</a>中的内容，修改软件源。</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Linux基础"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="Linux%E5%9F%BA%E7%A1%801_%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">&lt;no title&gt;</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   常用文件管理命令
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tmux">
+   tmux
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vim">
+   vim
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shell">
+   shell 语法
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     概论
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       概论
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       学习技巧
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       脚本示例
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       运行方式
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     注释
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       单行注释
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       多行注释
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     变量
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       定义变量
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       使用变量
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       只读变量
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       删除变量
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       变量类型
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id16">
+       字符串
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     默认变量
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       文件参数变量
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id19">
+       其它参数相关变量
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     数组
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
+       定义
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id22">
+       读取数组中某个元素的值
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id23">
+       读取整个数组
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id24">
+       数组长度
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expr">
+     expr命令
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id25">
+       字符串表达式
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id26">
+       整数表达式
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id27">
+       逻辑关系表达式
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read">
+     read命令
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#echo">
+     echo命令
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id28">
+       显示普通字符串
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id29">
+       显示转义字符
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id30">
+       显示变量
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id31">
+       显示换行
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id32">
+       显示不换行
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id33">
+       显示结果定向至文件
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id34">
+       原样输出字符串，不进行转义或取变量(用单引号)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id35">
+       显示命令的执行结果
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printf">
+     printf命令
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id36">
+       用法示例
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test">
+     test命令与判断符号[]
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id37">
+       逻辑运算符&amp;&amp;和||
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id38">
+       test命令
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id39">
+       文件类型判断
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id40">
+       文件权限判断
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id41">
+       整数间的比较
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id42">
+       字符串比较
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id43">
+       多重条件判定
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id44">
+       判断符号[]
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id45">
+     判断语句
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if">
+       单层if
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-else">
+       单层if-else
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-elif-elif-else">
+       多层if-elif-elif-else
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#case-esac">
+       case…esac形式
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id46">
+     循环语句
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#for-in-do-done">
+       for…in…do…done
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#for-do-done">
+       for ((…;…;…)) do…done
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#while-do-done">
+       while…do…done循环
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#until-do-done">
+       until…do…done循环
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#break">
+       break命令
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#continue">
+       continue命令
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id47">
+       死循环的处理方式
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id48">
+     函数
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#returnstdout">
+       不获取
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         return
+        </span>
+       </code>
+       值和
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stdout
+        </span>
+       </code>
+       值
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id49">
+       获取
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         return
+        </span>
+       </code>
+       值和
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stdout
+        </span>
+       </code>
+       值
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id50">
+       函数的输入参数
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id51">
+       函数内的局部变量
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exit">
+     exit命令
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id52">
+     文件重定向
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id53">
+       重定向命令列表
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id54">
+       输入和输出重定向
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stdinstdout">
+       同时重定向
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stdin
+        </span>
+       </code>
+       和
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stdout
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id55">
+     引入外部脚本
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ssh">
+   ssh
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id56">
+     ssh登录
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id57">
+       基本用法
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id58">
+       配置文件
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id59">
+       密钥登录
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id60">
+       执行命令
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scp">
+     scp传文件
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id61">
+       基本用法
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#scpvimtmux">
+       使用
+       <strong>
+        scp
+       </strong>
+       配置其他服务器的
+       <strong>
+        vim
+       </strong>
+       和
+       <strong>
+        tmux
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git">
+   git
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id62">
+     git基本概念
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id63">
+     git常用命令
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id64">
+   管道、环境变量与常用命令
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id65">
+     管道
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id66">
+       概念
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id67">
+       要点
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id68">
+       与文件重定向的区别
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id69">
+       举例
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id70">
+     环境变量
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id71">
+       概念
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id72">
+       查看
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id73">
+       修改
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id74">
+       常见环境变量
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id75">
+     常用命令
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id76">
+       系统状况
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id77">
+       文件权限
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id78">
+       文件检索
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id79">
+       查看文件内容
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id80">
+       用户相关
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id81">
+       工具
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id82">
+       安装软件
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docker">
+   租云服务器及配置docker环境
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id83">
+     概述
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id84">
+       云平台的作用:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id85">
+       任选一个云平台即可，推荐配置：
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id86">
+     租云平台
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id87">
+       阿里云
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#username-username-sudo">
+         创建工作用户
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           username
+          </span>
+         </code>
+         (username改成你自己的)并赋予
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           sudo
+          </span>
+         </code>
+         权限
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id88">
+         配置免密登录方式
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id89">
+         配置新服务器的工作环境
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#tmuxdocker">
+         安装
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           tmux
+          </span>
+         </code>
+         和
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           docker
+          </span>
+         </code>
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id90">
+       腾讯云
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id91">
+       华为云
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id92">
+     docker教程
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id93">
+       将当前用户添加到
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         docker
+        </span>
+       </code>
+       用户组
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#images">
+       镜像（images）
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#container">
+       容器(container)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id94">
+       实战
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tips">
+       小Tips
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>
