@@ -1,0 +1,3722 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bridges &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cs224w/networkx_example';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="经典图结构" href="networkx_basic.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="01-intro.html">
+                        01-introduction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="02-tradition-ml.html">
+                        Task-02:图机器学习及其特征工程
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="networkx_basic.html">
+                        经典图结构
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Bridges
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="01-intro.html">
+                        01-introduction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="02-tradition-ml.html">
+                        Task-02:图机器学习及其特征工程
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="networkx_basic.html">
+                        经典图结构
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Bridges
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS224w</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-intro.html">01-introduction</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02-tradition-ml.html">Task-02:图机器学习及其特征工程</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="networkx_basic.html">经典图结构</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bridges</a></li>
+
+
+
+
+
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+  </ul>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-repository-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">repository</span>
+</a>
+</a>
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcs224w/networkx_example.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">open issue</span>
+</a>
+</a>
+      
+  </ul>
+</div>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/cs224w/networkx_example.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bridges</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Bridges
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#katz-index">
+   Katz Index
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   创建无向图
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   从连接表创建图
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laplacian-matrix">
+   拉普拉斯矩阵（Laplacian Matrix）
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normalized-laplacian-matrix">
+   归一化拉普拉斯矩阵（Normalized Laplacian Matrix）
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入工具包</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">([</span><span class="s1">&#39;#046586&#39;</span><span class="p">,</span> <span class="s1">&#39;#28A9A1&#39;</span><span class="p">,</span> <span class="s1">&#39;#C9A77C&#39;</span><span class="p">,</span> <span class="s1">&#39;#F4A016&#39;</span><span class="p">,</span> <span class="s1">&#39;#F6BBC6&#39;</span><span class="p">,</span> <span class="s1">&#39;#E71F19&#39;</span><span class="p">])</span>  <span class="c1"># Nature 配色</span>
+<span class="c1"># %matplotlib inline</span>
+<span class="c1"># %config InlineBackend.figure_format = &#39;svg&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1"># 2.24, 2.24 设置figure_size尺寸</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;savefig.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># 图片像素</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># 分辨率</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;SimHei&#39;</span>  <span class="c1"># 显示中文</span>
+<span class="c1"># plt.rcParams[&#39;font.sans-serif&#39;] = &#39;Times New Roman&#39;  # 论文插图用</span>
+<span class="c1"># 设置正常显示字符</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1">#正常显示负号</span>
+<span class="c1"># plt.rcParams[&#39;font.size&#39;] = 60</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PageRank结点重要度</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">star_graph</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e0f092229c5fe0b77705c105979697b03dab33cae7defb4ac385b90b658b5e7a.png" src="../_images/e0f092229c5fe0b77705c105979697b03dab33cae7defb4ac385b90b658b5e7a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 计算PageRank结点重要度</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pagerank</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">pagerank</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.4583348922684132,
+ 1: 0.07738072967594098,
+ 2: 0.07738072967594098,
+ 3: 0.07738072967594098,
+ 4: 0.07738072967594098,
+ 5: 0.07738072967594098,
+ 6: 0.07738072967594098,
+ 7: 0.07738072967594098}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 结点连接数Node Degree度分析</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 创建图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建 Erods-Renyi 随机图，也称作binomial graph</span>
+<span class="c1"># n-节点数</span>
+<span class="c1"># p-任意两个结点产生连接的概率</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">gnp_random_graph</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">2023</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 初步可视化</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">2023</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4b47544ffeb952f24ac4870f12b2944b169e503eee328a3867f364d65a634c90.png" src="../_images/4b47544ffeb952f24ac4870f12b2944b169e503eee328a3867f364d65a634c90.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 最大连通域子图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Gcc</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">connected_components</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">Gcc</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">2023</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">Gcc</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">Gcc</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x29dd68af8e0&gt;
+</pre></div>
+</div>
+<img alt="../_images/59e19b5bbc02a2ce0dc3acd20942cfafd3b100acf4b13540c66988606166fbb0.png" src="../_images/59e19b5bbc02a2ce0dc3acd20942cfafd3b100acf4b13540c66988606166fbb0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">Gcc</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">2023</span><span class="p">)</span>
+
+<span class="c1"># 设置其他可视化形式</span>
+<span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;font_size&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span>
+    <span class="s1">&#39;node_size&#39;</span><span class="p">:</span><span class="mi">350</span><span class="p">,</span>
+    <span class="s1">&#39;node_color&#39;</span><span class="p">:</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;edgecolors&#39;</span><span class="p">:</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;linewidths&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;width&#39;</span><span class="p">:</span><span class="mi">2</span>
+<span class="p">}</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">Gcc</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Connected components of G&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d537a7e37b6950bd2f01405b383d6783e2c6a623ff421436c6956d9cd766bc0b.png" src="../_images/d537a7e37b6950bd2f01405b383d6783e2c6a623ff421436c6956d9cd766bc0b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 每个结点的连接数（degree）</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DegreeView({0: 2, 1: 2, 2: 3, 3: 1, 4: 3, 5: 1, 6: 2, 7: 1, 8: 1, 9: 2, 10: 3, 11: 0, 12: 0, 13: 1, 14: 1, 15: 3, 16: 3, 17: 1, 18: 0, 19: 3, 20: 0, 21: 0, 22: 3, 23: 1, 24: 1, 25: 1, 26: 2, 27: 1, 28: 5, 29: 2, 30: 1, 31: 0, 32: 2, 33: 3, 34: 5, 35: 3, 36: 3, 37: 1, 38: 2, 39: 1, 40: 2, 41: 5, 42: 1, 43: 1, 44: 3, 45: 2, 46: 1, 47: 5, 48: 2, 49: 0, 50: 0, 51: 3, 52: 0, 53: 5, 54: 3, 55: 0, 56: 3, 57: 2, 58: 3, 59: 4, 60: 3, 61: 0, 62: 1, 63: 2, 64: 3, 65: 2, 66: 2, 67: 5, 68: 1, 69: 1, 70: 1, 71: 3, 72: 1, 73: 3, 74: 3, 75: 1, 76: 2, 77: 2, 78: 4, 79: 1, 80: 3, 81: 2, 82: 2, 83: 1, 84: 4, 85: 1, 86: 1, 87: 3, 88: 1, 89: 4, 90: 2, 91: 2, 92: 1, 93: 3, 94: 0, 95: 3, 96: 0, 97: 0, 98: 2, 99: 1})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degree_sequence</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">((</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degree_sequence</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 4,
+ 4,
+ 4,
+ 4,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 2,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">degree_sequence</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Degree Rank Plot&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Degree&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Rnak&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/387990c002bd2812843ed8bc54834a98789c6e2cb7486f457f28fc58227838d3.png" src="../_images/387990c002bd2812843ed8bc54834a98789c6e2cb7486f457f28fc58227838d3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 结点Degree直方图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">degree_sequence</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">degree_sequence</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([14, 30, 22, 24,  4,  6], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Degree Histogram&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Degree&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f25a96d4e84691aa64b2d9d6d5074bf8f03903e0c910e18574157113a036cc4e.png" src="../_images/f25a96d4e84691aa64b2d9d6d5074bf8f03903e0c910e18574157113a036cc4e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## 棒棒糖图特征分析</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 导入图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 第一个参数指定头部结点数，第二个参数指定尾部结点数</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">lollipop_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###  可视化</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">2023</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/18b2b60bfa8c42fb77704240097f88278918b7eb65b832ac129c86c33e989a96.png" src="../_images/18b2b60bfa8c42fb77704240097f88278918b7eb65b832ac129c86c33e989a96.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 图数据分析</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 半径</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">radius</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 直径</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 偏心度：每个结点到图中其他结点的最远距离</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">eccentricity</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 8, 1: 8, 2: 8, 3: 7, 4: 6, 5: 5, 6: 4, 7: 5, 8: 6, 9: 7, 10: 8}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 中心结点，偏心度与半径相等的结点</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 外围结点，偏心度与直径相等的结点</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">periphery</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 10]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.23636363636363636
+</pre></div>
+</div>
+</div>
+</div>
+<p>n为结点个数，m为连接个数
+对于无向图：
+$<span class="math notranslate nohighlight">\(
+density = \frac{2m}{n(n-1)}
+\)</span>$</p>
+<p>对于有向图
+$<span class="math notranslate nohighlight">\(
+density = \frac{m}{n(n-1)}
+\)</span>$
+无连接图的density为0，全连接图的density为1，Multigraph（多重连接图）和带self loop的density可能大于1</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 3号结点到图中其他结点的最短距离</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">node_id</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">single_source_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{3: 0, 0: 1, 1: 1, 2: 1, 4: 1, 5: 2, 6: 3, 7: 4, 8: 5, 9: 6, 10: 7}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 每两个结点之间的最短距离</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pathlength</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+    <span class="n">spl</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">single_source_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">spl</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1"> --&gt; </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s1">   最短距离 </span><span class="si">{</span><span class="n">spl</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">pathlength</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spl</span><span class="p">[</span><span class="n">p</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 --&gt; 0   最短距离 0
+0 --&gt; 1   最短距离 1
+0 --&gt; 2   最短距离 1
+0 --&gt; 3   最短距离 1
+0 --&gt; 4   最短距离 2
+0 --&gt; 5   最短距离 3
+0 --&gt; 6   最短距离 4
+0 --&gt; 7   最短距离 5
+0 --&gt; 8   最短距离 6
+0 --&gt; 9   最短距离 7
+0 --&gt; 10   最短距离 8
+1 --&gt; 1   最短距离 0
+1 --&gt; 0   最短距离 1
+1 --&gt; 2   最短距离 1
+1 --&gt; 3   最短距离 1
+1 --&gt; 4   最短距离 2
+1 --&gt; 5   最短距离 3
+1 --&gt; 6   最短距离 4
+1 --&gt; 7   最短距离 5
+1 --&gt; 8   最短距离 6
+1 --&gt; 9   最短距离 7
+1 --&gt; 10   最短距离 8
+2 --&gt; 2   最短距离 0
+2 --&gt; 0   最短距离 1
+2 --&gt; 1   最短距离 1
+2 --&gt; 3   最短距离 1
+2 --&gt; 4   最短距离 2
+2 --&gt; 5   最短距离 3
+2 --&gt; 6   最短距离 4
+2 --&gt; 7   最短距离 5
+2 --&gt; 8   最短距离 6
+2 --&gt; 9   最短距离 7
+2 --&gt; 10   最短距离 8
+3 --&gt; 3   最短距离 0
+3 --&gt; 0   最短距离 1
+3 --&gt; 1   最短距离 1
+3 --&gt; 2   最短距离 1
+3 --&gt; 4   最短距离 1
+3 --&gt; 5   最短距离 2
+3 --&gt; 6   最短距离 3
+3 --&gt; 7   最短距离 4
+3 --&gt; 8   最短距离 5
+3 --&gt; 9   最短距离 6
+3 --&gt; 10   最短距离 7
+4 --&gt; 4   最短距离 0
+4 --&gt; 3   最短距离 1
+4 --&gt; 5   最短距离 1
+4 --&gt; 0   最短距离 2
+4 --&gt; 1   最短距离 2
+4 --&gt; 2   最短距离 2
+4 --&gt; 6   最短距离 2
+4 --&gt; 7   最短距离 3
+4 --&gt; 8   最短距离 4
+4 --&gt; 9   最短距离 5
+4 --&gt; 10   最短距离 6
+5 --&gt; 5   最短距离 0
+5 --&gt; 4   最短距离 1
+5 --&gt; 6   最短距离 1
+5 --&gt; 3   最短距离 2
+5 --&gt; 7   最短距离 2
+5 --&gt; 0   最短距离 3
+5 --&gt; 1   最短距离 3
+5 --&gt; 2   最短距离 3
+5 --&gt; 8   最短距离 3
+5 --&gt; 9   最短距离 4
+5 --&gt; 10   最短距离 5
+6 --&gt; 6   最短距离 0
+6 --&gt; 5   最短距离 1
+6 --&gt; 7   最短距离 1
+6 --&gt; 8   最短距离 2
+6 --&gt; 4   最短距离 2
+6 --&gt; 9   最短距离 3
+6 --&gt; 3   最短距离 3
+6 --&gt; 0   最短距离 4
+6 --&gt; 1   最短距离 4
+6 --&gt; 2   最短距离 4
+6 --&gt; 10   最短距离 4
+7 --&gt; 7   最短距离 0
+7 --&gt; 8   最短距离 1
+7 --&gt; 6   最短距离 1
+7 --&gt; 9   最短距离 2
+7 --&gt; 5   最短距离 2
+7 --&gt; 10   最短距离 3
+7 --&gt; 4   最短距离 3
+7 --&gt; 3   最短距离 4
+7 --&gt; 0   最短距离 5
+7 --&gt; 1   最短距离 5
+7 --&gt; 2   最短距离 5
+8 --&gt; 8   最短距离 0
+8 --&gt; 9   最短距离 1
+8 --&gt; 7   最短距离 1
+8 --&gt; 10   最短距离 2
+8 --&gt; 6   最短距离 2
+8 --&gt; 5   最短距离 3
+8 --&gt; 4   最短距离 4
+8 --&gt; 3   最短距离 5
+8 --&gt; 0   最短距离 6
+8 --&gt; 1   最短距离 6
+8 --&gt; 2   最短距离 6
+9 --&gt; 9   最短距离 0
+9 --&gt; 8   最短距离 1
+9 --&gt; 10   最短距离 1
+9 --&gt; 7   最短距离 2
+9 --&gt; 6   最短距离 3
+9 --&gt; 5   最短距离 4
+9 --&gt; 4   最短距离 5
+9 --&gt; 3   最短距离 6
+9 --&gt; 0   最短距离 7
+9 --&gt; 1   最短距离 7
+9 --&gt; 2   最短距离 7
+10 --&gt; 10   最短距离 0
+10 --&gt; 9   最短距离 1
+10 --&gt; 8   最短距离 2
+10 --&gt; 7   最短距离 3
+10 --&gt; 6   最短距离 4
+10 --&gt; 5   最短距离 5
+10 --&gt; 4   最短距离 6
+10 --&gt; 3   最短距离 7
+10 --&gt; 0   最短距离 8
+10 --&gt; 1   最短距离 8
+10 --&gt; 2   最短距离 8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#平均最短距离</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">pathlength</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">pathlength</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.2231404958677685
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 不同距离的结点对个数</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dist</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pathlength</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">dist</span><span class="p">:</span>
+        <span class="n">dist</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dist</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">dist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 11, 1: 26, 2: 18, 3: 16, 4: 14, 5: 12, 6: 10, 7: 8, 8: 6}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## 计算结点特征</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入工具包</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mcolors</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 可视化辅助函数</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">measures</span><span class="p">,</span> <span class="n">measure_name</span><span class="p">):</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">plasma</span><span class="p">,</span>
+                                   <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">measures</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span>
+                                   <span class="n">nodelist</span><span class="o">=</span><span class="n">measures</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    
+    <span class="n">nodes</span><span class="o">.</span><span class="n">set_norm</span><span class="p">(</span><span class="n">mcolors</span><span class="o">.</span><span class="n">SymLogNorm</span><span class="p">(</span><span class="n">linthresh</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">linscale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+    
+    <span class="n">edges</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">measure_name</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 导入无向图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">2023</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/36d400728d3a967dbda732a26635e6957a8e51ae0d3e2dea8e605c51033c60dd.png" src="../_images/36d400728d3a967dbda732a26635e6957a8e51ae0d3e2dea8e605c51033c60dd.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 导入有向图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DiG</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="n">DiG</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+                    <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">),(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">),(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+                    <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">),(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">),(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">),(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">)])</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">DiG</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0d680d00cb60c1778d498c771036f4df5fb1b07d8595bf8863b903f6a44f6103.png" src="../_images/0d680d00cb60c1778d498c771036f4df5fb1b07d8595bf8863b903f6a44f6103.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Node degree</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 16),
+ (1, 9),
+ (2, 10),
+ (3, 6),
+ (4, 3),
+ (5, 4),
+ (6, 4),
+ (7, 4),
+ (8, 5),
+ (9, 2),
+ (10, 3),
+ (11, 1),
+ (12, 2),
+ (13, 5),
+ (14, 2),
+ (15, 2),
+ (16, 2),
+ (17, 2),
+ (18, 2),
+ (19, 3),
+ (20, 2),
+ (21, 2),
+ (22, 2),
+ (23, 5),
+ (24, 3),
+ (25, 3),
+ (26, 2),
+ (27, 4),
+ (28, 3),
+ (29, 4),
+ (30, 4),
+ (31, 6),
+ (32, 12),
+ (33, 17)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 16,
+ 1: 9,
+ 2: 10,
+ 3: 6,
+ 4: 3,
+ 5: 4,
+ 6: 4,
+ 7: 4,
+ 8: 5,
+ 9: 2,
+ 10: 3,
+ 11: 1,
+ 12: 2,
+ 13: 5,
+ 14: 2,
+ 15: 2,
+ 16: 2,
+ 17: 2,
+ 18: 2,
+ 19: 3,
+ 20: 2,
+ 21: 2,
+ 22: 2,
+ 23: 5,
+ 24: 3,
+ 25: 3,
+ 26: 2,
+ 27: 4,
+ 28: 3,
+ 29: 4,
+ 30: 4,
+ 31: 6,
+ 32: 12,
+ 33: 17}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 字典按值排序</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(33, 17),
+ (0, 16),
+ (32, 12),
+ (2, 10),
+ (1, 9),
+ (3, 6),
+ (31, 6),
+ (8, 5),
+ (13, 5),
+ (23, 5),
+ (5, 4),
+ (6, 4),
+ (7, 4),
+ (27, 4),
+ (29, 4),
+ (30, 4),
+ (4, 3),
+ (10, 3),
+ (19, 3),
+ (24, 3),
+ (25, 3),
+ (28, 3),
+ (9, 2),
+ (12, 2),
+ (14, 2),
+ (15, 2),
+ (16, 2),
+ (17, 2),
+ (18, 2),
+ (20, 2),
+ (21, 2),
+ (22, 2),
+ (26, 2),
+ (11, 1)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()),</span> <span class="s1">&#39;Node Degree&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3a4db7fbde154eedc9df674d9b3e3de79b7f5e5a8747d43470b6c61a59047b65.png" src="../_images/3a4db7fbde154eedc9df674d9b3e3de79b7f5e5a8747d43470b6c61a59047b65.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Degree Centrality-无向图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.48484848484848486,
+ 1: 0.2727272727272727,
+ 2: 0.30303030303030304,
+ 3: 0.18181818181818182,
+ 4: 0.09090909090909091,
+ 5: 0.12121212121212122,
+ 6: 0.12121212121212122,
+ 7: 0.12121212121212122,
+ 8: 0.15151515151515152,
+ 9: 0.06060606060606061,
+ 10: 0.09090909090909091,
+ 11: 0.030303030303030304,
+ 12: 0.06060606060606061,
+ 13: 0.15151515151515152,
+ 14: 0.06060606060606061,
+ 15: 0.06060606060606061,
+ 16: 0.06060606060606061,
+ 17: 0.06060606060606061,
+ 18: 0.06060606060606061,
+ 19: 0.09090909090909091,
+ 20: 0.06060606060606061,
+ 21: 0.06060606060606061,
+ 22: 0.06060606060606061,
+ 23: 0.15151515151515152,
+ 24: 0.09090909090909091,
+ 25: 0.09090909090909091,
+ 26: 0.06060606060606061,
+ 27: 0.12121212121212122,
+ 28: 0.09090909090909091,
+ 29: 0.12121212121212122,
+ 30: 0.12121212121212122,
+ 31: 0.18181818181818182,
+ 32: 0.36363636363636365,
+ 33: 0.5151515151515151}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;Degree Centrality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/798d144b066ced7deef590e653f1fc5336121457496cac76018cd728dd3b36dd.png" src="../_images/798d144b066ced7deef590e653f1fc5336121457496cac76018cd728dd3b36dd.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Degree Centrality-有向图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">in_degree_centrality</span><span class="p">(</span><span class="n">DiG</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2: 0.7000000000000001,
+ 3: 0.1,
+ 4: 0.1,
+ 1: 0.1,
+ 5: 0.6000000000000001,
+ 6: 0.1,
+ 7: 0.0,
+ 8: 0.0,
+ 9: 0.0,
+ 10: 0.0,
+ 11: 0.0}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">out_degree_centrality</span><span class="p">(</span><span class="n">DiG</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2: 0.1,
+ 3: 0.1,
+ 4: 0.2,
+ 1: 0.0,
+ 5: 0.30000000000000004,
+ 6: 0.2,
+ 7: 0.2,
+ 8: 0.2,
+ 9: 0.2,
+ 10: 0.1,
+ 11: 0.1}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">DiG</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">in_degree_centrality</span><span class="p">(</span><span class="n">DiG</span><span class="p">),</span> <span class="s1">&#39;DiGraph Degree Centrality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/5f00d9d0e0eacf855b2781ee5674637b34f6edc01d184f582eb94972d0306083.png" src="../_images/5f00d9d0e0eacf855b2781ee5674637b34f6edc01d184f582eb94972d0306083.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">DiG</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">out_degree_centrality</span><span class="p">(</span><span class="n">DiG</span><span class="p">),</span> <span class="s1">&#39;DiGraph Degree Centrality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/48b5465dab65d6dc4e0bc08ee59e88cda9b54603ff7ebc16e331c9fee8d4f075.png" src="../_images/48b5465dab65d6dc4e0bc08ee59e88cda9b54603ff7ebc16e331c9fee8d4f075.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Eigenvector Centrality-无向图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;Eigenvector Centrality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/9ee4e29f45389e310dbb6a558d09a1d7d9baf9872202609380f985fb40b8989a.png" src="../_images/9ee4e29f45389e310dbb6a558d09a1d7d9baf9872202609380f985fb40b8989a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Eigenvector Centrality-有向图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">DiG</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality_numpy</span><span class="p">(</span><span class="n">DiG</span><span class="p">),</span> <span class="s1">&#39;Eigenvector Centrality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/4ae54234a661f8a3e7c6e7aa39c9dd05819ed26cf62991b84707387ffcb1d8d7.png" src="../_images/4ae54234a661f8a3e7c6e7aa39c9dd05819ed26cf62991b84707387ffcb1d8d7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Betweeness Centrality (必经之地)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.43763528138528146,
+ 1: 0.053936688311688304,
+ 2: 0.14365680615680618,
+ 3: 0.011909271284271283,
+ 4: 0.0006313131313131313,
+ 5: 0.02998737373737374,
+ 6: 0.029987373737373736,
+ 7: 0.0,
+ 8: 0.05592682780182781,
+ 9: 0.0008477633477633478,
+ 10: 0.0006313131313131313,
+ 11: 0.0,
+ 12: 0.0,
+ 13: 0.04586339586339586,
+ 14: 0.0,
+ 15: 0.0,
+ 16: 0.0,
+ 17: 0.0,
+ 18: 0.0,
+ 19: 0.03247504810004811,
+ 20: 0.0,
+ 21: 0.0,
+ 22: 0.0,
+ 23: 0.017613636363636363,
+ 24: 0.0022095959595959595,
+ 25: 0.0038404882154882154,
+ 26: 0.0,
+ 27: 0.02233345358345358,
+ 28: 0.0017947330447330447,
+ 29: 0.0029220779220779218,
+ 30: 0.014411976911976909,
+ 31: 0.13827561327561325,
+ 32: 0.145247113997114,
+ 33: 0.30407497594997596}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;Betweeness Centrality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/7a21cfd2055b89a18b6ac265714a15f3b10e70e505c0a061b48662d9681f2e47.png" src="../_images/7a21cfd2055b89a18b6ac265714a15f3b10e70e505c0a061b48662d9681f2e47.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Closeness Centrality (去哪都近)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.5689655172413793,
+ 1: 0.4852941176470588,
+ 2: 0.559322033898305,
+ 3: 0.4647887323943662,
+ 4: 0.3793103448275862,
+ 5: 0.38372093023255816,
+ 6: 0.38372093023255816,
+ 7: 0.44,
+ 8: 0.515625,
+ 9: 0.4342105263157895,
+ 10: 0.3793103448275862,
+ 11: 0.36666666666666664,
+ 12: 0.3707865168539326,
+ 13: 0.515625,
+ 14: 0.3707865168539326,
+ 15: 0.3707865168539326,
+ 16: 0.28448275862068967,
+ 17: 0.375,
+ 18: 0.3707865168539326,
+ 19: 0.5,
+ 20: 0.3707865168539326,
+ 21: 0.375,
+ 22: 0.3707865168539326,
+ 23: 0.39285714285714285,
+ 24: 0.375,
+ 25: 0.375,
+ 26: 0.3626373626373626,
+ 27: 0.4583333333333333,
+ 28: 0.4520547945205479,
+ 29: 0.38372093023255816,
+ 30: 0.4583333333333333,
+ 31: 0.5409836065573771,
+ 32: 0.515625,
+ 33: 0.55}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;Closeness Centrality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/c1afbdd16c8042fc5316e1aab9150ef11a0c51aac48824881aa6d3d023b764c0.png" src="../_images/c1afbdd16c8042fc5316e1aab9150ef11a0c51aac48824881aa6d3d023b764c0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### PageRank</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">DiG</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2: 0.35498362527288035,
+ 3: 0.3050906960724587,
+ 4: 0.04755306418089125,
+ 1: 0.04012092964665928,
+ 5: 0.09920010077470663,
+ 6: 0.04755306418089125,
+ 7: 0.021099703974302532,
+ 8: 0.021099703974302532,
+ 9: 0.021099703974302532,
+ 10: 0.021099703974302532,
+ 11: 0.021099703974302532}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">DiG</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">DiG</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.85</span><span class="p">),</span> <span class="s1">&#39;DiGraph PageRank&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/7f2102e559740e7176e38b7f3860d115f220e348ebe4b6296f46addefd60a6db.png" src="../_images/7f2102e559740e7176e38b7f3860d115f220e348ebe4b6296f46addefd60a6db.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Katz Centrality</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">katz_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">1.0</span><span class="p">),</span> <span class="s1">&#39;G Katz Centrality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/11c5dfda907f79255d71a77e5652934d0072de31a1b779b0768ec5dd77edf9ca.png" src="../_images/11c5dfda907f79255d71a77e5652934d0072de31a1b779b0768ec5dd77edf9ca.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">DiG</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">katz_centrality</span><span class="p">(</span><span class="n">DiG</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">1.0</span><span class="p">),</span> <span class="s1">&#39;DiG Katz Centrality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/cda51a9d73c17b3ed1d45494c54ba74144dd1d64fad51602cc5e292e1ff525d5.png" src="../_images/cda51a9d73c17b3ed1d45494c54ba74144dd1d64fad51602cc5e292e1ff525d5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### HITS Hubs and Authorities</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">hits</span><span class="p">(</span><span class="n">DiG</span><span class="p">)</span>
+<span class="n">draw</span><span class="p">(</span><span class="n">DiG</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="s1">&#39;DiG HITS Hubs&#39;</span><span class="p">)</span>
+<span class="n">draw</span><span class="p">(</span><span class="n">DiG</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;DiG HITS Authorities&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/0d5b3be5b73510ed8cc514c9bd56cbcaa2d4b54da0b43b5137bfa8c5450b1bab.png" src="../_images/0d5b3be5b73510ed8cc514c9bd56cbcaa2d4b54da0b43b5137bfa8c5450b1bab.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/9dbe96d89dc2762929ca56ef1c7bab95339c29fca89b59954d1606929207b830.png" src="../_images/9dbe96d89dc2762929ca56ef1c7bab95339c29fca89b59954d1606929207b830.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### NetworkX 社群属性</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/36d400728d3a967dbda732a26635e6957a8e51ae0d3e2dea8e605c51033c60dd.png" src="../_images/36d400728d3a967dbda732a26635e6957a8e51ae0d3e2dea8e605c51033c60dd.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 三角形个数</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 18,
+ 1: 12,
+ 2: 11,
+ 3: 10,
+ 4: 2,
+ 5: 3,
+ 6: 3,
+ 7: 6,
+ 8: 5,
+ 9: 0,
+ 10: 2,
+ 11: 0,
+ 12: 1,
+ 13: 6,
+ 14: 1,
+ 15: 1,
+ 16: 1,
+ 17: 1,
+ 18: 1,
+ 19: 1,
+ 20: 1,
+ 21: 1,
+ 22: 1,
+ 23: 4,
+ 24: 1,
+ 25: 1,
+ 26: 1,
+ 27: 1,
+ 28: 1,
+ 29: 4,
+ 30: 3,
+ 31: 3,
+ 32: 13,
+ 33: 15}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;Triangles&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/035cc81f8fce4514900309f77d010a7d6bc30d6c7896926cbe8934c784a249d6.png" src="../_images/035cc81f8fce4514900309f77d010a7d6bc30d6c7896926cbe8934c784a249d6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Clustering Coefficient</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0.15,
+ 1: 0.3333333333333333,
+ 2: 0.24444444444444444,
+ 3: 0.6666666666666666,
+ 4: 0.6666666666666666,
+ 5: 0.5,
+ 6: 0.5,
+ 7: 1.0,
+ 8: 0.5,
+ 9: 0,
+ 10: 0.6666666666666666,
+ 11: 0,
+ 12: 1.0,
+ 13: 0.6,
+ 14: 1.0,
+ 15: 1.0,
+ 16: 1.0,
+ 17: 1.0,
+ 18: 1.0,
+ 19: 0.3333333333333333,
+ 20: 1.0,
+ 21: 1.0,
+ 22: 1.0,
+ 23: 0.4,
+ 24: 0.3333333333333333,
+ 25: 0.3333333333333333,
+ 26: 1.0,
+ 27: 0.16666666666666666,
+ 28: 0.3333333333333333,
+ 29: 0.6666666666666666,
+ 30: 0.5,
+ 31: 0.2,
+ 32: 0.19696969696969696,
+ 33: 0.11029411764705882}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;Clustering Coefficients&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/18efd57e42e032c8d7c012d8d3c0700f65a735120febae1953189ca93f6e7ed3.png" src="../_images/18efd57e42e032c8d7c012d8d3c0700f65a735120febae1953189ca93f6e7ed3.png" />
+</div>
+</div>
+<div class="section" id="bridges">
+<h1>Bridges<a class="headerlink" href="#bridges" title="Permalink to this headline">#</a></h1>
+<p>如果某个连接断掉，会使连通域个数增加，则该连接是bridg</p>
+<p>bridge不属于环的一部分</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">675</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2772d5187233225e7fbbe3d7d037d3d3cba244d7faf2d5708d5b82005bd62250.png" src="../_images/2772d5187233225e7fbbe3d7d037d3d3cba244d7faf2d5708d5b82005bd62250.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">bridges</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 11)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Common Neighbors 和 Jaccard Coefficient</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">common_neighbors</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 10]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preds</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">jaccard_coefficient</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
+<span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">preds</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1">) -&gt; </span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s1">.8f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 1) -&gt; 0.38888889
+(2, 3) -&gt; 0.33333333
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preds</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">adamic_adar_index</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
+<span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">preds</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1">) -&gt; </span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s1">.8f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 1) -&gt; 6.13071687
+(2, 3) -&gt; 2.15847583
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="katz-index">
+<h1>Katz Index<a class="headerlink" href="#katz-index" title="Permalink to this headline">#</a></h1>
+<p>结点u到结点v，路径为k的路径个数</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算主特征向量</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">normalized_laplacian_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvals</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;最大特征值&#39;</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="c1"># 折减系数</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="c1"># 创建单位矩阵</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()))</span>
+
+<span class="c1"># 计算Katz index</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">inv</span><span class="p">(</span><span class="n">I</span> <span class="o">-</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_array</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">*</span> <span class="n">beta</span><span class="p">)</span> <span class="o">-</span> <span class="n">I</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>最大特征值 1.7146113474736127
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(34, 34)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.630971  ,  0.03760311, -0.50718655, ...,  0.22028562,
+         0.08051109,  0.0187629 ],
+       [ 0.03760311,  0.0313979 , -1.09231501, ...,  0.18920621,
+        -0.09098329,  0.08188737],
+       [-0.50718655, -1.09231501,  0.79993439, ..., -0.4511988 ,
+         0.17631358, -0.23914987],
+       ...,
+       [ 0.22028562,  0.18920621, -0.4511988 , ..., -0.07349891,
+         0.47525815, -0.0457034 ],
+       [ 0.08051109, -0.09098329,  0.17631358, ...,  0.47525815,
+        -0.28781332, -0.70104834],
+       [ 0.0187629 ,  0.08188737, -0.23914987, ..., -0.0457034 ,
+        -0.70104834, -0.50717615]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## 北京上海地铁站图数据挖掘</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 定义可视化辅助函数</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">measures</span><span class="p">,</span> <span class="n">measure_name</span><span class="p">):</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">plasma</span><span class="p">,</span>
+                                   <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">measures</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span>
+                                   <span class="n">nodelist</span><span class="o">=</span><span class="n">measures</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    
+    <span class="n">nodes</span><span class="o">.</span><span class="n">set_norm</span><span class="p">(</span><span class="n">mcolors</span><span class="o">.</span><span class="n">SymLogNorm</span><span class="p">(</span><span class="n">linthresh</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">linscale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+    
+    <span class="n">edges</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">measure_name</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 字典按值排序辅助函数</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dict_sort_by_value</span><span class="p">(</span><span class="n">dict_input</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    输入字典，输出按值排序的字典 </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict_input</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 导入地铁站连接表</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 上海地铁站连接表</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./data/shanghai_subway.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>前一站</th>
+      <th>后一站</th>
+      <th>地铁线</th>
+      <th>时间（分钟）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>莘庄</td>
+      <td>外环路</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>外环路</td>
+      <td>莲花路</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>莲花路</td>
+      <td>锦江乐园</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>锦江乐园</td>
+      <td>上海南站</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>上海南站</td>
+      <td>漕宝路</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>487</th>
+      <td>抚顺路</td>
+      <td>国权路</td>
+      <td>18</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>488</th>
+      <td>国权路</td>
+      <td>复旦大学</td>
+      <td>18</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>489</th>
+      <td>复旦大学</td>
+      <td>上海财经大学</td>
+      <td>18</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>490</th>
+      <td>上海财经大学</td>
+      <td>殷高路</td>
+      <td>18</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>491</th>
+      <td>殷高路</td>
+      <td>长江南路</td>
+      <td>18</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>492 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 创建图</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h1>创建无向图<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h1>从连接表创建图<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;前一站&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;后一站&#39;</span><span class="p">])],</span> <span class="n">line</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;地铁线&#39;</span><span class="p">],</span> <span class="n">time</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;时间（分钟）&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 检查是否导入成功</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 节点个数</span>
+<span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>402
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 连接个数</span>
+<span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>480
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查看连接特征</span>
+<span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">[(</span><span class="s1">&#39;同济大学&#39;</span><span class="p">,</span> <span class="s1">&#39;四平路&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;line&#39;: 10, &#39;time&#39;: 2}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 可视化</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># j结点排版布局，默认弹簧布局</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6dc30383d9abfb521332019ec07d7c6e7c908d496b3a792f2ef5457777c28384.png" src="../_images/6dc30383d9abfb521332019ec07d7c6e7c908d496b3a792f2ef5457777c28384.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### shorest path 最短路径</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 任意两节点之间是否存在路径</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">has_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;昌吉东路&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;同济大学&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 任意两结点之间的最短路径</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;昌吉东路&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;同济大学&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;昌吉东路&#39;,
+ &#39;上海赛车场&#39;,
+ &#39;嘉定新城&#39;,
+ &#39;马陆&#39;,
+ &#39;陈翔公路&#39;,
+ &#39;南翔&#39;,
+ &#39;桃浦新村&#39;,
+ &#39;武威路&#39;,
+ &#39;祁连山路&#39;,
+ &#39;李子园&#39;,
+ &#39;上海西站&#39;,
+ &#39;真如&#39;,
+ &#39;枫桥路&#39;,
+ &#39;曹杨路&#39;,
+ &#39;镇坪路&#39;,
+ &#39;中潭路&#39;,
+ &#39;上海火车站&#39;,
+ &#39;宝山路&#39;,
+ &#39;海伦路&#39;,
+ &#39;邮电新村&#39;,
+ &#39;四平路&#39;,
+ &#39;同济大学&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 任意两结点之间的最短路径</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;昌吉东路&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;同济大学&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>59
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 全图平均最短路径</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41.06494956638255
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 某一站去其他站的最短路径</span>
+<span class="c1"># nx.single_source_shortest_path(G, source=&#39;同济大学&#39;)</span>
+
+<span class="c1"># # 某一站去其他站的最短路径长度</span>
+<span class="c1"># nx.single_source_shortest_path_length(G, source=&#39;同济大学&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## 地铁导航系统</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 指定起始站和终点站</span>
+<span class="n">A_station</span> <span class="o">=</span> <span class="s1">&#39;昌吉东路&#39;</span>
+<span class="n">B_station</span> <span class="o">=</span> <span class="s1">&#39;同济大学&#39;</span>
+
+<span class="c1"># 获取最短路径</span>
+<span class="n">shorest_path_list</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">A_station</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">B_station</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">shorest_path_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">previous_station</span> <span class="o">=</span> <span class="n">shorest_path_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">next_station</span> <span class="o">=</span> <span class="n">shorest_path_list</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">line_id</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">[(</span><span class="n">previous_station</span><span class="p">,</span> <span class="n">next_station</span><span class="p">)][</span><span class="s1">&#39;line&#39;</span><span class="p">]</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">[(</span><span class="n">previous_station</span><span class="p">,</span> <span class="n">next_station</span><span class="p">)][</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">previous_station</span><span class="si">}</span><span class="s1"> -&gt; </span><span class="si">{</span><span class="n">next_station</span><span class="si">}</span><span class="s1">  </span><span class="si">{</span><span class="n">line_id</span><span class="si">}</span><span class="s1">号线  </span><span class="si">{</span><span class="n">time</span><span class="si">}</span><span class="s1">分钟&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>昌吉东路 -&gt; 上海赛车场  11号线  4分钟
+上海赛车场 -&gt; 嘉定新城  11号线  4分钟
+嘉定新城 -&gt; 马陆  11号线  3分钟
+马陆 -&gt; 陈翔公路  11号线  4分钟
+陈翔公路 -&gt; 南翔  11号线  3分钟
+南翔 -&gt; 桃浦新村  11号线  3分钟
+桃浦新村 -&gt; 武威路  11号线  3分钟
+武威路 -&gt; 祁连山路  11号线  2分钟
+祁连山路 -&gt; 李子园  11号线  3分钟
+李子园 -&gt; 上海西站  11号线  2分钟
+上海西站 -&gt; 真如  11号线  3分钟
+真如 -&gt; 枫桥路  11号线  2分钟
+枫桥路 -&gt; 曹杨路  11号线  2分钟
+曹杨路 -&gt; 镇坪路  4号线  3分钟
+镇坪路 -&gt; 中潭路  4号线  2分钟
+中潭路 -&gt; 上海火车站  4号线  3分钟
+上海火车站 -&gt; 宝山路  4号线  4分钟
+宝山路 -&gt; 海伦路  4号线  3分钟
+海伦路 -&gt; 邮电新村  10号线  2分钟
+邮电新村 -&gt; 四平路  10号线  2分钟
+四平路 -&gt; 同济大学  10号线  2分钟
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Node Degree</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dict_sort_by_value(dict(G.degree()))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()),</span> <span class="s1">&#39;Node Degree&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ea04577e3fd3baebc9b2bb20c813eebecc93617abe96702454b9fcd592c936fd.png" src="../_images/ea04577e3fd3baebc9b2bb20c813eebecc93617abe96702454b9fcd592c936fd.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;Degree centrality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/cbca973d5e9a4331b5a0084ffba782124b5afdf357c865901ff7ab787a39b410.png" src="../_images/cbca973d5e9a4331b5a0084ffba782124b5afdf357c865901ff7ab787a39b410.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Eigenvector Centrality (可能不收敛)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nx.eigenvector_centrality(G)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;Eigenvector centrality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/8702cab36ecf10412830a73e642cec8ead7391225502a12de527d8039e2e5ad9.png" src="../_images/8702cab36ecf10412830a73e642cec8ead7391225502a12de527d8039e2e5ad9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Closeness centrality (去哪都近)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;Closeness Centrality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/8d433ac3cc44a52d43d506dbe5fd0110f5a6457884fe5edc0c6125712216dcb7.png" src="../_images/8d433ac3cc44a52d43d506dbe5fd0110f5a6457884fe5edc0c6125712216dcb7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### PageRank</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;PageRank&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/4e180faaebd2bbab6f42715f9b0946bee65419388dda27be860680545f976b57.png" src="../_images/4e180faaebd2bbab6f42715f9b0946bee65419388dda27be860680545f976b57.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 社群属性Clustering</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 三角形个数</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nx.triangles(G)</span>
+<span class="c1"># dict_sort_by_value(nx.triangles(G))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;Triangels&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/a2755c6627b2cf437df15632bae1f4936c257e8ad6b1866f415242ae2c016e4a.png" src="../_images/a2755c6627b2cf437df15632bae1f4936c257e8ad6b1866f415242ae2c016e4a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Clustering coefficients</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;Clustering coefficients&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Font &#39;default&#39; does not have a glyph for &#39;-&#39; [U+2212], substituting with a dummy symbol.
+</pre></div>
+</div>
+<img alt="../_images/f57f08dabae47782feae1ca6455cc00c4a6a8c9485974d15d585ddb48d10682e.png" src="../_images/f57f08dabae47782feae1ca6455cc00c4a6a8c9485974d15d585ddb48d10682e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 计算全图Graphlet个数</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 导入全图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8ee497e3e99fe8801048defb4085b945c9bf00006cb9b46337718e03ae867e67.png" src="../_images/8ee497e3e99fe8801048defb4085b945c9bf00006cb9b46337718e03ae867e67.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 指定Graphlet</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/da5e4dbcda82737523da1fb28f9fa4b429f62f115a096b6e4696b0a08730e1b6.png" src="../_images/da5e4dbcda82737523da1fb28f9fa4b429f62f115a096b6e4696b0a08730e1b6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 匹配Graphlet,统计个数</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">sub_nodes</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(),</span> <span class="nb">len</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">nodes</span><span class="p">())):</span> <span class="c1"># 遍历全图中，符合graphlet结点个数的所有结点组合</span>
+    <span class="n">subg</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">sub_nodes</span><span class="p">)</span> <span class="c1"># 从全图中抽取子图</span>
+    <span class="k">if</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">subg</span><span class="p">)</span> <span class="ow">and</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_isomorphic</span><span class="p">(</span><span class="n">subg</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span> <span class="c1"># 如果子图是完整连通域 并且符合graphlet特征。输出原图结点编号</span>
+        <span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">subg</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 1), (0, 2), (1, 2)]
+[(0, 1), (0, 3), (1, 3)]
+[(0, 1), (0, 7), (1, 7)]
+[(0, 1), (0, 13), (1, 13)]
+[(0, 1), (0, 17), (1, 17)]
+[(0, 1), (0, 19), (1, 19)]
+[(0, 1), (0, 21), (1, 21)]
+[(0, 2), (0, 3), (2, 3)]
+[(0, 2), (0, 7), (2, 7)]
+[(0, 2), (0, 8), (8, 2)]
+[(0, 2), (0, 13), (2, 13)]
+[(0, 3), (0, 7), (3, 7)]
+[(0, 3), (0, 12), (3, 12)]
+[(0, 3), (0, 13), (3, 13)]
+[(0, 4), (0, 6), (4, 6)]
+[(0, 4), (0, 10), (10, 4)]
+[(0, 5), (0, 6), (5, 6)]
+[(0, 5), (0, 10), (10, 5)]
+[(1, 2), (1, 3), (2, 3)]
+[(1, 2), (1, 7), (2, 7)]
+[(1, 2), (1, 13), (2, 13)]
+[(1, 3), (1, 7), (3, 7)]
+[(1, 3), (1, 13), (3, 13)]
+[(2, 3), (2, 7), (3, 7)]
+[(2, 3), (2, 13), (3, 13)]
+[(8, 2), (8, 32), (2, 32)]
+[(16, 5), (16, 6), (5, 6)]
+[(8, 30), (8, 32), (32, 30)]
+[(8, 30), (8, 33), (33, 30)]
+[(8, 32), (8, 33), (33, 32)]
+[(32, 14), (32, 33), (33, 14)]
+[(32, 15), (32, 33), (33, 15)]
+[(32, 18), (32, 33), (33, 18)]
+[(32, 20), (32, 33), (33, 20)]
+[(32, 22), (32, 33), (33, 22)]
+[(33, 23), (33, 27), (27, 23)]
+[(32, 23), (32, 29), (29, 23)]
+[(33, 23), (33, 29), (29, 23)]
+[(32, 23), (32, 33), (33, 23)]
+[(24, 25), (24, 31), (25, 31)]
+[(33, 26), (33, 29), (26, 29)]
+[(33, 28), (33, 31), (28, 31)]
+[(32, 29), (32, 33), (33, 29)]
+[(32, 30), (32, 33), (33, 30)]
+[(32, 31), (32, 33), (33, 31)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 拉普拉斯矩阵特征值分解</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 创建图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># 结点个数</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">5000</span> <span class="c1"># 连接个数</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">gnm_random_graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">5040</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 邻接矩阵（Adjacency Matrix）</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">adjacency_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000, 1000)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matrix([[0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        ...,
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0]], dtype=int32)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="laplacian-matrix">
+<h1>拉普拉斯矩阵（Laplacian Matrix）<a class="headerlink" href="#laplacian-matrix" title="Permalink to this headline">#</a></h1>
+<div class="math notranslate nohighlight">
+\[
+L = D - A
+\]</div>
+<p>L 为拉普拉斯矩阵</p>
+<p>D 为结点degree对角矩阵</p>
+<p>A 为邻接矩阵</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">laplacian_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000, 1000)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 结点degree对角矩阵</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">L</span> <span class="o">+</span> <span class="n">A</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matrix([[12,  0,  0, ...,  0,  0,  0],
+        [ 0,  6,  0, ...,  0,  0,  0],
+        [ 0,  0,  8, ...,  0,  0,  0],
+        ...,
+        [ 0,  0,  0, ...,  8,  0,  0],
+        [ 0,  0,  0, ...,  0,  6,  0],
+        [ 0,  0,  0, ...,  0,  0,  7]], dtype=int32)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="normalized-laplacian-matrix">
+<h1>归一化拉普拉斯矩阵（Normalized Laplacian Matrix）<a class="headerlink" href="#normalized-laplacian-matrix" title="Permalink to this headline">#</a></h1>
+<p><span class="math notranslate nohighlight">\(L_n = D^{-\frac{1}{2}}LD^{-\frac{1}{2}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L_n</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">normalized_laplacian_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L_n</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000, 1000)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L_n</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matrix([[1., 0., 0., ..., 0., 0., 0.],
+        [0., 1., 0., ..., 0., 0., 0.],
+        [0., 0., 1., ..., 0., 0., 0.],
+        ...,
+        [0., 0., 0., ..., 1., 0., 0.],
+        [0., 0., 0., ..., 0., 1., 0.],
+        [0., 0., 0., ..., 0., 0., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">L_n</span><span class="o">.</span><span class="n">todense</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x29dd7145520&gt;
+</pre></div>
+</div>
+<img alt="../_images/a3f8b4faff5b9ec14df078f5386b2cdc661e033e0e935ea6ee1703e514e00fa2.png" src="../_images/a3f8b4faff5b9ec14df078f5386b2cdc661e033e0e935ea6ee1703e514e00fa2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 特征值分解</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvals</span><span class="p">(</span><span class="n">L_n</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5924617911775976
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### 特征值分布直方图</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Eigenvalue Histogram&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Eigenvalue&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/978e2760a3832862e3b2c2306db3f90f4d1009dc718094cc89690cb021826522.png" src="../_images/978e2760a3832862e3b2c2306db3f90f4d1009dc718094cc89690cb021826522.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cs224w"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="networkx_basic.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">经典图结构</p>
+      </div>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Bridges
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#katz-index">
+   Katz Index
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   创建无向图
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   从连接表创建图
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laplacian-matrix">
+   拉普拉斯矩阵（Laplacian Matrix）
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normalized-laplacian-matrix">
+   归一化拉普拉斯矩阵（Normalized Laplacian Matrix）
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>
