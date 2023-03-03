@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: CS224w 
+    chapters:
+    - file: cs224w/01-intro
+    - file: cs224w/02-tradition-ml
+    - file: cs224w/networkx_basic
+    - file: cs224w/networkx_example

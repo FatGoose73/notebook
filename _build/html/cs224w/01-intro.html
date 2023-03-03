@@ -1,0 +1,1156 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-introduction &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cs224w/01-intro';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Task-02:图机器学习及其特征工程" href="02-tradition-ml.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        01-introduction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="02-tradition-ml.html">
+                        Task-02:图机器学习及其特征工程
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="networkx_basic.html">
+                        经典图结构
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="networkx_example.html">
+                        Bridges
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        01-introduction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="02-tradition-ml.html">
+                        Task-02:图机器学习及其特征工程
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="networkx_basic.html">
+                        经典图结构
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="networkx_example.html">
+                        Bridges
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS224w</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">01-introduction</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02-tradition-ml.html">Task-02:图机器学习及其特征工程</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="networkx_basic.html">经典图结构</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="networkx_example.html">Bridges</a></li>
+
+
+
+
+
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+  </ul>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-repository-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">repository</span>
+</a>
+</a>
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcs224w/01-intro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">open issue</span>
+</a>
+</a>
+      
+  </ul>
+</div>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/cs224w/01-intro.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>01-introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   01-introduction
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     图机器学习
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   图机器学习的应用
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     不同类型的任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     经典的图机器学习任务：
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#node-level">
+     Node-level 图机器学习任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edge-level">
+     Edge-level 图机器学习任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subgraph-level">
+     Subgraph-level 图机器学习任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph-level">
+     Graph-level 图机器学习任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     图表示的选择
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <div class="section" id="introduction">
+<h1>01-introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id1">
+<h2>图机器学习<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>什么是图？</p>
+<p>图是描述和分析实体及其关系的一种通用语言</p>
+<p>各种类型的图：</p>
+<ul class="simple">
+<li><p>事件图、计算机网络、疾病发展路径、食物网、粒子网、地铁交通网、社交网络、经济网络、通信网络、引用网络、互联网、神经网络、知识图谱、监管网络、场景图、代码图、分子、3D形状</p></li>
+</ul>
+<p>那么我们该如何利用关系结构进行更好的预测？</p>
+<ul class="simple">
+<li><p>复杂领域具有丰富的关系结构，可以表示为关系图</p></li>
+<li><p>通过对关系的显式建模来进行更好的预测!</p></li>
+</ul>
+<p>如今的深度学习工具箱是根据简单的序列/网格来进行设计的：</p>
+<ul class="simple">
+<li><p>images</p></li>
+<li><p>text\speech</p></li>
+</ul>
+<p>但是不是一切事物都可以被表征为序列或者网格，我们该如何才能开发出适用范围更广的神经网络呢？</p>
+<ul class="simple">
+<li><p>图即是深度学习新的前沿</p></li>
+<li><p>图让万物相连</p></li>
+</ul>
+<p>为什么图深度学习很难？</p>
+<ul class="simple">
+<li><p>具有不确定的尺寸</p></li>
+<li><p>具有复杂的拓扑结构（不像网格具有空间局部性）</p></li>
+<li><p>没有固定的结点顺序或参考结点</p></li>
+<li><p>通常是动态的并具有多模态特征</p></li>
+</ul>
+<p>图神经网络</p>
+<ul class="simple">
+<li><p>输入为：network</p></li>
+<li><p>输出为：结点标签、新连接、生成的图和子图</p></li>
+<li><p>每个结点定义为一个计算图</p>
+<ul>
+<li><p>每个计算图中的边可以被认为是转换/聚合函数</p></li>
+</ul>
+</li>
+</ul>
+<p>​	因此，结点通过神经网络聚合来自其邻居的信息，即每个结点根据其邻居定义一个计算图。</p>
+<p>表示学习</p>
+<p><strong>表示学习，这一页没看懂</strong></p>
+<ul class="simple">
+<li><p>将结点映射到d维的嵌入，使得网络中相似的结点的嵌入更接近</p></li>
+</ul>
+<p>因此，我们将探索图数据的机器学习和表示学习：</p>
+<ul class="simple">
+<li><p>传统方法: Graphlets, Graph Kernels</p></li>
+<li><p>结点嵌入的方法: DeepWalk, Node2Vec</p></li>
+<li><p>图神经网络: GCN, GraphSAGE, GAT, Theory of GNNs</p></li>
+<li><p>知识图谱与推理: TransE, BetaE</p></li>
+<li><p>深度图聚合模型: GraphRNN</p></li>
+<li><p>前沿应用：Applications to Biomedicine, Science, Technology</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h1>图机器学习的应用<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id3">
+<h2>不同类型的任务<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>graph-level prediction, graph generation</p></li>
+<li><p>node level</p></li>
+<li><p>community (subgraph level)</p></li>
+<li><p>edge-level</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>经典的图机器学习任务：<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>结点分类：预测一个结点的属性</p>
+<ul>
+<li><p>对在线的用户或条目进行分类</p></li>
+</ul>
+</li>
+<li><p>连接预测：预测两个结点之间是否存在连接丢失</p>
+<ul>
+<li><p>知识图谱补全</p></li>
+</ul>
+</li>
+<li><p>图分类：对不同的图进行分类</p>
+<ul>
+<li><p>分子属性预测</p></li>
+</ul>
+</li>
+<li><p>聚类：检测一些结点是否可形成子图</p>
+<ul>
+<li><p>社交圈检测</p></li>
+</ul>
+</li>
+<li><p>其他：</p>
+<ul>
+<li><p>图生成：药物挖掘</p></li>
+<li><p>图演化：物理模拟</p></li>
+</ul>
+</li>
+</ul>
+<p>这些任务都会导致广泛的应用</p>
+</div>
+<div class="section" id="node-level">
+<h2>Node-level 图机器学习任务<a class="headerlink" href="#node-level" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>蛋白质折叠</p></li>
+<li><p>蛋白质折叠问题</p></li>
+<li><p>AlphaFold：</p>
+<ul>
+<li><p>核心思想：空间图</p></li>
+<li><p>结点：蛋白质序列中的氨基酸</p></li>
+<li><p>边：氨基酸（残基）之间的接近度</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="edge-level">
+<h2>Edge-level 图机器学习任务<a class="headerlink" href="#edge-level" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>推荐系统</p></li>
+</ol>
+<ul class="simple">
+<li><p>用户与物品进行交互</p>
+<ul>
+<li><p>看电影、购买商品、听音乐</p></li>
+<li><p>结点：用户和物品</p></li>
+<li><p>边：用于-物品之间的交互</p></li>
+</ul>
+</li>
+<li><p>目的：推荐用户可能喜欢的物品</p></li>
+</ul>
+<ol class="arabic" start="2">
+<li><p>药物副作用</p>
+<p>许多患者服用药物来治疗复杂或并存的疾病</p>
+<ul class="simple">
+<li><p>任务：给出一对药物，来预测其副作用</p></li>
+<li><p>结点：药物与蛋白质</p></li>
+<li><p>边：其间的关系</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="subgraph-level">
+<h2>Subgraph-level 图机器学习任务<a class="headerlink" href="#subgraph-level" title="Permalink to this headline">#</a></h2>
+<p>交通预测，将道路网看作是图结构</p>
+<ul class="simple">
+<li><p>结点：路段</p></li>
+<li><p>边：路段之间的连通性</p></li>
+<li><p>预测：到达时间</p></li>
+</ul>
+</div>
+<div class="section" id="graph-level">
+<h2>Graph-level 图机器学习任务<a class="headerlink" href="#graph-level" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>药物发现</p></li>
+</ol>
+<p>抗生素可以看作是小分子图</p>
+<ul class="simple">
+<li><p>结点：原子</p></li>
+<li><p>边：化学键</p></li>
+</ul>
+<p>图神经网络模型，从候选池中预测有潜力的分子</p>
+<ol class="arabic simple" start="2">
+<li><p>分子生成/优化</p></li>
+</ol>
+<ul class="simple">
+<li><p>生成高药似值的分子</p></li>
+<li><p>优化现有分子以获得理想的属性</p></li>
+</ul>
+<ol class="arabic" start="3">
+<li><p>物理模拟</p>
+<p>将物理模拟看作是图：</p>
+<ul class="simple">
+<li><p>结点：粒子</p></li>
+<li><p>边：粒子间的相互作用</p></li>
+</ul>
+</li>
+</ol>
+<p>一个图演化网络</p>
+<ul class="simple">
+<li><p>目的：预测图将如何演化</p></li>
+<li><p>如 deepmind天气预测</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>图表示的选择<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p>图的组成：</p>
+<ul class="simple">
+<li><p>对象：结点、顶点（<span class="math notranslate nohighlight">\(N\)</span>）</p></li>
+<li><p>交互：连接、边 （<span class="math notranslate nohighlight">\(E\)</span>）</p></li>
+<li><p>系统：网络、图 （<span class="math notranslate nohighlight">\(G(N, E)\)</span>）</p></li>
+</ul>
+<p>选择合适的表示：</p>
+<ul class="simple">
+<li><p>如果您将相互合作的个人联系起来，您将探索一个professional network</p></li>
+<li><p>如果您连接那些有性关系的人，您将探索sexual network</p></li>
+<li><p>如果您连接相互引用的科学论文，您将研究citation network</p></li>
+</ul>
+<p>如果您将所有论文的标题中的同一个词连接起来，您将探索什么？</p>
+<ul class="simple">
+<li><p>依旧是一个网络</p></li>
+</ul>
+<p>如何定义一个图：</p>
+<ol class="arabic simple">
+<li><p>如何构建一个图？</p>
+<ul class="simple">
+<li><p>什么是结点？</p></li>
+<li><p>什么是边？</p></li>
+</ul>
+</li>
+<li><p>给定领域/问题，适当的网络表示决定了我们成功使用网络的能力：</p>
+<ul class="simple">
+<li><p>在某些情况下，存在唯一、明确的表示</p></li>
+<li><p>在其他情况下，表示不是唯一的</p></li>
+<li><p>分配连接的方式将决定您可以研究问题的性质</p></li>
+</ul>
+</li>
+</ol>
+<p>有向图和无向图</p>
+<ul class="simple">
+<li><p>无向图（Undirected）</p>
+<ul>
+<li><p>连接：无向的（对称的，相反的）</p></li>
+<li><p>如同事关系、友谊关系</p></li>
+</ul>
+</li>
+<li><p>有向图（Directed）</p>
+<ul>
+<li><p>连接：有向的（弧）</p></li>
+<li><p>来电、推特的关注</p></li>
+</ul>
+</li>
+</ul>
+<p>异质图（Heterogeneous）</p>
+<ul class="simple">
+<li><p>异质图可以表示为<span class="math notranslate nohighlight">\(G=(V,E,R,T)\)</span></p></li>
+<li><p>结点的类型 <span class="math notranslate nohighlight">\(v_i \in V\)</span></p></li>
+<li><p>边的关系类型 <span class="math notranslate nohighlight">\((v_i,r,v_j)\in E\)</span></p></li>
+<li><p>结点类型 <span class="math notranslate nohighlight">\(T(v_i)\)</span></p></li>
+<li><p>关系类型 <span class="math notranslate nohighlight">\(r\in R\)</span></p></li>
+</ul>
+<p>异质图举例</p>
+<ol class="arabic simple">
+<li><p>医疗知识图谱</p>
+<ul class="simple">
+<li><p>结点：偏头痛</p></li>
+<li><p>边：氟维司群、治疗、乳腺肿瘤</p></li>
+<li><p>结点类型：蛋白质</p></li>
+<li><p>关系类型：导致的原因</p></li>
+</ul>
+</li>
+<li><p>学术图</p>
+<ul class="simple">
+<li><p>结点：ICML</p></li>
+<li><p>边：GraphSAGE、NeurIPS</p></li>
+<li><p>结点类型：作者</p></li>
+<li><p>关系类型：出版年</p></li>
+</ul>
+</li>
+</ol>
+<p>结点的度</p>
+<ol class="arabic simple">
+<li><p>无向图：</p>
+<ul class="simple">
+<li><p>结点的度 <span class="math notranslate nohighlight">\(k_i\)</span>：跟结点 <span class="math notranslate nohighlight">\(i\)</span> 相连的边的数量</p></li>
+<li><p>平均度：<span class="math notranslate nohighlight">\(\bar k=&lt;k&gt;=\frac{1}{N}\sum_{i=1}^{N}k_i=\frac{2E}{N}\)</span></p></li>
+</ul>
+</li>
+<li><p>有向图：有向图中包含入度和出度，一个结点的度是出度和入度之和</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar k =\frac{E}{N}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar k^{in} = \bar k^{out}\)</span></p></li>
+</ul>
+</li>
+</ol>
+<p>二分图</p>
+<ol class="arabic simple">
+<li><p>二分图：是一个图，其结点可以分为两个不相交的集合 <span class="math notranslate nohighlight">\(U\)</span> 和<span class="math notranslate nohighlight">\( V\)</span>，这样每条链接都将 <span class="math notranslate nohighlight">\(U\)</span> 中的一个结点连接到 <span class="math notranslate nohighlight">\(V\)</span> 中的一个结点；即 <span class="math notranslate nohighlight">\(U\)</span> 和 <span class="math notranslate nohighlight">\(V\)</span> 是<strong>独立的集合</strong></p></li>
+<li><p>举例</p>
+<ul class="simple">
+<li><p>作者-论文</p></li>
+<li><p>演员-电影</p></li>
+<li><p>观众-电影</p></li>
+<li><p>食谱-配料</p></li>
+</ul>
+</li>
+<li><p>“折叠”网络</p>
+<ul class="simple">
+<li><p>作者合作网络</p></li>
+<li><p>电影联合评级网络</p></li>
+</ul>
+</li>
+</ol>
+<p>图表示：邻接矩阵A</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_{ij}=1\)</span> 表示存在结点 <span class="math notranslate nohighlight">\(i\)</span> 到结点 <span class="math notranslate nohighlight">\(j\)</span> 之间的连接</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{ij}=0\)</span> 表示不存在结点 <span class="math notranslate nohighlight">\(i\)</span> 到结点 <span class="math notranslate nohighlight">\(j\)</span> 之间的连接</p></li>
+<li><p>注意：有向图的邻接矩阵不是对称的</p></li>
+<li><p>邻接矩阵是稀疏的</p></li>
+</ul>
+<p>网络是稀疏图</p>
+<ul class="simple">
+<li><p>大多数真实世界的网络都是稀疏的，<span class="math notranslate nohighlight">\(E &lt;&lt; E_{max}\ (or\ k &lt;&lt; N - 1)\)</span></p></li>
+<li><p>这就导致了邻接矩阵包含有大量的0</p></li>
+</ul>
+<p>结点和边的属性包括：</p>
+<ul class="simple">
+<li><p>权重（如通信频率）</p></li>
+<li><p>排序（最好的朋友，第二好的朋友）</p></li>
+<li><p>类型（朋友，亲戚，同事）</p></li>
+<li><p>标记（朋友-敌人，信任-不信任）</p></li>
+<li><p>属性取决于图中其余部分的结构：如一般朋友的数量</p></li>
+</ul>
+<p>更多类型的图</p>
+<ol class="arabic simple">
+<li><p>无权无向图（Unweighted， Undirected）</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_{ii}=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{ij}=A_{ji}\)</span> 对称的</p></li>
+<li><p><span class="math notranslate nohighlight">\(E=\frac{1}{2}\sum_{i,j=1}^{N}A_{ij}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar k = \frac{2E}{N}\bar k = \frac{2E}{N}\)</span></p></li>
+<li><p>友谊、超链接</p></li>
+</ul>
+</li>
+<li><p>有权无向图（Weighted, Undirected）</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_{ii}=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{ij} = A_{ji}\)</span> 对称的</p></li>
+<li><p><span class="math notranslate nohighlight">\(E=\frac{1}{2}\sum_{i,j=1}^{N}nonzero(A_{ij})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar k = \frac{2E}{N}\bar k = \frac{2E}{N}\)</span></p></li>
+<li><p>协作关系、互联网、路段</p></li>
+</ul>
+</li>
+<li><p>自循环无向图（self-edge/self-loop，undirected）</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_{ii} \neq 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{ij} = A{ji}\)</span> 对称的</p></li>
+<li><p><span class="math notranslate nohighlight">\(E=\frac{1}{2}\sum_{i,j=1, i\neq j}^{N}A_{ij}+\sum_{i=1}^{N}A_{ii}\)</span></p></li>
+<li><p>蛋白质</p></li>
+</ul>
+</li>
+<li><p>Multigraph （无向图）</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_{ii} = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{ij} = A_{ji}\)</span> 对称的</p></li>
+<li><p><span class="math notranslate nohighlight">\(E=\frac{1}{2}\sum_{i,j=1}^{N}nonzero(A_{ij})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar k = \frac{2E}{N}\bar k = \frac{2E}{N}\)</span></p></li>
+<li><p>通信、协作</p></li>
+</ul>
+</li>
+</ol>
+<p>无向图的连通性</p>
+<ul class="simple">
+<li><p>无向联通图：任何两个结点之间存在一条路径</p></li>
+<li><p>非连通图由两个或多个连通图组成</p></li>
+<li><p>Giant Component：最大连通域</p></li>
+<li><p>Isolated node：孤立结点</p></li>
+</ul>
+<p>连通性举例</p>
+<p>当一个图具有多个连通域，其邻接矩阵为形如对角矩阵的形式，因此非0元素均在方阵中，其他元素均为0</p>
+<p>有向图的连通性</p>
+<ol class="arabic simple">
+<li><p>Strongly connected directed graph （强连通有向图）</p>
+<ul class="simple">
+<li><p>图中任意两个均可达到（A-&gt;B, B-&gt;A）</p></li>
+</ul>
+</li>
+<li><p>Weakly connected directed graph （弱连通有向图）</p>
+<ul class="simple">
+<li><p>忽略边的方向时，图中任意两个结点均可到达</p></li>
+</ul>
+</li>
+<li><p>Strongly connected components (SCCs，强连通域)</p>
+<ul class="simple">
+<li><p>不太理解</p></li>
+</ul>
+</li>
+<li><p>In-component：指向SCC</p></li>
+<li><p>Out-component：由SCC指出</p></li>
+</ol>
+<p>图机器学习常用工具</p>
+<ul class="simple">
+<li><p>PyG（PyTorch Geometric）：官方自己的库，和PyTorch类似</p></li>
+<li><p>GraphGym</p></li>
+<li><p>NetworkX</p></li>
+<li><p>DGL：李沐老师推荐的，适合进行学术研究</p></li>
+<li><p>图数据可视化：AntV、Echarts、GraphXR</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cs224w"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="02-tradition-ml.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Task-02:图机器学习及其特征工程</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   01-introduction
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     图机器学习
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   图机器学习的应用
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     不同类型的任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     经典的图机器学习任务：
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#node-level">
+     Node-level 图机器学习任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edge-level">
+     Edge-level 图机器学习任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subgraph-level">
+     Subgraph-level 图机器学习任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph-level">
+     Graph-level 图机器学习任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     图表示的选择
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1775 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-02:图机器学习及其特征工程 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cs224w/02-tradition-ml';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="经典图结构" href="networkx_basic.html" />
+    <link rel="prev" title="01-introduction" href="01-intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="01-intro.html">
+                        01-introduction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Task-02:图机器学习及其特征工程
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="networkx_basic.html">
+                        经典图结构
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="networkx_example.html">
+                        Bridges
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="01-intro.html">
+                        01-introduction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Task-02:图机器学习及其特征工程
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="networkx_basic.html">
+                        经典图结构
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="networkx_example.html">
+                        Bridges
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS224w</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-intro.html">01-introduction</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Task-02:图机器学习及其特征工程</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="networkx_basic.html">经典图结构</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="networkx_example.html">Bridges</a></li>
+
+
+
+
+
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+  </ul>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-repository-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">repository</span>
+</a>
+</a>
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcs224w/02-tradition-ml.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">open issue</span>
+</a>
+</a>
+      
+  </ul>
+</div>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/cs224w/02-tradition-ml.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Task-02:图机器学习及其特征工程</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Task-02:图机器学习及其特征工程
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     复习
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     传统的机器学习流程
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     特征设计
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     图机器学习
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#node-level">
+   Node-level的任务和特征
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Node-level任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Node-level特征：概述
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#node-degree">
+     1.结点特征：Node degree
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#node-centrality">
+     2.结点特征：Node centrality
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     特征向量中心性
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     中介中心性
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     接近中心性
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clustering-coefficient">
+     3.结点特征：Clustering Coefficient
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     4.结点特征：异构子图
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       诱导子图和图同构
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     结点级特征总结
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     讨论
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     连接预测任务及其特征
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#link-level-recap">
+     1. Link-level预测任务：Recap
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     连接预测任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     通过邻近度进行连接预测
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     连接级特征：概述
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     1.基于距离的特征
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     2.基于局部邻域重叠的特征
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     全局邻域重叠
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     直觉：邻接矩阵的幂
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     全局邻域重叠
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#link-level">
+     Link-level特征：总结
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph-level">
+     Graph-level特征及核方法
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     Graph-level特征
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     背景：核方法
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     Graph-level特征:概述
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph-kernel">
+     Graph kernel：关键思想
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id26">
+     Graph-level 子图特征
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph-level-graphlet-kernel">
+     Graph-level Graphlet Kernel(图级别的子图核方法)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weisfeiler-lehman-kernel">
+     Weisfeiler-Lehman Kernel
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#color-refinement">
+     Color refinement
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id27">
+     Weisfeiler-Lehman Kernel
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id28">
+     Graph-level 特征：总结
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     今日总结
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <div class="section" id="task-02">
+<h1>Task-02:图机器学习及其特征工程<a class="headerlink" href="#task-02" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id1">
+<h2>复习<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Node-level 预测</p></li>
+<li><p>Link-level 预测</p></li>
+<li><p>Graph-level 预测</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>传统的机器学习流程<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>对结点、连接、图设计特征</p></li>
+<li><p>将获得的特征用作训练数据集</p></li>
+<li><p>训练模型</p>
+<ul>
+<li><p>逻辑回归</p></li>
+<li><p>随机森林</p></li>
+<li><p>神经网络等</p></li>
+</ul>
+</li>
+<li><p>应用模型</p>
+<ul>
+<li><p>对一个新的结点/连接/图，获取其特征并进行预测</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>特征设计<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>达到好的模型性能的关键是获取图上有效的特征x</p></li>
+<li><p>传统的机器学习使用手动提取的特征</p></li>
+<li><p>本节课我们将会回顾一下传统特征在以下任务中的应用：</p>
+<ul>
+<li><p>Node-level 预测</p></li>
+<li><p>Link-level 预测</p></li>
+<li><p>Graph-level 预测</p></li>
+</ul>
+</li>
+<li><p>为了简单起见，我们通过无向图来说明</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>图机器学习<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>目标：对一些列目标进行预测</p></li>
+<li><p>设计过程中的选择：</p>
+<ul>
+<li><p>特征(features):d维向量<span class="math notranslate nohighlight">\(x\)</span></p></li>
+<li><p>对象(objects):结点，边，结点的集合，整个图</p></li>
+<li><p>目标函数：即我们要解决的任务是什么？</p></li>
+</ul>
+</li>
+</ul>
+<p>举个例子：Node-level 预测</p>
+<ul class="simple">
+<li><p>给出一个图<span class="math notranslate nohighlight">\(G=(V, E)\)</span></p></li>
+<li><p>学习函数<span class="math notranslate nohighlight">\(f:V \to \mathbb R\)</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="node-level">
+<h1>Node-level的任务和特征<a class="headerlink" href="#node-level" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id5">
+<h2>Node-level任务<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p>结点分类
+机器学习离不开特征</p>
+</div>
+<div class="section" id="id6">
+<h2>Node-level特征：概述<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>目标：表征结点在图中的结构和位置</p>
+<ul>
+<li><p>结点的度（Node degree）</p></li>
+<li><p>结点中心性（Node centrality）</p></li>
+<li><p>集聚系数（Clustering coefficient）</p></li>
+<li><p>连通异构子图（Graphlets）</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="node-degree">
+<h2>1.结点特征：Node degree<a class="headerlink" href="#node-degree" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>结点<span class="math notranslate nohighlight">\(v\)</span>的度<span class="math notranslate nohighlight">\(k_v\)</span>就是该结点边的数量（或者说是相邻结点的数量）</p></li>
+<li><p>所有相邻结点同等看待</p></li>
+</ul>
+</div>
+<div class="section" id="node-centrality">
+<h2>2.结点特征：Node centrality<a class="headerlink" href="#node-centrality" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>结点的度仅计算该结点相邻结点的数量，但是忽略了其不同相邻结点的重要程度</p></li>
+<li><p>结点中心性<span class="math notranslate nohighlight">\(c_v\)</span>把结点在图中的重要性考虑进来</p></li>
+<li><p>衡量重要性的一些指标：</p>
+<ul>
+<li><p>Engienvector centrality（特征向量中心性）</p></li>
+<li><p>Betweenness centrality（中介中心性）</p></li>
+<li><p>Closeness centrality（接近中心性）</p></li>
+<li><p>其他等等…</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>特征向量中心性<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>如果一个结点<span class="math notranslate nohighlight">\(v\)</span>被重要的邻居<span class="math notranslate nohighlight">\(v \in N(v)\)</span>所包围，那么则说该结点是重要的</p></li>
+<li><p>结点<span class="math notranslate nohighlight">\(v\)</span>的中心性定义：相邻结点中心性的总和</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(c_v = \frac{1}{\lambda}\sum_{u \in N(v)}c_u\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span>是归一化常数，一般为A的最大特征值</p></li>
+</ul>
+</li>
+</ul>
+<p>上述公式通过递归的方式对中心性进行建模，那么我们该如何求解？
+通过矩阵的形式重写上述递归方程，则有：
+$<span class="math notranslate nohighlight">\(c_v = \frac{1}{\lambda}\sum_{u \in N(v)}c_u\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\lambda \mathbf c = \mathbf A \mathbf c\)</span>$</p>
+<ul class="simple">
+<li><p>其中，<span class="math notranslate nohighlight">\(\mathbf A\)</span>是邻接矩阵，<span class="math notranslate nohighlight">\(\mathbf A_{uv}=1 \ if \ u \in N(v)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf c\)</span>为中心性向量</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span>是特征值</p></li>
+<li><p>可以看出<span class="math notranslate nohighlight">\(\mathbf c\)</span>是<span class="math notranslate nohighlight">\(\mathbf A\)</span>的特征向量</p></li>
+<li><p>最大的特征值<span class="math notranslate nohighlight">\(\lambda_{max}\)</span>始终为正且唯一的，根据Perron-Frobenius Theorem</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_{max}\)</span>对应的特征向量<span class="math notranslate nohighlight">\(\mathbf c_{max}\)</span>作为中心性</p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>中介中心性<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>如果一个结点位于其他结点之间的许多最短路径上，则该结点很重要</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+c_v = \frac{\text{shortest paths between s and t that contain v}}{\text {shorest paths between s and t}}
+\]</div>
+</div>
+<div class="section" id="id9">
+<h2>接近中心性<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>如果一个结点到所有其他结点的路径最短，则该结点很重要</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+c_v = \frac{1}{\sum_{u \neq v}\text{shorest path length between u and v}}
+\]</div>
+</div>
+<div class="section" id="clustering-coefficient">
+<h2>3.结点特征：Clustering Coefficient<a class="headerlink" href="#clustering-coefficient" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>衡量结点<span class="math notranslate nohighlight">\(v\)</span>相邻结点连接程度的特征</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+e_v = \frac{\text{edges among neighboring nodes}}{\binom{k_v}{2}} \in [0, 1]
+\]</div>
+<p><span class="math notranslate nohighlight">\(\binom{k_v}{2}\)</span>表示<span class="math notranslate nohighlight">\(k_v\)</span>个相邻结点之间结点对的个数（就是从相邻的结点集合中取出两个，共有多少种取法）</p>
+</div>
+<div class="section" id="id10">
+<h2>4.结点特征：异构子图<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<p><img alt="" src="../_images/14.png" /></p>
+<ul class="simple">
+<li><p>由图可以看出，集聚系数计算了自我网络中的三角形数量</p></li>
+<li><p>因此我们可以通过计算预先指定的子图的数量（如graphlets）</p></li>
+<li><p>目标:用于描述结点<span class="math notranslate nohighlight">\(u\)</span>周围的网络结构</p>
+<ul>
+<li><p>Graphlets是描述结点<span class="math notranslate nohighlight">\(u\)</span>邻域网络结构的小子图</p></li>
+</ul>
+</li>
+</ul>
+<p>类比：</p>
+<ul class="simple">
+<li><p>度衡量了结点相邻的<strong>边</strong>的数量</p></li>
+<li><p>集聚系数衡量了结点相邻的<strong>三角形</strong>的数量</p></li>
+<li><p>异构子图度向量（Graphlet Degree Vector, GDV）：是结点基于异构子图的特征</p>
+<ul>
+<li><p>GDV衡量了结点相邻的异构子图的数量</p></li>
+</ul>
+</li>
+<li><p>考虑一个大小为2~5个结点的异构子图，我们可以得到：</p>
+<ul>
+<li><p>73个坐标的向量即是一个描述结点邻域拓扑结构的签名</p></li>
+</ul>
+</li>
+<li><p>异构子图度向量是对结点局部网络拓扑结构的一种描述</p>
+<ul>
+<li><p>比较两个结点的向量提供了比结点的度或集聚系数更详细的局部拓扑相似性度量</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="id11">
+<h3>诱导子图和图同构<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>诱导子图（Induced subgraph）是另一种图，是由结点的子集以及连接该子集中所有结点的边构成。</p></li>
+<li><p>图同构（Graph Isomorphism）是指两个图包含相同数量的结点并且以相同的方式进行连接，则称两个图为图同构</p></li>
+<li><p>Graphlets：root connected（根连接）</p>
+<ul>
+<li><p>5个结点最多可构成73种异构子图</p></li>
+</ul>
+</li>
+<li><p>Graph Degree Vector(GDV)：根结点在特定位置模式下，统计子图数量对应的向量。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>结点级特征总结<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>本节介绍了不同的方式从而获得结点特征，分别为：</p></li>
+<li><p>以重要性为基础的特征</p>
+<ul>
+<li><p>结点的度</p></li>
+<li><p>结点中心性的不同衡量方式</p></li>
+</ul>
+</li>
+<li><p>以结构为基础的特征</p>
+<ul>
+<li><p>结点的度</p></li>
+<li><p>集聚系数</p></li>
+<li><p>子图度向量</p></li>
+</ul>
+</li>
+<li><p>以重要性为基础的特征：衡量结点在图中的重要性</p>
+<ul>
+<li><p>结点的度</p>
+<ul>
+<li><p>简单统计某个结点相邻结点的数量</p></li>
+</ul>
+</li>
+<li><p>结点中心性</p>
+<ul>
+<li><p>对图中某个结点相邻结点的重要性进行建模</p></li>
+<li><p>不同的衡量方法：特征向量中心性、中介中心性、接近中心性</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>用于预测图中有影响力的结点</p>
+<ul>
+<li><p>举例：预测社交网络中名人用户</p></li>
+</ul>
+</li>
+<li><p>以结构为基础的特征：捕获结点邻域的拓扑属性</p>
+<ul>
+<li><p>结点的度</p>
+<ul>
+<li><p>简单统计某个结点相邻结点的数量</p></li>
+</ul>
+</li>
+<li><p>集聚系数</p>
+<ul>
+<li><p>度量相邻结点的连接情况</p></li>
+</ul>
+</li>
+<li><p>子图度向量</p>
+<ul>
+<li><p>统计不同子图出现的次数</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>用于预测一个结点在图中的作用</p>
+<ul>
+<li><p>举例：在一个蛋白质-蛋白质相互作用网络中预测蛋白质功能</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h2>讨论<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
+<p>对网络中不同结点进行打标的方式</p>
+<p><img alt="" src="../_images/12.png" /></p>
+<ul class="simple">
+<li><p>目前介绍的特征能够对上述结点进行区分</p></li>
+</ul>
+<p><img alt="" src="../_images/13.png" /></p>
+<ul class="simple">
+<li><p>目前介绍的特征不能够对上述结点进行区分</p></li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h2>连接预测任务及其特征<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="link-level-recap">
+<h2>1. Link-level预测任务：Recap<a class="headerlink" href="#link-level-recap" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>该任务是通过已有的连接去预测是否存在新的连接</p></li>
+<li><p>在测试阶段，不存在连接的结点对将会被排序，排名前K的结点对会被预测</p></li>
+<li><p>该任务的核心是对<strong>结点对</strong>设计特征</p></li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h2>连接预测任务<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
+<p>连接预测任务的两种形式：</p>
+<ol class="arabic simple">
+<li><p>连接随机丢失</p>
+<ul class="simple">
+<li><p>随机丢弃一部分连接，然后对他们进行预测</p></li>
+</ul>
+</li>
+<li><p>连接随时间变化</p>
+<ul class="simple">
+<li><p>定义一段时间内的图<span class="math notranslate nohighlight">\(G[t_0, t_0']\)</span>，模型输出一个排好序的列表L，其中包含了在下一个时间段的图<span class="math notranslate nohighlight">\(G[t_1, t_1']\)</span>出现的连接</p></li>
+<li><p>如何评价</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(n = |E_{new}|\)</span>：在时间段<span class="math notranslate nohighlight">\([t_1, t_1']\)</span>出现的新的边</p></li>
+<li><p>取L中前n个元素，并统计预测对的边的数量</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id16">
+<h2>通过邻近度进行连接预测<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>方法：</p>
+<ul>
+<li><p>对于结点对<span class="math notranslate nohighlight">\((x, y)\)</span>并计算其分数<span class="math notranslate nohighlight">\(c(x, y)\)</span></p>
+<ul>
+<li><p>例如，<span class="math notranslate nohighlight">\(c(x,y)\)</span>可能表示为<span class="math notranslate nohighlight">\(x\)</span>和<span class="math notranslate nohighlight">\(y\)</span>的共同邻居的数量</p></li>
+</ul>
+</li>
+<li><p>根据<span class="math notranslate nohighlight">\(c(x,y)\)</span>递减的顺序对<span class="math notranslate nohighlight">\((x,y)\)</span>进行排序</p></li>
+<li><p>将前n个结点对预测为存在新的连接</p></li>
+<li><p>并与<span class="math notranslate nohighlight">\(G[t_1, t_1']\)</span>时刻的图真实出现的连接进行比较</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h2>连接级特征：概述<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Distance-based feature: 基于距离的特征</p></li>
+<li><p>Local neighborhood overlap：基于局部邻域重叠的特征</p></li>
+<li><p>Global neighborhood overlap：基于全局邻域重叠的特征</p></li>
+</ul>
+</div>
+<div class="section" id="id18">
+<h2>1.基于距离的特征<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h2>
+<p><img alt="" src="../_images/11.png" /></p>
+<ul class="simple">
+<li><p>结点之间的最短路径</p></li>
+<li><p>但是最短距不能反映出邻域的重叠程度</p>
+<ul>
+<li><p>BH有两个公共结点，但是AB只有一个</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h2>2.基于局部邻域重叠的特征<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h2>
+<p>捕捉与结点<span class="math notranslate nohighlight">\(v_1\)</span>和<span class="math notranslate nohighlight">\(v_2\)</span>均相邻的结点数量</p>
+<ol class="arabic simple">
+<li><p>共同邻接点数量：<span class="math notranslate nohighlight">\(|N(v_1) \cap N(v_2)|\)</span></p></li>
+<li><p>Jaccard系数:<span class="math notranslate nohighlight">\(\frac{|N(v_1) \cap N(v_2)|}{|N(v_1) \cup N(v_2)|}\)</span></p></li>
+<li><p>Adamic-Adar指数：<span class="math notranslate nohighlight">\(\sum_{u \in N(v_1) \cap N(v_2)} \frac{1}{log(k_u)}\)</span> ,<span class="math notranslate nohighlight">\(k_c\)</span>表示结点c的度</p></li>
+</ol>
+<ul class="simple">
+<li><p>局部邻域特征的局限性</p>
+<ul>
+<li><p>如果两个结点没有任务公共相邻结点，则这类特征总为0</p></li>
+<li><p>然而，这两个结点在未来也存在潜在的连接</p></li>
+</ul>
+</li>
+<li><p>全局邻域特征通过将整个图考虑进来，解决了这个局限性</p></li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h2>全局邻域重叠<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Katz 指数：两个结点之间所有不同长度路径的数量</p></li>
+<li><p>Q：如何计算两结点之间路径数量？</p></li>
+<li><p>A：使用图邻接矩阵的幂</p></li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h2>直觉：邻接矩阵的幂<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>计算两结点之间所有不同长度路径的数量</p>
+<ul>
+<li><p>回忆一下：<span class="math notranslate nohighlight">\(A_{uv} = 1\)</span> if <span class="math notranslate nohighlight">\(u \in N(v)\)</span></p></li>
+<li><p>定义<span class="math notranslate nohighlight">\(P_{uv}^{(K)}\)</span>为结点<span class="math notranslate nohighlight">\(u\)</span>和<span class="math notranslate nohighlight">\(v\)</span>之间长度为<span class="math notranslate nohighlight">\(K\)</span>的路径</p></li>
+<li><p>接下来将证明，<span class="math notranslate nohighlight">\(P^{(K)} = A^k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P_{uv}^{1}=A_{uv}\)</span>表示为路径长度为1的两个结点，即相邻结点</p></li>
+</ul>
+</li>
+<li><p>但是如何计算<span class="math notranslate nohighlight">\(P_{uv}^{(2)}\)</span>?</p>
+<ul>
+<li><p>步骤1：根据结点<span class="math notranslate nohighlight">\(u\)</span>的相邻结点和结点<span class="math notranslate nohighlight">\(v\)</span>,计算长度为1的路径的数量</p></li>
+<li><p>步骤2：将这些路径的数量和相加</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h2>全局邻域重叠<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>Katz index：统计两个结点之间所有长度行走次数的和</p></li>
+<li><p>如何计算？</p></li>
+<li><p>使用邻接矩阵的幂！</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_{uv}\)</span>表示结点<span class="math notranslate nohighlight">\(u\)</span>和<span class="math notranslate nohighlight">\(v\)</span>之间行走次数为1的路径的数量（直接邻居）</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{uv}^2\)</span>表示结点<span class="math notranslate nohighlight">\(u\)</span>和<span class="math notranslate nohighlight">\(v\)</span>之间行走次数为2的路径的数量（邻居的邻居）</p></li>
+<li><p>类似，<span class="math notranslate nohighlight">\(A_{uv}^l\)</span>表示行走次数为l的路径的数量</p></li>
+</ul>
+</li>
+<li><p>结点<span class="math notranslate nohighlight">\(v_1\)</span>和<span class="math notranslate nohighlight">\(v_2\)</span>之间的Katz index计算方式如下：
+$<span class="math notranslate nohighlight">\(
+S_{v_1v_2}=\sum_{l=1}^{\infty}\beta^l A^l_{v_1v_2}
+\)</span>$</p>
+<ul class="simple">
+<li><p>计算所有长度行走次数对应的路径数量之和</p></li>
+<li><p><span class="math notranslate nohighlight">\(0 &lt; \beta &lt; 1\)</span>为衰减因子</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{v_1v_2}^l\)</span>表示结点<span class="math notranslate nohighlight">\(v_1\)</span>和<span class="math notranslate nohighlight">\(v_2\)</span>之间行走次数为l的路径的数量</p></li>
+</ul>
+</li>
+<li><p>Katz index矩阵以闭式的形式进行计算：
+$<span class="math notranslate nohighlight">\(
+S = \sum_{i=1}^{\infty}\beta^i A^i = (\mathbf I -\beta A)^{-1} - \mathbf I
+\)</span>$</p>
+<p>简单推导（中间的字符需要整理替换）
+$<span class="math notranslate nohighlight">\(
+S=bA+b^2A^2+b^3A^3+\cdots = (I - bA)^{-1}-I
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+(I-bA)(I+S)
+\)</span>$
+展开即可</p>
+</li>
+</ul>
+</div>
+<div class="section" id="link-level">
+<h2>Link-level特征：总结<a class="headerlink" href="#link-level" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>基于距离的特征</p>
+<ul>
+<li><p>使用两个结点之间的最短路径长度，但是无法对邻域的重叠情况进行描述</p></li>
+</ul>
+</li>
+<li><p>局部邻域重叠</p>
+<ul>
+<li><p>衡量两个结点之间有多少共享结点</p></li>
+<li><p>当不存在共享结点时，总为0</p></li>
+</ul>
+</li>
+<li><p>全局邻域重叠</p>
+<ul>
+<li><p>使用全局图结构对两个节点进行打分</p></li>
+<li><p>Katz index统计两个结点之间所有行走次数对应路径数量之和</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="graph-level">
+<h2>Graph-level特征及核方法<a class="headerlink" href="#graph-level" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="id23">
+<h2>Graph-level特征<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>目标：找到一些能表征整个图结构的特征</p></li>
+</ul>
+</div>
+<div class="section" id="id24">
+<h2>背景：核方法<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>核方法在传统机器学习中常用来进行图预测</p></li>
+<li><p>核心：设计核方法而不是特征向量</p></li>
+<li><p>快速了解什么是核方法：</p>
+<ul>
+<li><p>核方法<span class="math notranslate nohighlight">\(K(G, G') \in \mathbb R\)</span> 衡量数据之间的相似性</p></li>
+<li><p>核矩阵<span class="math notranslate nohighlight">\(\mathbf K=(K(G, G'))_{GG'}\)</span>必须总是半正定的</p></li>
+<li><p>存在一些特征表示<span class="math notranslate nohighlight">\(\phi(\cdot)\)</span>，使得<span class="math notranslate nohighlight">\(K(G,G')=\phi(G)^T \phi(G')\)</span></p></li>
+<li><p>核方法一旦确定，就可以使用现成的机器学习模型进行预测（如核SVM）</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h2>Graph-level特征:概述<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Graph kernels：衡量两张图之间的相似性</p>
+<ul>
+<li><p>Graphlet Kernel</p></li>
+<li><p>Weisfeiler-Lehman Kernel</p></li>
+<li><p>其他的graph kernels</p>
+<ul>
+<li><p>Random-walk kernel</p></li>
+<li><p>Shorest-path kernel</p></li>
+<li><p>And many more…</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="graph-kernel">
+<h2>Graph kernel：关键思想<a class="headerlink" href="#graph-kernel" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>目的：设计图特征向量<span class="math notranslate nohighlight">\(\phi(G)\)</span></p></li>
+<li><p>核心思想：图的Bag-of-words(BoW，词袋模型)</p>
+<ul>
+<li><p>BoW 忽略单词的排序，而只考虑单词计数作为文档的特征</p></li>
+<li><p>图的简单扩展：将结点看作是单词</p></li>
+<li><p>因为两张图都含有4个红色结点，因此两张不同的图我们得到了相同的特征向量</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../_images/01.png" /></p>
+<p>如果我们使用结点的度作为词袋呢？</p>
+<p><img alt="" src="../_images/02.png" /></p>
+<ul class="simple">
+<li><p>Graphlet Kernel和Weisfeiler-Lehman Kernel都是使用bag-of-*来表征图，其中*比结点的度更加复杂</p></li>
+</ul>
+</div>
+<div class="section" id="id26">
+<h2>Graph-level 子图特征<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>核心思想：统计图中不同子图的数量</p>
+<ul>
+<li><p>注意：这里子图的定义与node-level特征中子图的定义不太相同</p></li>
+<li><p>其中的差别为；</p>
+<ul>
+<li><p>此处子图的结点之间不需要有连接（允许存在孤立结点）</p></li>
+<li><p>子图可以没有根</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>定义<span class="math notranslate nohighlight">\(\mathcal G(g_1,g_2,\cdot, g_{n_k})\)</span>是一系列大小为k的子图</p>
+<p><img alt="" src="../_images/03.png" /></p>
+<ul class="simple">
+<li><p>即给定图G，子图列表为<span class="math notranslate nohighlight">\(\mathcal G(g_1,g_2,\cdot, g_{n_k})\)</span>，定义子图计数向量<span class="math notranslate nohighlight">\(\mathbf f_G \in \mathcal R^{n_k}\)</span>为：
+$<span class="math notranslate nohighlight">\(
+(\mathbf f_G)_i = \text{number of } (g_i \subseteq G) \text{ for }i=1,2,\dots,n_k
+\)</span>$</p></li>
+</ul>
+<p><img alt="" src="../_images/04.png" /></p>
+</div>
+<div class="section" id="graph-level-graphlet-kernel">
+<h2>Graph-level Graphlet Kernel(图级别的子图核方法)<a class="headerlink" href="#graph-level-graphlet-kernel" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>给定两个图，G和G‘,子图的核计算方式如下：
+<span class="math notranslate nohighlight">\(K(G,G')=f_G^Tf_G'\)</span></p></li>
+<li><p>问题：如果G和G’的尺寸大小不同，数值上将会产生不好的变动</p></li>
+<li><p>解决方案：对每个特征向量进行归一化处理
+$<span class="math notranslate nohighlight">\(
+h_G = \frac{f_G}{sum(f_G)}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+K(G,G')=h_G^Th_{G'}
+\)</span>$</p></li>
+<li><p>局限性：统计子图数量复杂度较高</p>
+<ul>
+<li><p>对于大小为<span class="math notranslate nohighlight">\(n\)</span>的图，统计大小为k的子图复杂度为<span class="math notranslate nohighlight">\(n^k\)</span></p></li>
+<li><p>这在最差情况下难以接收，因为子图同构测试是一个NP-hard问题</p></li>
+<li><p>如果一个图结点的度都被限制在<span class="math notranslate nohighlight">\(d\)</span>以内，则存在一个复杂度为<span class="math notranslate nohighlight">\(O(nd^{k-1})\)</span>的算法来统计所有大小为<span class="math notranslate nohighlight">\(k\)</span>的子图个数</p></li>
+</ul>
+</li>
+</ul>
+<p>我们是否能够设计一个更加高效的核方法？</p>
+</div>
+<div class="section" id="weisfeiler-lehman-kernel">
+<h2>Weisfeiler-Lehman Kernel<a class="headerlink" href="#weisfeiler-lehman-kernel" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>目的：设计一个高效的图特征描述方法<span class="math notranslate nohighlight">\(\phi(G)\)</span></p></li>
+<li><p>思想：通过邻域结构来迭代的扩增结点“词包”</p>
+<ul>
+<li><p>是Bag of node degrees的扩展版本，由于结点的度是一跳邻域信息</p></li>
+</ul>
+</li>
+<li><p>使用的算法：颜色细化（color refinement）</p></li>
+</ul>
+</div>
+<div class="section" id="color-refinement">
+<h2>Color refinement<a class="headerlink" href="#color-refinement" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>给定，一个图<span class="math notranslate nohighlight">\(G\)</span>以及结点的集合<span class="math notranslate nohighlight">\(V\)</span></p>
+<ul>
+<li><p>对每个结点<span class="math notranslate nohighlight">\(v\)</span>设定初始颜色<span class="math notranslate nohighlight">\(c^{(0)}(v)\)</span></p></li>
+<li><p>通过如下方法迭代的细化结点的颜色
+$<span class="math notranslate nohighlight">\(
+c^{(k+1)}(v) = HASH(\{c^{(k)}(v), \{c^{(k)}(u)\}_{u\in N(v)}\})
+\)</span>$
+其中，HASH将不同的输入输入映射维不同的颜色</p></li>
+</ul>
+</li>
+<li><p>在颜色细化的第K步之后，<span class="math notranslate nohighlight">\(c^{(K)}(v)\)</span>描述了第K-跳邻域的结构</p></li>
+</ul>
+<p>实例</p>
+<ul class="simple">
+<li><p>设定初始结点颜色</p></li>
+</ul>
+<p><img alt="" src="../_images/05.png" /></p>
+<ul class="simple">
+<li><p>聚合邻域结点颜色</p></li>
+</ul>
+<p><img alt="" src="../_images/06.png" /></p>
+<ul class="simple">
+<li><p>HASH表颜色映射</p></li>
+</ul>
+<p><img alt="" src="../_images/07.png" /></p>
+<ul class="simple">
+<li><p>聚合邻域结点颜色</p></li>
+</ul>
+<p><img alt="" src="../_images/08.png" /></p>
+<ul class="simple">
+<li><p>HASH表颜色映射</p></li>
+</ul>
+<p><img alt="" src="../_images/09.png" /></p>
+<ul class="simple">
+<li><p>颜色细化之后，WL核方法计算特定颜色染过色的结点个数</p></li>
+</ul>
+<p><img alt="" src="../_images/10.png" /></p>
+<ul class="simple">
+<li><p>WL核方法的值是通过计算颜色计数向量的内积得到的
+$<span class="math notranslate nohighlight">\(
+K(G, G') = \phi(G)^T\phi(G')=49
+\)</span>$</p></li>
+</ul>
+</div>
+<div class="section" id="id27">
+<h2>Weisfeiler-Lehman Kernel<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>WL核方法是计算高效的</p>
+<ul>
+<li><p>染色过程中每一步的时间复杂度与边的数量成线性关系，因为只聚合相邻结点的颜色</p></li>
+</ul>
+</li>
+<li><p>当计算核方法的值时，只有同时出现在两个图中的颜色才会被纳入计算</p>
+<ul>
+<li><p>因此，每种颜色的数量不超过图的结点数量</p></li>
+</ul>
+</li>
+<li><p>统计颜色的时间复杂度与结点数量呈线性关系</p></li>
+<li><p>总时间复杂度与边的数量呈线性关系</p></li>
+</ul>
+</div>
+<div class="section" id="id28">
+<h2>Graph-level 特征：总结<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Graphlet Kernel</p>
+<ul>
+<li><p>图被表征为Bag-of-graphlets</p></li>
+<li><p>计算复杂度高</p></li>
+</ul>
+</li>
+<li><p>Weisfeiler-Lehman Kernel</p>
+<ul>
+<li><p>使用k-跳颜色细化算法来扩增结点颜色“词袋”</p>
+<ul>
+<li><p>不同的颜色包含不同k-跳邻域结构信息</p></li>
+</ul>
+</li>
+<li><p>图被表征为Bag-of-colors</p></li>
+<li><p>计算高效的</p></li>
+<li><p>与图神经网络很接近</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id29">
+<h2>今日总结<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>传统机器学习pipeline</p>
+<ul>
+<li><p>手工特征 + 机器学习模型</p></li>
+</ul>
+</li>
+<li><p>图的手工特征</p>
+<ul>
+<li><p>Node-level</p>
+<ul>
+<li><p>结点的度、中心性、聚集系数、异构子图</p></li>
+</ul>
+</li>
+<li><p>Link-level</p>
+<ul>
+<li><p>基于距离的特征</p></li>
+<li><p>局部/全局邻域重叠</p></li>
+</ul>
+</li>
+<li><p>Graph-level</p>
+<ul>
+<li><p>Graphlet Kernel、WL Kernel</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>然而，我们只对图的结构进行特征化，并不是结点及其邻域的属性</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cs224w"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="01-intro.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">01-introduction</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="networkx_basic.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">经典图结构</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Task-02:图机器学习及其特征工程
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     复习
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     传统的机器学习流程
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     特征设计
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     图机器学习
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#node-level">
+   Node-level的任务和特征
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Node-level任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Node-level特征：概述
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#node-degree">
+     1.结点特征：Node degree
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#node-centrality">
+     2.结点特征：Node centrality
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     特征向量中心性
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     中介中心性
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     接近中心性
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clustering-coefficient">
+     3.结点特征：Clustering Coefficient
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     4.结点特征：异构子图
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       诱导子图和图同构
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     结点级特征总结
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     讨论
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     连接预测任务及其特征
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#link-level-recap">
+     1. Link-level预测任务：Recap
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     连接预测任务
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     通过邻近度进行连接预测
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     连接级特征：概述
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     1.基于距离的特征
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     2.基于局部邻域重叠的特征
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     全局邻域重叠
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     直觉：邻接矩阵的幂
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     全局邻域重叠
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#link-level">
+     Link-level特征：总结
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph-level">
+     Graph-level特征及核方法
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     Graph-level特征
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     背景：核方法
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     Graph-level特征:概述
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph-kernel">
+     Graph kernel：关键思想
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id26">
+     Graph-level 子图特征
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph-level-graphlet-kernel">
+     Graph-level Graphlet Kernel(图级别的子图核方法)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weisfeiler-lehman-kernel">
+     Weisfeiler-Lehman Kernel
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#color-refinement">
+     Color refinement
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id27">
+     Weisfeiler-Lehman Kernel
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id28">
+     Graph-level 特征：总结
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     今日总结
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>
